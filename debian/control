@@ -27,22 +27,19 @@ Build-Depends: debhelper (>= 13.0.0),
                libxrender-dev,
                libxt-dev,
                pkg-config,
-               sharutils,
-               xsltproc
+               sharutils
 Standards-Version: 4.1.4
 Homepage: http://www.fvwm.org/
 
 Package: fvwm3
 Architecture: any
-Depends: libperl4-corelibs-perl | perl (<< 5.12.3-7),
+Depends: libperl4-corelibs-perl,
          ${misc:Depends},
          ${shlibs:Depends}
 Recommends: lxmenu-data | gnome-menus,
             python3,
             python3-xdg
-Suggests: libx11-protocol-perl,
-          perl-tk,
-          stalonetray
+Suggests: stalonetray
 Provides: x-window-manager
 Description: F(?) Virtual Window Manager
  FVWM3 is a powerful ICCCM2 compliant multiple virtual desktop window manager
