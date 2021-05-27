@@ -1,0 +1,51 @@
+Source: fvwm3
+Section: x11
+Priority: optional
+Maintainer: Jaimos Skriletz <jaimosskriletz@gmail.com>
+Build-Depends: debhelper (>= 13.0.0),
+               file,
+               fontconfig,
+               gettext,
+               libbson-dev,
+               libevent-dev,
+               libfontconfig1-dev | libfontconfig-dev,
+               libfreetype6-dev,
+               libfribidi-dev (>= 0.10.7),
+               libncurses5-dev,
+               libpng-dev,
+               libreadline-dev | libreadline6-dev | libreadline5-dev,
+               librsvg2-dev (>= 2.13.92),
+               libsm-dev,
+               libx11-dev,
+               libxcursor-dev,
+               libxext-dev,
+               libxft-dev,
+               libxi-dev,
+               libxpm-dev,
+               libxrandr-dev,
+               libxrender-dev,
+               libxt-dev,
+               pkg-config,
+               sharutils,
+               xsltproc
+Standards-Version: 4.1.4
+Homepage: http://www.fvwm.org/
+
+Package: fvwm3
+Architecture: any
+Depends: libperl4-corelibs-perl | perl (<< 5.12.3-7),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Recommends: lxmenu-data | gnome-menus,
+            python3,
+            python3-xdg
+Suggests: libx11-protocol-perl,
+          perl-tk,
+          stalonetray
+Provides: x-window-manager
+Description: F(?) Virtual Window Manager
+ FVWM3 is a powerful ICCCM2 compliant multiple virtual desktop window manager
+ for the X Window System. FVWM3 is the successor to FVWM 2.x, which was
+ originally (a looooong time ago!) derived from TWM. FVWM3 is intended to have
+ a small memory footprint but a rich feature set, be extremely customizable
+ and extendible, and have a high degree of Motif MWM compatibility.

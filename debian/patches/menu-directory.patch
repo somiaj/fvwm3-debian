@@ -1,0 +1,16 @@
+Description: Change escape function.
+  Use escape_file_name instead of escape_fvwm_name since $name is a filename.
+Author: Unknown
+Forwarded: not-needed
+Last-Updated: 2016-12-10
+--- a/bin/fvwm-menu-directory.in
++++ b/bin/fvwm-menu-directory.in
+@@ -200,7 +200,7 @@ my $sort_sub =
+ @files = reverse @files if $order < 0;
+ 
+ # dump all menu items and start adding new items
+-my $menu_name  = &escape_fvwm_name($name);
++my $menu_name  = &escape_file_name($name);
+ my $menu_name2 = &escape_menu_name($name);
+ print qq(DestroyMenu recreate "$menu_name"\nAddToMenu "$menu_name2"\n);
+ 

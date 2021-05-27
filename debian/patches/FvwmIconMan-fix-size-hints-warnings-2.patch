@@ -1,0 +1,35 @@
+Description: Fix FvwmIconMan still triggering size hint warnings.
+  * The original patch by Dominik Vogt didn't always work due to a
+    timing issue. This modifies the original patch by waiting
+    until FvwmIconMan has finished resizing to set the hints to
+    keep from triggering the warning.
+  * Patch only stops FvwmIconMan from triggering the warnings
+    and other applications my still trigger the warnings. Upstream
+    rejected patch in hopes of a better fix on the warning system
+    in the future.
+Debian-Bug: https://bugs.debian.org/849355
+Author: Jaimos Skriletz <jaimosskriletz@gmail.com>
+Date: Tue, 28 Feb 2017 19:42:54 -0700
+---
+ modules/FvwmIconMan/xmanager.c | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+--- a/modules/FvwmIconMan/xmanager.c
++++ b/modules/FvwmIconMan/xmanager.c
+@@ -441,6 +441,16 @@ static void resize_window(WinManager *ma
+     }
+     MyXUngrabServer(theDisplay);
+   }
++
++  // Wait until the window has resised to fix the HINTS.
++  // counter is used to break an infinte loop.
++  XWindowAttributes attribs;
++  int counter = 20000;
++  while ( counter && (attribs.width != man->geometry.width ||
++          attribs.height != man->geometry.height)) {
++    XGetWindowAttributes(theDisplay, man->theWindow, &attribs);
++    counter--;
++  }
+   fix_manager_size(man, man->geometry.width, man->geometry.height);
+ }
+ 

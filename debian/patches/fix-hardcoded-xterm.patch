@@ -1,0 +1,138 @@
+Description: Changed hard-coded xterm into x-terminal-emulator per Policy
+ .
+ Also in keeping with Debian policy, change the option --title to -T,
+ and removed the --name option. Changed the man page to document the
+ Debian specific change.
+ .
+ Converted with metadata by Vincent W. Chen <vinmun@gmail.com>.
+ .
+ Updated by Jaimos Skriletz <jaimosskriletz@gmail.com>
+   * Added updates to change xterm to x-terminal-emulator in the default-config
+     and fvwm-menu-desktop.
+   * Added a clarification of the -name option to FvwmConsole manpage.
+Author: Manoj Srivastava <srivasta@debian.org>
+Forwarded: not-needed
+Last-Update: 2018-05-14
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/modules/FvwmConsole/FvwmConsole.c
++++ b/modules/FvwmConsole/FvwmConsole.c
+@@ -90,7 +90,9 @@ int main(int argc, char *argv[])
+ 	char client[120];
+ 	char **eargv;
+ 	int i, j, k;
+-	char *xterm_pre[] = { "-title", Name, "-name", Name, NULL };
++	/* char *xterm_pre[] = { "-title", Name, "-name", Name, NULL }; */
++	/* x-terminal-emulator options. */
++	char *xterm_pre[] = { "-T", Name, NULL };
+ 	char *xterm_post[] = { "-e", NULL, NULL };
+ 	int  clpid;
+ 
+--- a/modules/FvwmConsole/FvwmConsole.h
++++ b/modules/FvwmConsole/FvwmConsole.h
+@@ -34,7 +34,8 @@
+ #define HISTSIZE 100    /* readline history file size */
+ #define HISTFILE "/.FvwmConsole-History"
+ 
+-#define XTERM "xterm"
++/* #define XTERM "xterm" */
++#define XTERM "x-terminal-emulator" /* Debian specific change for policy */
+ 
+ /* message to client */
+ #define C_BEG   "_C_Config_Line_Begin_\n"
+--- a/default-config/config
++++ b/default-config/config
+@@ -29,7 +29,7 @@
+ #
+ # The following is used in various menus and also sets the terminal
+ # that FvwmConsole uses. Change this to your terminal of choice
+-InfoStoreAdd terminal xterm
++InfoStoreAdd terminal x-terminal-emulator
+ 
+ # This is used for "Run Command" and the Meta+Space key-binding
+ InfoStoreAdd runcmd "dmenu_run -nb '#2b4e5e'"
+--- a/modules/FvwmForm/FvwmForm-XDGMenuHelp
++++ b/modules/FvwmForm/FvwmForm-XDGMenuHelp
+@@ -64,7 +64,7 @@ DestroyModuleConfig  FvwmForm-XDGMenuHel
+ *FvwmForm-XDGMenuHelp:   Button  continue "Options Help"
+ *FvwmForm-XDGMenuHelp:   Command Module FvwmForm FvwmForm-XDGOptionsHelp
+ *FvwmForm-XDGMenuHelp:   Button  continue "fvwm-menu-desktop man page"        
+-*FvwmForm-XDGMenuHelp:   Command Exec exec xterm -g 100x50 -n "Help fvwm-menu-desktop" -T "Help fvwm-menu-desktop" -e "man fvwm-menu-desktop"
++*FvwmForm-XDGMenuHelp:   Command Exec exec x-terminal-emulator -g 100x50 -n "Help fvwm-menu-desktop" -T "Help fvwm-menu-desktop" -e "man fvwm-menu-desktop"
+ *FvwmForm-XDGMenuHelp:   Line    Left
+ *FvwmForm-XDGMenuHelp:   Line    " "
+ 
+--- a/modules/FvwmForm/FvwmForm-XDGOptionsHelp
++++ b/modules/FvwmForm/FvwmForm-XDGOptionsHelp
+@@ -132,7 +132,7 @@ DestroyModuleConfig  FvwmForm-XDGOptions
+ *FvwmForm-XDGOptionsHelp:   Button  continue "XDGMenu Help"
+ *FvwmForm-XDGOptionsHelp:   Command Module FvwmForm FvwmForm-XDGMenuHelp
+ *FvwmForm-XDGOptionsHelp:   Button  continue "fvwm-menu-desktop $[gt.manpage]"        
+-*FvwmForm-XDGOptionsHelp:   Command Exec exec xterm -g 100x50 -n "Help fvwm-menu-desktop" -T "Help fvwm-menu-desktop" -e "man fvwm-menu-desktop"
++*FvwmForm-XDGOptionsHelp:   Command Exec exec x-terminal-emulator -g 100x50 -n "Help fvwm-menu-desktop" -T "Help fvwm-menu-desktop" -e "man fvwm-menu-desktop"
+ *FvwmForm-XDGOptionsHelp:   Line    Left
+ *FvwmForm-XDGOptionsHelp:   Line    " "
+ 
+--- a/bin/fvwm-menu-desktop.in
++++ b/bin/fvwm-menu-desktop.in
+@@ -274,7 +274,7 @@ Standard output is a series Fvwm command
+     regen_cmd = 'PipeRead `fvwm-menu-desktop`'
+     dynamic_menu = False
+     menu_error = False
+-    term_cmd = "xterm -e"
++    term_cmd = "x-terminal-emulator -e" # Debian Policy change xterm to x-terminal-emulator
+ 
+     # Loads config options from $FVWM_USERDIR/.FvwmForm-XDGMenu-Config
+     if "FVWM_USERDIR" in os.environ:
+@@ -880,7 +880,7 @@ Options:
+     --regen-cmd ACTION        The fvwm ACTION for the 'Regenerate' menu item.
+                               Default: 'PipeRead `fvwm-menu-desktop`'
+     --term-cmd CMD            Terminal emulator CMD used on terminal entries.
+-                              Default: xterm -e
++                              Debian Default: x-terminal-emulator -e
+     --dynamic                 used with dynamic menus.
+     -e, --menu-error          out python-xdg not found error in menu.
+     -v, --verbose             run and display debug info on STDERR."""
+--- a/doc/modules/FvwmConsole.adoc
++++ b/doc/modules/FvwmConsole.adoc
+@@ -46,7 +46,9 @@ ____
+ 
+ A different terminal emulator can be specified with the -terminal
+ option. However, only terminal programs that understand the options
+--name, -title and -e can be used.
++-name, -title and -e can be used. Debian specific: hardcoded xterm
++is changed to x-terminal-emulator. To be policy compliant -name
++option is removed from default options and -title is change to -T.
+ 
+ ____
+ Module FvwmConsole -terminal rxvt
+@@ -64,6 +66,17 @@ FvwmConsole*VT100*geometry: 40x4 +
+ FvwmConsole*font: 7x14
+ ____
+ 
++Debian specific: Since -name is not included by default, the
++default resource will be set by the x-terminal-emulator used
++and not FvwmConsole. You can change the resource to match the
++terminal, or if supported by the terminal, run FvwmCConsole
++with the -name option:
++
++____
++Module FvwmConsole -name FvwmConsole
++____
++
++
+ == COMMAND EDITING
+ 
+ If the GNU readline library is available, it can be used.
+--- a/doc/bin/fvwm-menu-desktop.adoc
++++ b/doc/bin/fvwm-menu-desktop.adoc
+@@ -89,6 +89,9 @@ script exits with an error.
+   to run terminal applications in. _CMD_ needs to end with an execute
+   option, such as xterm's -e option, which will run the command that is
+   appended to _CMD_. The default is "xterm -e".
++
++Debian specific: Per Debian policy, default changed to
++"x-terminal-emulator -e".
+ --dynamic ::
+   This option is to be used with creating dynamic menus using
+   *DynamicPopUpAction* and *DynamicPopDownAction*. This adds a

@@ -1,0 +1,8 @@
+# FVWM uses Hilight as a config option and this causes lintian spelling
+# errors of hilight highlight and variations. Ignoring them.
+fvwm3 binary: spelling-error-in-binary usr/bin/fvwm3 Hilight Highlight
+fvwm3 binary: spelling-error-in-manpage usr/share/man/man1/* Hilight Highlight
+fvwm3 binary: spelling-error-in-manpage usr/share/man/man1/* hilight highlight
+fvwm3 binary: spelling-error-in-manpage usr/share/man/man1/* Hilighting Highlighting
+fvwm3 binary: spelling-error-in-manpage usr/share/man/man1/* hilighting highlighting
+fvwm3 binary: spelling-error-in-manpage usr/share/man/man1/* hilighted highlighted

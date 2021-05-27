@@ -1,0 +1,7 @@
+pkgconfig.patch
+FvwmIconMan-fix-size-hints-warnings-2.patch
+fix-TabCom.patch
+menu-directory.patch
+fix-hardcoded-xterm.patch
+enable-more-mouse-buttons.patch
+manpage-ClickTime.patch
