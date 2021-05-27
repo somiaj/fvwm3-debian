@@ -23,7 +23,7 @@ Adjust to suit your needs.
   ```
   $ apt install build-essential
   $ apt build-dep fvwm
-  $ apt install libbson-dev libevent-dev
+  $ apt install libbson-dev libevent-dev asciidoctor
   ```
 
   If you want to build for buster, you need to install
@@ -45,7 +45,7 @@ Adjust to suit your needs.
 
   ```
   $ cd ..
-  $ sudo dpkg -i fvwm3_1.0.3-1_amd64.deb
+  $ sudo apt install ./fvwm3_1.0.3-1_amd64.deb
   ```
 
 
