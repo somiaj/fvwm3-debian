@@ -49,8 +49,8 @@ This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
 -InfoStoreAdd terminal xterm
 +InfoStoreAdd terminal x-terminal-emulator
  
- # This is used for "Run Command" and the Meta+Space key-binding
- InfoStoreAdd runcmd "dmenu_run -nb '#2b4e5e'"
+ # This is used for "Run Command" and the Meta+Space key-binding.
+ # runcmd is the binary name and runcmdopt contains additional
 --- a/modules/FvwmForm/FvwmForm-XDGMenuHelp
 +++ b/modules/FvwmForm/FvwmForm-XDGMenuHelp
 @@ -64,7 +64,7 @@ DestroyModuleConfig  FvwmForm-XDGMenuHel
