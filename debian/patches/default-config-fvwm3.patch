@@ -1,0 +1,94 @@
+Description: Update default-config to use the renamed fvwm3-foo
+  helper binaries and Fvwm3Name module manpages in Debian.
+Author: Jaimos Skriletz <jaimosskriletz@gmail.com>
+Last-Update: 2021-05-31
+--- a/default-config/config
++++ b/default-config/config
+@@ -59,8 +59,8 @@ InfoStoreAdd runcmd "dmenu_run -nb '#2b4
+ DestroyFunc StartFunction
+ AddToFunc   StartFunction
+ + I Test (Init, f $[FVWM_USERDIR]/.BGdefault) \
+-    Exec exec fvwm-root $[FVWM_USERDIR]/.BGdefault
+-+ I TestRc (NoMatch) Exec exec fvwm-root \
++    Exec exec fvwm3-root $[FVWM_USERDIR]/.BGdefault
+++ I TestRc (NoMatch) Exec exec fvwm3-root \
+     $[FVWM_DATADIR]/default-config/images/background/bg1.png
+ + I Module FvwmButtons RightPanel
+ + I Module FvwmEvent EventNewDesk
+@@ -95,17 +95,17 @@ AddToFunc   ViewManPage
+ #
+ # SetBG is used with the background menu to set the background
+ # image and configure it to be loaded the next time fvwm is run.
+-# Note, fvwm-root can't use .jpeg or resize images. Use something
++# Note, fvwm3-root can't use .jpeg or resize images. Use something
+ # like display, feh, etc.
+ DestroyFunc SetBG
+ AddToFunc   SetBG
+ + I Test (f $[FVWM_USERDIR]/images/background/$0) \
+-    Exec exec fvwm-root $[FVWM_USERDIR]/images/background/$0
++    Exec exec fvwm3-root $[FVWM_USERDIR]/images/background/$0
+ + I TestRc (Match) Exec exec ln -fs images/background/$0 \
+     $[FVWM_USERDIR]/.BGdefault
+ + I TestRc (Match) Break
+ + I Test (!f $[FVWM_DATADIR]/default-config/images/background/$0) Break
+-+ I Exec exec fvwm-root $[FVWM_DATADIR]/default-config/images/background/$0
+++ I Exec exec fvwm3-root $[FVWM_DATADIR]/default-config/images/background/$0
+ + I Exec exec ln -fs $[FVWM_DATADIR]/default-config/images/background/$0 \
+     $[FVWM_USERDIR]/.BGdefault
+ 
+@@ -300,7 +300,7 @@ Test (x dmenu_run) + "Run command" Exec
+ + "&Quit%icons/quit.png%" Module FvwmScript FvwmScript-ConfirmQuit
+ 
+ # Generate XDGMenu
+-PipeRead "fvwm-menu-desktop -e"
++PipeRead "fvwm3-menu-desktop -e"
+ 
+ # Programs Menu
+ #
+@@ -408,26 +408,26 @@ AddToMenu   MenuSendToPage
+ # Fvwm Man Pages (Help) Menu
+ DestroyMenu MenuFvwmManPages
+ AddToMenu   MenuFvwmManPages "Help" Title
+-+ "fvwm3"               ViewManPage fvwm3
+-+ "FvwmAnimate"         ViewManPage FvwmAnimate
+-+ "FvwmAuto"            ViewManPage FvwmAuto
+-+ "FvwmBacker"          ViewManPage FvwmBacker
+-+ "FvwmButtons"         ViewManPage FvwmButtons
+-+ "FvwmCommand"         ViewManPage FvwmCommand
+-+ "FvwmConsole"         ViewManPage FvwmConsole
+-+ "FvwmEvent"           ViewManPage FvwmEvent
+-+ "FvwmIconMan"         ViewManPage FvwmIconMan
+-+ "FvwmIdent"           ViewManPage FvwmIdent
+-+ "FvwmPager"           ViewManPage FvwmPager
+-+ "FvwmPerl"            ViewManPage FvwmPerl
+-+ "FvwmRearrange"       ViewManPage FvwmRearrange
+-+ "FvwmScript"          ViewManPage FvwmScript
+-+ "" Nop
+-+ "fvwm-root"	        ViewManPage fvwm-root
+-+ "fvwm-menu-desktop"   ViewManPage fvwm-menu-desktop
+-+ "fvwm-menu-directory" ViewManPage fvwm-menu-directory
+-+ "fvwm-menu-xlock"     ViewManPage fvwm-menu-xlock
+-+ "fvwm-config"         ViewManPage fvwm-config
+++ "fvwm3"                ViewManPage fvwm3
+++ "FvwmAnimate"          ViewManPage Fvwm3Animate
+++ "FvwmAuto"             ViewManPage Fvwm3Auto
+++ "FvwmBacker"           ViewManPage Fvwm3Backer
+++ "FvwmButtons"          ViewManPage Fvwm3Buttons
+++ "FvwmCommand"          ViewManPage Fvwm3Command
+++ "FvwmConsole"          ViewManPage Fvwm3Console
+++ "FvwmEvent"            ViewManPage Fvwm3Event
+++ "FvwmIconMan"          ViewManPage Fvwm3IconMan
+++ "FvwmIdent"            ViewManPage Fvwm3Ident
+++ "FvwmPager"            ViewManPage Fvwm3Pager
+++ "FvwmPerl"             ViewManPage Fvwm3Perl
+++ "FvwmRearrange"        ViewManPage Fvwm3Rearrange
+++ "FvwmScript"           ViewManPage Fvwm3Script
+++ "" Nop
+++ "fvwm3-root"	         ViewManPage fvwm3-root
+++ "fvwm3-menu-desktop"   ViewManPage fvwm3-menu-desktop
+++ "fvwm3-menu-directory" ViewManPage fvwm3-menu-directory
+++ "fvwm3-menu-xlock"     ViewManPage fvwm3-menu-xlock
+++ "fvwm3-config"         ViewManPage fvwm3-config
+ 
+ #######
+ # 5: Mouse and Key bindings
