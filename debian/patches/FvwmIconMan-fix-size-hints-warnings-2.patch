@@ -7,7 +7,9 @@ Description: Fix FvwmIconMan still triggering size hint warnings.
     and other applications my still trigger the warnings. Upstream
     rejected patch in hopes of a better fix on the warning system
     in the future.
+  * Upstream did not want the patch.
 Debian-Bug: https://bugs.debian.org/849355
+Forwarded: not-needed
 Author: Jaimos Skriletz <jaimosskriletz@gmail.com>
 Date: Tue, 28 Feb 2017 19:42:54 -0700
 ---

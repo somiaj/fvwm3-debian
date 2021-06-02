@@ -5,6 +5,7 @@ Description: Replaces fvwm's AM_CHECK_PKG_CONFIG with PKG_PROG_PKG_CONFIG.
   Upstream was not interested in the patch.
 Author: Helmut Grohne <helmutg@debian.org>
 Debian-Bug: http://bugs.debian.org/900074
+Forwarded: not-needed
 Reviewd-By: Jaimos Skriletz <jaimosskriletz@gmail.com>
 Last-Updated: 2018-06-12
 --- a/acinclude.m4

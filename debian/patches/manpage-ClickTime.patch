@@ -1,3 +1,8 @@
+Description: Add double click time info to ClickTime in manpage.
+Author: Jaimos Skriletz <jaimosskriletz@gmail.com>
+Debian-Bug: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=567387
+Forwarded: http://www.mail-archive.com/fvwm-workers@fvwm.org/msg04561.html
+Last-Updated: 2016-12-10
 --- a/doc/fvwm3/fvwm3.adoc
 +++ b/doc/fvwm3/fvwm3.adoc
 @@ -3191,6 +3191,9 @@ default root cursor, you must set your r

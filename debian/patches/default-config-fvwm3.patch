@@ -1,6 +1,7 @@
 Description: Update default-config to use the renamed fvwm3-foo
   helper binaries and Fvwm3Name module manpages in Debian.
 Author: Jaimos Skriletz <jaimosskriletz@gmail.com>
+Forwarded: not-needed
 Last-Update: 2021-05-31
 --- a/default-config/config
 +++ b/default-config/config

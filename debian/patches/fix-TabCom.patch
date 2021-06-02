@@ -1,6 +1,8 @@
 Description: Fixes conflicting array sizes for variable `TabCom' in
   TabCommodules/FvwmScript/FvwmScript.c and modules/FvwmScript/Instructions.c
+  Upstream did not want patch.
 Author: Michael Tautschnig <mt@debian.org>
+Forwarded: not-needed
 Debian-Bug: http://bugs.debian.org/801612
 Reviewd-By: Jaimos Skriletz <jaimosskriletz@gmail.com>
 Last-Updated: 2015-10-12

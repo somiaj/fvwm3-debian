@@ -1,6 +1,5 @@
 fvwm3 (1.0.3-1) unstable; urgency=low
 
-  * Initial release of fvwm3, the successor to fvwm2.
+  * Initial package of fvwm3, the successor to fvwm2. Closes: #989261
 
- -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Wed, 26 May 2021 09:51:00 -0700
-
+ -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Sun, 30 May 2021 09:55:00 -0700

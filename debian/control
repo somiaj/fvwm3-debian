@@ -2,7 +2,9 @@ Source: fvwm3
 Section: x11
 Priority: optional
 Maintainer: Jaimos Skriletz <jaimosskriletz@gmail.com>
+Rules-Requires-Root: no
 Build-Depends: debhelper (>= 13.0.0),
+               debhelper-compat (= 13),
                asciidoctor,
                file,
                fontconfig,
@@ -28,8 +30,8 @@ Build-Depends: debhelper (>= 13.0.0),
                libxt-dev,
                pkg-config,
                sharutils
-Standards-Version: 4.1.4
-Homepage: http://www.fvwm.org/
+Standards-Version: 4.5.1
+Homepage: https://www.fvwm.org/
 
 Package: fvwm3
 Architecture: any

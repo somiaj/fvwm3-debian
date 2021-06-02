@@ -1,0 +1,121 @@
+Description: Spelling error fixes in binaries and manual pages.
+Author: Jaimos Skriletz <jaimosskriletz@gmail.com>
+Forwarded: https://github.com/fvwmorg/fvwm3/pull/512
+Last-Updated: 2021-05-30
+--- a/doc/fvwm3/fvwm3.adoc
++++ b/doc/fvwm3/fvwm3.adoc
+@@ -1719,7 +1719,7 @@ Mouse 3 FS N WindowShade $$[func.context
+ 
+ $[debuglog.state]::
+ 	Either _0_ (debug log closed) or _1_. Indicates the current state of
+-	debuging and logging facility.
++	debugging and logging facility.
+ 
+ $[gt._str_]::
+ 	return the translation of _str_ by looking in the current locale
+@@ -3963,7 +3963,7 @@ current desk or the selected desktop if
+ The _NoCurrentDeskTitle_ option removes this title. _TitleForAllDesks_
+ causes fvwm to add a menu title with the desk name and/or number
+ before each group of windows on the same desk. With _NoLayer_, the
+-layer of the window is not diplayed. The options _ShowPage_,
++layer of the window is not displayed. The options _ShowPage_,
+ _ShowPageX_ and _ShowPageY_ enable displaying the page of the window
+ rounded multiples of the display size. With _ShowScreen_, the window's
+ screen name is displayed.
+--- a/doc/modules/FvwmButtons.adoc
++++ b/doc/modules/FvwmButtons.adoc
+@@ -370,7 +370,7 @@ NoSize:::
+     This option specifies that this button will not be considered at all
+     when making the initial calculations of button sizes. Useful for the
+     odd button that gets just a couple of pixels too large to keep in
+-    line, and therefor blows up your whole buttonbox. "NoSize" is
++    line, and therefore blows up your whole buttonbox. "NoSize" is
+     equivalent to "Size 0 0".
+ 
+ Padding width height:::
+@@ -1128,7 +1128,7 @@ whitespace character.
+ The FvwmButtons program, and the concept for interfacing this module to
+ the Window Manager, are all original work by Robert Nation.
+ 
+-Originally, FvwmGoodStuff preceeded FvwmButtons.
++Originally, FvwmGoodStuff preceded FvwmButtons.
+ 
+ == AUTHOR
+ 
+--- a/doc/modules/FvwmEvent.adoc
++++ b/doc/modules/FvwmEvent.adoc
+@@ -146,8 +146,8 @@ The following events are valid:
+ |new_page 		| Occurs when a new page is switched to
+ |old_add_window 	| DEPRECATED
+ |old_configure_window 	| DEPRECATED
+-|property_change 	| Occurs when a window recieves a PropertNotify event
+-|raise_window 		| Occurs when a windowis raised
++|property_change 	| Occurs when a window receives a PropertNotify event
++|raise_window 		| Occurs when a window is raised
+ |res_class 		| Occurs when a window's Class is set
+ |res_name 		| Occurs when a window's Resource is set
+ |restack 		| Occurs when windows are restacked
+--- a/doc/modules/FvwmMFL.adoc
++++ b/doc/modules/FvwmMFL.adoc
+@@ -31,7 +31,7 @@ packet has different fields, depending o
+ == COMMUNICATION
+ 
+ The default unix-domain socket for _FvwmMFL_ is _$TMPDIR/fvwm_mfl.sock_,
+-although this can be overriden via an environment variable
++although this can be overridden via an environment variable
+ _FVWMMFL_SOCKET_.
+ 
+ == REGISTERING INTEREST
+--- a/fvwm/bindings.c
++++ b/fvwm/bindings.c
+@@ -489,7 +489,7 @@ static int ParseBinding(
+ 	{
+ 		fvwm_debug(
+ 			__func__, "Binding specified AnyModifier"
+-			" and other modifers too. Excess modifiers are"
++			" and other modifiers too. Excess modifiers are"
+ 			" ignored.");
+ 		modifier = AnyModifier;
+ 	}
+--- a/fvwm/menubindings.c
++++ b/fvwm/menubindings.c
+@@ -452,7 +452,7 @@ int menu_binding(
+ 	if ((modifier & AnyModifier) && (modifier & (~AnyModifier)))
+ 	{
+ 		fvwm_debug(__func__, "Binding specified AnyModifier"
+-			   " and other modifers too. Excess modifiers are"
++			   " and other modifiers too. Excess modifiers are"
+ 			   " ignored.");
+ 		modifier = AnyModifier;
+ 	}
+--- a/libs/FScreen.c
++++ b/libs/FScreen.c
+@@ -499,7 +499,7 @@ void FScreenInit(Display *dpy)
+ 
+ 	if (res == NULL || (res != NULL && res->noutput == 0)) {
+ 		XRRFreeScreenResources(res);
+-		fvwm_debug(__func__, "RandR present, yet no ouputs found.");
++		fvwm_debug(__func__, "RandR present, yet no outputs found.");
+ 		goto randr_fail;
+ 	}
+ 	XRRFreeScreenResources(res);
+--- a/modules/FvwmIconMan/readconfig.c
++++ b/modules/FvwmIconMan/readconfig.c
+@@ -681,7 +681,7 @@ Binding *ParseMouseEntry(char *tline)
+ 
+   modifiers_string_to_modmask(modifiers, &mods);
+   if((mods & AnyModifier)&&(mods&(~AnyModifier))) {
+-    ConsoleMessage("Binding specified AnyModifier and other modifers too. "
++    ConsoleMessage("Binding specified AnyModifier and other modifiers too. "
+ 		    "Excess modifiers will be ignored.");
+   }
+ 
+@@ -735,7 +735,7 @@ static Binding *ParseKeyEntry(char *tlin
+ 
+   modifiers_string_to_modmask(modifiers, &mods);
+   if((mods & AnyModifier)&&(mods&(~AnyModifier))) {
+-    ConsoleMessage("Binding specified AnyModifier and other modifers too. Excess modifiers will be ignored.");
++    ConsoleMessage("Binding specified AnyModifier and other modifiers too. Excess modifiers will be ignored.");
+   }
+ 
+   /*

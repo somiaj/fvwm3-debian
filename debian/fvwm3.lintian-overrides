@@ -1,8 +1,12 @@
-# FVWM uses Hilight as a config option and this causes lintian spelling
-# errors of hilight highlight and variations. Ignoring them.
+# FVWM uses an incorrect spelling of highlight as a config option and
+# this causes lintian spelling errors. Ignoring them.
 fvwm3 binary: spelling-error-in-binary usr/bin/fvwm3 Hilight Highlight
-fvwm3 binary: spelling-error-in-manpage usr/share/man/man1/* Hilight Highlight
-fvwm3 binary: spelling-error-in-manpage usr/share/man/man1/* hilight highlight
-fvwm3 binary: spelling-error-in-manpage usr/share/man/man1/* Hilighting Highlighting
-fvwm3 binary: spelling-error-in-manpage usr/share/man/man1/* hilighting highlighting
-fvwm3 binary: spelling-error-in-manpage usr/share/man/man1/* hilighted highlighted
+fvwm3 binary: spelling-error-in-binary usr/libexec/fvwm3/*/* hilight highlight
+fvwm3 binary: typo-in-manual-page usr/share/man/man1/* Hilight Highlight
+fvwm3 binary: typo-in-manual-page usr/share/man/man1/* hilight highlight
+fvwm3 binary: typo-in-manual-page usr/share/man/man1/* Hilighting Highlighting
+fvwm3 binary: typo-in-manual-page usr/share/man/man1/* hilighting highlighting
+fvwm3 binary: typo-in-manual-page usr/share/man/man1/* hilighted highlighted
+# fvwm3 module manual pages have been renamed to make package installable
+# along side fvwm, but are associated with module binaries.
+fvwm3: spare-manual-page usr/share/man/man1/Fvwm3*.1.gz

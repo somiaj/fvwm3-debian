@@ -1,0 +1,30 @@
+fvwm3 (1.0.3-1) unstable; urgency=low
+
+    FVWM3 is the successor to FVWM. FVWM3 will include new features and
+    breaking changes to FVWM. FVWM3 is currently mostly compatible with
+    FVWM and most config options still work. See the upstream changelog,
+    /usr/share/doc/fvwm3/changelog.gz, for a list of changes.
+
+    The Debian package contains some changes from upstream in order to
+    ensure that fvwm3 and fvwm don't conflict.
+
+      + All the helper binaries are renamed from fvwm-name to fvwm3-name.
+        This includes fvwm3-config, fvwm3-convert-2.6, fvwm3-menu-desktop,
+        fvwm3-menu-directory, fvwm3-menu-xlock, fvwm3-perllib, and fvwm3-root.
+ 
+      + Man pages for modules have been renamed to Fvwm3Module (the module
+        names are unchanged).
+
+      + If you have both fvwm3 and fvwm installed be sure to use the
+        appropriate fvwm3 binaries and man pages to avoid issues.
+
+    FVWM3 uses the same configuration file, ~/.fvwm/config, as FVWM.
+    If you wish to use a different configuration file you can either
+    set the FVWM_USERDIR=~/.fvwm3 environment variable or launch
+    fvwm3 with the -f config_file option.
+
+    The Debian package does not include the new module FvwmPrompt due
+    to golang dependences.
+
+ -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Wed, 26 May 2021 19:44:54 -0700
+    
