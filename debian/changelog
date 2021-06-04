@@ -1,6 +1,7 @@
 fvwm3 (1.0.4-1~rc1) unstable; urgency=low
 
   * Placeholder for future 1.0.4 release for building from git.
+  * Update build depends. Move transitional packages to or depends.
 
  -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Thu, 03 Jun 2021 17:44:00 -0700
 

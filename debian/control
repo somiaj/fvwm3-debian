@@ -11,10 +11,10 @@ Build-Depends: debhelper (>= 13.0.0),
                gettext,
                libbson-dev,
                libevent-dev,
-               libfontconfig1-dev | libfontconfig-dev,
-               libfreetype6-dev,
+               libfontconfig-dev | libfontconfig1-dev,
+               libfreetype-dev | libfreetype6-dev,
                libfribidi-dev (>= 0.10.7),
-               libncurses5-dev,
+               libncurses-dev | libncurses5-dev,
                libpng-dev,
                libreadline-dev | libreadline6-dev | libreadline5-dev,
                librsvg2-dev (>= 2.13.92),
@@ -28,8 +28,7 @@ Build-Depends: debhelper (>= 13.0.0),
                libxrandr-dev,
                libxrender-dev,
                libxt-dev,
-               pkg-config,
-               sharutils
+               pkg-config
 Standards-Version: 4.5.1
 Homepage: https://www.fvwm.org/
 
