@@ -1,3 +1,9 @@
+fvwm3 (1.0.4-1~rc1) unstable; urgency=low
+
+  * Placeholder for future 1.0.4 release for building from git.
+
+ -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Thu, 03 Jun 2021 17:44:00 -0700
+
 fvwm3 (1.0.3-1) unstable; urgency=low
 
   * Initial package of fvwm3, the successor to fvwm2. Closes: #989261
