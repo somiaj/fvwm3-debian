@@ -5,7 +5,7 @@ Forwarded: not-needed
 Last-Update: 2021-05-31
 --- a/default-config/config
 +++ b/default-config/config
-@@ -73,8 +73,8 @@ DesktopConfiguration global
+@@ -77,8 +77,8 @@ DesktopConfiguration global
  DestroyFunc StartFunction
  AddToFunc   StartFunction
  + I Test (Init, f $[FVWM_USERDIR]/.BGdefault) \
@@ -16,7 +16,7 @@ Last-Update: 2021-05-31
      $[FVWM_DATADIR]/default-config/images/background/bg1.png
  + I Module FvwmButtons RightPanel
  + I Module FvwmEvent EventNewDesk
-@@ -109,17 +109,17 @@ AddToFunc   ViewManPage
+@@ -113,17 +113,17 @@ AddToFunc   ViewManPage
  #
  # SetBG is used with the background menu to set the background
  # image and configure it to be loaded the next time fvwm is run.
@@ -37,7 +37,7 @@ Last-Update: 2021-05-31
  + I Exec exec ln -fs $[FVWM_DATADIR]/default-config/images/background/$0 \
      $[FVWM_USERDIR]/.BGdefault
  
-@@ -314,7 +314,7 @@ Test (x $[infostore.runcmd]) + "Run comm
+@@ -315,7 +315,7 @@ Test (x $[infostore.runcmd]) + "Run comm
  + "&Quit%icons/quit.png%" Module FvwmScript FvwmScript-ConfirmQuit
  
  # Generate XDGMenu
@@ -46,7 +46,7 @@ Last-Update: 2021-05-31
  
  # Programs Menu
  #
-@@ -422,26 +422,26 @@ AddToMenu   MenuSendToPage
+@@ -423,26 +423,26 @@ AddToMenu   MenuSendToPage
  # Fvwm Man Pages (Help) Menu
  DestroyMenu MenuFvwmManPages
  AddToMenu   MenuFvwmManPages "Help" Title
