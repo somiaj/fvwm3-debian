@@ -23,7 +23,7 @@ override_dh_installdocs:
 	dh_installdocs -X.in -X.am -XMakefile
 
 override_dh_installchangelogs:
-	dh_installchangelogs debian/CHANGELOG.md
+	dh_installchangelogs CHANGELOG.md
 
 %:
 	dh $@
