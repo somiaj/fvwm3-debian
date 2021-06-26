@@ -3,15 +3,19 @@
 This is the `debian/` directory for fvwm3 to build a
 Debian package (.deb) from the fvwm3 source.
 
-This is meant to build a fvwm3 package from the current master
-branch from the [fvwm3](https://github.com/fvwmorg/fvwm3)
-repository. The official release (1.0.3 at time of writing)
-will be added to Debian (it is sitting in New at time of writing).
+The main branch is to build a fvwm3 package from the current master
+branch of the [fvwm3](https://github.com/fvwmorg/fvwm3) repository.
+Branches will be used to create snapshots to build a specific fvwm3
+release version.
 
-## Use
+This builds a package that can be installed along side the fvwm package
+(which is fvwm version 2). To do this some binaries and manual pages
+have been renamed. Check `debian/NEWS` for details.
 
-Build the current [fvwm3](https://github.com/fvwmorg/fvwm3)
-source and package it in a Debian package for bullseye as follows.
+## Build Instructions
+
+Build the current [fvwm3](https://github.com/fvwmorg/fvwm3) source
+and package it in a Debian package for bullseye (or buster) as follows.
 
 Adjust to suit your needs.
 
@@ -32,9 +36,8 @@ Adjust to suit your needs.
               libxi-dev libxpm-dev libxrandr-dev libxrender-dev libxt-dev
   ```
 
-  If you want to build for buster, you need to install
-  debhelper from backports. Provided you have backports
-  enabled:
+  If building for buster, install debhelper from `buster-backports`.
+  Provided you have `buster-backports` in your sources:
 
   ```
   apt -t buster-backports install debhelper
@@ -50,8 +53,7 @@ Adjust to suit your needs.
 + Install the resulting .deb package.
 
   ```
-  cd ..
-  sudo apt install ./fvwm3_1.0.4-1~rc1_amd64.deb
+  sudo apt install ../fvwm3_1.0.4-1~rc1_amd64.deb
   ```
 
 
