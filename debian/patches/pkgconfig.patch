@@ -59,7 +59,7 @@ Last-Updated: 2018-06-12
  
  PKG_CHECK_MODULES([xt],[xt],
  [],
-@@ -785,7 +785,7 @@ AC_ARG_ENABLE(rsvg,
+@@ -772,7 +772,7 @@ AC_ARG_ENABLE(rsvg,
  )
  if test ! x"$with_rsvg" = xno; then
     with_rsvg=no
@@ -68,7 +68,7 @@ Last-Updated: 2018-06-12
        AC_MSG_CHECKING(for librsvg - version >= $rsvg_min_version)
        if $PKG_CONFIG --exists librsvg-2.0 ; then
           if $PKG_CONFIG --exists "librsvg-2.0 >= $rsvg_min_version" ; then
-@@ -1034,7 +1034,7 @@ if test ! x"$with_bidi" = xno; then
+@@ -1021,7 +1021,7 @@ if test ! x"$with_bidi" = xno; then
      AS_HELP_STRING([--with-fribidi-bindir=DIR],
        [directory of fribidi-config if not in PATH]),
      FRIBIDI_BINDIR="$withval", FRIBIDI_BINDIR=".")

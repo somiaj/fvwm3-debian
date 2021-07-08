@@ -37,8 +37,8 @@ Last-Update: 2021-05-31
  + I Exec exec ln -fs $[FVWM_DATADIR]/default-config/images/background/$0 \
      $[FVWM_USERDIR]/.BGdefault
  
-@@ -315,7 +315,7 @@ Test (x $[infostore.runcmd]) + "Run comm
- + "&Quit%icons/quit.png%" Module FvwmScript FvwmScript-ConfirmQuit
+@@ -315,7 +315,7 @@ Test (x $[infostore.runcmd]) + "R&un Com
+ + "$[gt.&Quit]%icons/quit.png%" Module FvwmScript FvwmScript-ConfirmQuit
  
  # Generate XDGMenu
 -PipeRead "fvwm-menu-desktop -e"
