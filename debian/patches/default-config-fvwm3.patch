@@ -1,8 +1,8 @@
-Description: Update default-config to use the renamed fvwm3-foo
-  helper binaries and Fvwm3Name module manpages in Debian.
+Description: Update default-config and fvwm3-menu-desktop to use the renamed
+  fvwm3-foo helper binaries and Fvwm3Name module manpages in Debian.
 Author: Jaimos Skriletz <jaimosskriletz@gmail.com>
 Forwarded: not-needed
-Last-Update: 2021-05-31
+Last-Update: 2021-06-22
 --- a/default-config/config
 +++ b/default-config/config
 @@ -77,8 +77,8 @@ DesktopConfiguration global
@@ -93,3 +93,382 @@ Last-Update: 2021-05-31
  
  #######
  # 5: Mouse and Key bindings
+--- a/bin/fvwm-menu-desktop-config.fpl
++++ b/bin/fvwm-menu-desktop-config.fpl
+@@ -16,8 +16,8 @@ my $configtmp = "$ENV{'FVWM_USERDIR'}/.X
+ 
+ open(MSG ,">$configtmp") || die "Error $!";
+ 
+-my $all = `fvwm-menu-desktop --get-menus all`;
+-my $selected = `fvwm-menu-desktop --get-menus desktop`;
++my $all = `fvwm3-menu-desktop --get-menus all`;
++my $selected = `fvwm3-menu-desktop --get-menus desktop`;
+ 
+ my @all_filelist = split(/ /,$all);
+ my @selected_filelist = split(/ /,$selected);
+@@ -97,7 +97,7 @@ else {
+ *${modname}: Line    center
+ *${modname}: Text    \"\$[gt.No menus found! Check why from within a terminal with]\"
+ *${modname}: Line    center
+-*${modname}: Text    \"'fvwm-menu-desktop -v'\"
++*${modname}: Text    \"'fvwm3-menu-desktop -v'\"
+ *${modname}: Line    left
+ *${modname}: Text    \" \"
+ ";
+@@ -189,7 +189,7 @@ foreach my $key (keys %all_menus) {
+ }
+ 
+ $fvwmform_commands .= "\"
+-*${modname}: Command    PipeRead 'fvwm-menu-desktop \\
++*${modname}: Command    PipeRead 'fvwm3-menu-desktop \\
+ \$(IconsOn\?--enable-mini-icons )\\
+ \$(Size\?-s \$(Size) )\\
+ \$(TitlesOn\?--with-titles )\\
+@@ -246,7 +246,7 @@ $fvwmform_commands .= "
+   '*${modname}Default: AppIcon      \$(AppIcon) '       \\
+ ) >> \$FVWM_USERDIR/.${modname}
+ 
+-*${modname}: Command PipeRead 'fvwm-menu-desktop'
++*${modname}: Command PipeRead 'fvwm3-menu-desktop'
+ 
+ *${modname}: Button     continue \"\$[gt.Save]\"
+ 
+--- a/bin/fvwm-menu-desktop.in
++++ b/bin/fvwm-menu-desktop.in
+@@ -271,7 +271,7 @@ Standard output is a series Fvwm command
+     default_app_icon = "gnome-applications"
+     default_dir_icon = "gnome-fs-directory"
+     include_items = 'both'
+-    regen_cmd = 'PipeRead `fvwm-menu-desktop`'
++    regen_cmd = 'PipeRead `fvwm3-menu-desktop`'
+     dynamic_menu = False
+     menu_error = False
+     term_cmd = "x-terminal-emulator -e" # Debian Policy change xterm to x-terminal-emulator
+@@ -333,7 +333,7 @@ Standard output is a series Fvwm command
+             print(usage)
+             sys.exit()
+         elif o in ("--version") :
+-            print("fvwm-menu-desktop version " + version)
++            print("fvwm3-menu-desktop version " + version)
+             sys.exit()
+         elif o in ("-e", "--menu-error") :
+             menu_error = True
+@@ -409,7 +409,7 @@ Standard output is a series Fvwm command
+             printtext('AddToMenu "%s" "%s" Title' % (top, top))
+             printtext('+ "$[gt.Error]: python-xdg $[gt.not found]" Nop')
+             printtext('+ "" Nop')
+-            printtext('+ "$[gt.Regenerate]" PipeRead `fvwm-menu-desktop -e`')
++            printtext('+ "$[gt.Regenerate]" PipeRead `fvwm3-menu-desktop -e`')
+         else:
+             sys.stderr.write('Python module python-xdg not found.')
+         sys.exit(1)
+@@ -455,7 +455,7 @@ Standard output is a series Fvwm command
+             printtext('AddToMenu "%s" "%s" Title' % (top, top))
+             printtext('+ "$[gt.Error]: $[gt.No menus found]" Nop')
+             printtext('+ "" Nop')
+-            printtext('+ "$[gt.Regenerate]" PipeRead `fvwm-menu-desktop -e`')
++            printtext('+ "$[gt.Regenerate]" PipeRead `fvwm3-menu-desktop -e`')
+         else:
+             sys.stderr.write(install_prefix+desktop+menu_type+".menu not available on this system. Exiting...\n")
+         sys.exit(1)
+@@ -878,7 +878,7 @@ Options:
+                               menu. NAME can be 'config', 'regenerate', 'both'
+                               or 'none'. Default both.
+     --regen-cmd ACTION        The fvwm ACTION for the 'Regenerate' menu item.
+-                              Default: 'PipeRead `fvwm-menu-desktop`'
++                              Default: 'PipeRead `fvwm3-menu-desktop`'
+     --term-cmd CMD            Terminal emulator CMD used on terminal entries.
+                               Debian Default: x-terminal-emulator -e
+     --dynamic                 used with dynamic menus.
+--- a/doc/bin/fvwm-menu-desktop.adoc
++++ b/doc/bin/fvwm-menu-desktop.adoc
+@@ -1,12 +1,12 @@
+-= fvwm-menu-desktop(1)
++= fvwm3-menu-desktop(1)
+ 
+ == NAME
+ 
+-fvwm-menu-desktop - Reads XDG menu files and creates Fvwm menus
++fvwm3-menu-desktop - Reads XDG menu files and creates Fvwm menus
+ 
+ == SYNOPSIS
+ 
+-fvwm-menu-desktop [ **--help**|*-h* ] [ *--version* ] [
++fvwm3-menu-desktop [ **--help**|*-h* ] [ *--version* ] [
+ *--install-prefix* _DIR_ ] [ *--desktop* _NAME_ ] [ *--menu-type* _NAME_
+ ] [ *--theme* _NAME_ ] [ **--with-titles**|*-w* ] [ *--without-titles* ]
+ [ *--enable-mini-icons* ] [ **--size**|*-s* _NUM_ ] [ *--mini-icon-dir*
+@@ -63,7 +63,7 @@ script exits with an error.
+   menus matching those settings.
+ --install-prefix DIR::
+   Optional parameter to override the standard locations for XDG menu
+-  definitions. Tells *fvwm-menu-desktop* to look in _DIR_ for .menu
++  definitions. Tells *fvwm3-menu-desktop* to look in _DIR_ for .menu
+   files instead of the standard locations /etc/xdg/menus (and
+   $HOME/.config/menus if it exists).
+ --with-titles|-w::
+@@ -83,7 +83,7 @@ script exits with an error.
+ --regen-cmd CMD ::
+   This option sets the fvwm command _CMD_ that is run when the menu item
+   'Regenerate' is selected. The default is "PipeRead
+-  `fvwm-menu-desktop`".
++  `fvwm3-menu-desktop`".
+ --term-cmd CMD ::
+   This option sets the terminal emulator command _CMD_ that is used to
+   to run terminal applications in. _CMD_ needs to end with an execute
+@@ -118,7 +118,7 @@ below for some solutions.
+ --verbose::
+   Enables additional information printouts on STDERR.
+ Icons Options::
+-  By default, fvwm-menu-desktop builds menus without mini-icons. To
++  By default, fvwm3-menu-desktop builds menus without mini-icons. To
+   enable mini-icons use the following options.
+ 
+ If ImageMagick is installed on the system, the script will resize and
+@@ -143,7 +143,7 @@ is generated to speed things up.
+   If --enable-mini-icons is used the _size_ of the icons can changed
+   with this parameter. Default is 24.
+ --mini-icon-dir DIR::
+-  When the right size mini-icon isn't available, fvwm-menu-desktop
++  When the right size mini-icon isn't available, fvwm3-menu-desktop
+   creates icons with the right size in $HOME/.fvwm/icons. If you don't
+   want to use the default directory, $HOME/.fvwm/icons, use this option
+   to specify a different folder.
+@@ -156,14 +156,14 @@ is generated to speed things up.
+ 
+ == USAGE
+ 
+-*fvwm-menu-desktop* outputs XDG .menu files in the syntax of fvwm menus.
+-When *fvwm-menu-desktop* is run with no options, it will load defaults
++*fvwm3-menu-desktop* outputs XDG .menu files in the syntax of fvwm menus.
++When *fvwm3-menu-desktop* is run with no options, it will load defaults
+ from the *FvwmForm-XDGMenu-Config* file (see below) then search your
+ system for suitable menu file(s). To see which menus are available on
+ your system run:
+ 
+ ....
+-fvwm-menu-desktop --get-menus all
++fvwm3-menu-desktop --get-menus all
+ ....
+ 
+ If no menus are found you may not have any installed on your system. By
+@@ -172,16 +172,16 @@ $HOME/.config/menus or the location set
+ *--install-prefix* to specify another location search for menus.
+ 
+ Though a combination of command line options and the
+-*FvwmForm-XDGMenu-Config* settings, *fvwm-menu-desktop* can generate any
++*FvwmForm-XDGMenu-Config* settings, *fvwm3-menu-desktop* can generate any
+ combination of the menus found. To get a list of what menu(s) would be
+ generated use the *--get-menus* _desktop_ option. The following will
+-list all menus generated if *fvwm-menu-desktop* was run with no options.
++list all menus generated if *fvwm3-menu-desktop* was run with no options.
+ 
+ ....
+-fvwm-menu-desktop --get-menus desktop
++fvwm3-menu-desktop --get-menus desktop
+ ....
+ 
+-*fvwm-menu-desktop* determines which menu(s) to generate as follows
++*fvwm3-menu-desktop* determines which menu(s) to generate as follows
+ 
+ If no config file is found, all menus will be weighted and the script
+ will generate the best (highest weight) menu found.
+@@ -202,12 +202,12 @@ names.
+ 
+ *--all-menus* by itself will generate all menus found.
+ 
+-By default *fvwm-menu-desktop* will generate a menu whose top level name
+-is "XDGMenu". To tell fvwm to read the output of *fvwm-menu-desktop* to
++By default *fvwm3-menu-desktop* will generate a menu whose top level name
++is "XDGMenu". To tell fvwm to read the output of *fvwm3-menu-desktop* to
+ create the menu XDGMenu add the following to your fvwm config file:
+ 
+ ....
+-PipeRead 'fvwm-menu-desktop'
++PipeRead 'fvwm3-menu-desktop'
+ ....
+ 
+ *Warning:* Depending on the options used this command may be slow and
+@@ -221,13 +221,13 @@ Once the menu is generated you can open
+ AddToMenu MenuFvwmRoot "XDG Menu" Popup XDGMenu
+ ....
+ 
+-*fvwm-menu-desktop* can be configured though both command line options
++*fvwm3-menu-desktop* can be configured though both command line options
+ and a *FvwmForm* GUI to customize the menu(s) that get generated.
+ 
+ == GUI
+ 
+ *FvwmForm-XDGMenu-Config* is a *FvwmForm* interface that can be used to
+-configure the defaults for *fvwm-menu-desktop*. You can access this from
++configure the defaults for *fvwm3-menu-desktop*. You can access this from
+ the "Configure" item in the top level menu that is generated or run the
+ following from within *FvwmConsole*
+ 
+@@ -238,21 +238,21 @@ Module FvwmPerl -l fvwm-menu-desktop-con
+ This form can be used to select which menu(s) get generated by default
+ along with setting many (but not all) of the available options. When you
+ click "Save Settings" the form will write a config file located at
+-$FVWM_USERDIR/.FvwmForm-XDGMenu-Config that *fvwm-menu-desktop* will
++$FVWM_USERDIR/.FvwmForm-XDGMenu-Config that *fvwm3-menu-desktop* will
+ parse for defaults when run.
+ 
+ See the help inside of *FvwmForm-XDGMenu-Config* for more information.
+ 
+ == EXAMPLES
+ 
+-There are many ways to setup when fvwm runs *fvwm-menu-desktop* to
++There are many ways to setup when fvwm runs *fvwm3-menu-desktop* to
+ generate the menu. One method is to just generate the menu when fvwm
+ loads and then use the GUI config tool to change any options. To do this
+ you only need to add the following to the fvwm config file:
+ 
+ ....
+ AddToMenu MenuFvwmRoot "XDG Menu" Popup XDGMenu PipeRead
+-'fvwm-menu-desktop'
++'fvwm3-menu-desktop'
+ ....
+ 
+ The menu is created once when fvwm loads. Since menu creation can
+@@ -269,7 +269,7 @@ generate the menu when 'Regenerate' is s
+ using a command like
+ 
+ ....
+-fvwm-menu-desktop --regen-cmd XDGRegen > $FVWM_USERDIR/.XDGMenu
++fvwm3-menu-desktop --regen-cmd XDGRegen > $FVWM_USERDIR/.XDGMenu
+ ....
+ 
+ Then add the following to the fvwm config file to define the function
+@@ -279,14 +279,14 @@ file doesn't exist when fvwm starts.
+ ....
+ DestroyFunc XDGRegen
+ AddToFunc   XDGRegen
+-+ I PipeRead 'fvwm-menu-desktop --regen-cmd XDGRegen > \
+++ I PipeRead 'fvwm3-menu-desktop --regen-cmd XDGRegen > \
+     $[FVWM_USERDIR]/.XDGMenu; echo "Nop"'
+ + I Read $[FVWM_USERDIR]/.XDGMenu
+ 
+ Test (!f $[FVWM_USERDIR]/.XDGMenu) XDGRegen Read $[FVWM_USERDIR]/.XDGMenu
+ ....
+ 
+-Besides creating a top level menu, *fvwm-menu-desktop* can insert the
++Besides creating a top level menu, *fvwm3-menu-desktop* can insert the
+ menu into an existing menu using the *--insert-in-menu* option. For
+ example one could create the menu MenuFvwmRoot and include the XDG items
+ at the end.
+@@ -298,7 +298,7 @@ AddToMenu   MenuFvwmRoot "Fvwm" Title
+ + "ItemN" ActionN
+ + "" Nop
+ 
+-PipeRead 'fvwm-menu-desktop --insert-in-menu MenuFvwmRoot'
++PipeRead 'fvwm3-menu-desktop --insert-in-menu MenuFvwmRoot'
+ ....
+ 
+ In this case the menu items are inserted at the end of the MenuFvwmRoot
+@@ -315,7 +315,7 @@ AddToFunc   XDGRegen
+ + I AddToMenu MenuFvwmRoot "Item1" Action1 ...
+ + I AddToMenu MenuFvwmRoot "ItemN" ActionN
+ + I AddToMenu MenuFvwmRoot "" Nop
+-+ I PipeRead 'fvwm-menu-desktop --insert-in-menu MenuFvwmRoot \
+++ I PipeRead 'fvwm3-menu-desktop --insert-in-menu MenuFvwmRoot \
+     --regen-cmd XDGRegen'
+ ....
+ 
+@@ -326,7 +326,7 @@ menu XDGMenu when it is opened using
+ 
+ ....
+ AddToMenu XDGMenu "XDGMenu" Title
+-+ DynamicPopUpAction PipeRead 'fvwm-menu-desktop'
+++ DynamicPopUpAction PipeRead 'fvwm3-menu-desktop'
+ ....
+ 
+ This will create the menu when it is opened. One issue here is it will
+@@ -336,7 +336,7 @@ is open used the *--dynamic* option
+ 
+ ....
+ AddToMenu XDGMenu "XDGMenu" Title
+-+ DynamicPopUpAction PipeRead 'fvwm-menu-desktop \
+++ DynamicPopUpAction PipeRead 'fvwm3-menu-desktop \
+     --dynamic --include-items config'
+ + DynamicPopDownAction DestroyMenu recreate XDGMenu
+ ....
+@@ -358,7 +358,7 @@ AddToFunc GenRootMenu
+ + I AddToMenu MenuFvwmRoot "Item1" Action1 ...
+ + I AddToMenu MenuFvwmRoot "ItemN" ActionN
+ + I AddToMenu MenuFvwmRoot "" Nop
+-+ PipeRead `fvwm-menu-desktop --insert-in-menu MenuFvwmRoot \
+++ PipeRead `fvwm3-menu-desktop --insert-in-menu MenuFvwmRoot \
+     --include-items config`
+ 
+ AddToMenu MenuFvwmRoot "Fvwm" Title
+@@ -377,7 +377,7 @@ This script is based on fvwm-xdg-menu.py
+ (http://www.cl.cam.ac.uk/~pz215/) who assigned Licence: GPL 2 Date:
+ 03.12.2005.
+ 
+-The script was reworked to replace the existing fvwm-menu-desktop perl
++The script was reworked to replace the existing fvwm3-menu-desktop perl
+ script by the fvwm-workers.
+ 
+ == COPYING
+--- a/modules/FvwmForm/FvwmForm-XDGMenuHelp
++++ b/modules/FvwmForm/FvwmForm-XDGMenuHelp
+@@ -16,7 +16,7 @@ DestroyModuleConfig  FvwmForm-XDGMenuHel
+ *FvwmForm-XDGMenuHelp:   Line    left
+ *FvwmForm-XDGMenuHelp:   Text    "$[gt.All the XDG menus found on the system are listed under Available Menus.  Use]"
+ *FvwmForm-XDGMenuHelp:   Line    left
+-*FvwmForm-XDGMenuHelp:   Text    "$[gt.this FvwmForm to configure some of the defaults options for fvwm-menu-desktop]"
++*FvwmForm-XDGMenuHelp:   Text    "$[gt.this FvwmForm to configure some of the defaults options for fvwm3-menu-desktop]"
+ *FvwmForm-XDGMenuHelp:   Line    left
+ *FvwmForm-XDGMenuHelp:   Text    "$[gt.and select which menus are generated.  Select the options you want and then]"
+ *FvwmForm-XDGMenuHelp:   Line    left
+@@ -26,7 +26,7 @@ DestroyModuleConfig  FvwmForm-XDGMenuHel
+ *FvwmForm-XDGMenuHelp:   Line    left
+ *FvwmForm-XDGMenuHelp:   Text    "$[gt.Export Menu:]"
+ *FvwmForm-XDGMenuHelp:   Line    left
+-*FvwmForm-XDGMenuHelp:   Text    "$[gt.     Generates a menu by calling fvwm-menu-desktop with the selected options]"
++*FvwmForm-XDGMenuHelp:   Text    "$[gt.     Generates a menu by calling fvwm3-menu-desktop with the selected options]"
+ *FvwmForm-XDGMenuHelp:   Line    left
+ *FvwmForm-XDGMenuHelp:   Text    "$[gt.     and saves the output to Output Path. After the menu file is created it]"
+ *FvwmForm-XDGMenuHelp:   Line    left
+@@ -36,7 +36,7 @@ DestroyModuleConfig  FvwmForm-XDGMenuHel
+ *FvwmForm-XDGMenuHelp:   Line    left
+ *FvwmForm-XDGMenuHelp:   Text    "$[gt.Save and Regenerate:]"
+ *FvwmForm-XDGMenuHelp:   Line    left
+-*FvwmForm-XDGMenuHelp:   Text    "$[gt.     This saves the settings then runs fvwm-menu-desktop with no options using]"
++*FvwmForm-XDGMenuHelp:   Text    "$[gt.     This saves the settings then runs fvwm3-menu-desktop with no options using]"
+ *FvwmForm-XDGMenuHelp:   Line    left
+ *FvwmForm-XDGMenuHelp:   Text    "$[gt.     the defaults saved in the config file. This does not export the menu.]"
+ *FvwmForm-XDGMenuHelp:   Line    left
+@@ -50,7 +50,7 @@ DestroyModuleConfig  FvwmForm-XDGMenuHel
+ *FvwmForm-XDGMenuHelp:   Line    Left
+ *FvwmForm-XDGMenuHelp:   Line    " "
+ *FvwmForm-XDGMenuHelp:   Line    left
+-*FvwmForm-XDGMenuHelp:   Text    "$[gt.If no menus appear check with 'fvwm-menu-desktop --get-menus all -v'.]"
++*FvwmForm-XDGMenuHelp:   Text    "$[gt.If no menus appear check with 'fvwm3-menu-desktop --get-menus all -v'.]"
+ *FvwmForm-XDGMenuHelp:   Line    left
+ *FvwmForm-XDGMenuHelp:   Text    "$[gt.Also it is a good idea to check $HOME/.xsession-errors for errors.]"
+ *FvwmForm-XDGMenuHelp:   Line    left
+@@ -65,8 +65,8 @@ DestroyModuleConfig  FvwmForm-XDGMenuHel
+ *FvwmForm-XDGMenuHelp:   Command Nop
+ *FvwmForm-XDGMenuHelp:   Button  continue "Options Help"
+ *FvwmForm-XDGMenuHelp:   Command Module FvwmForm FvwmForm-XDGOptionsHelp
+-*FvwmForm-XDGMenuHelp:   Button  continue "fvwm-menu-desktop man page"        
+-*FvwmForm-XDGMenuHelp:   Command Exec exec x-terminal-emulator -g 100x50 -n "Help fvwm-menu-desktop" -T "Help fvwm-menu-desktop" -e "man fvwm-menu-desktop"
++*FvwmForm-XDGMenuHelp:   Button  continue "fvwm3-menu-desktop man page"        
++*FvwmForm-XDGMenuHelp:   Command Exec exec x-terminal-emulator -g 100x50 -n "Help fvwm3-menu-desktop" -T "Help fvwm3-menu-desktop" -e "man fvwm3-menu-desktop"
+ *FvwmForm-XDGMenuHelp:   Line    Left
+ *FvwmForm-XDGMenuHelp:   Line    " "
+ 
+--- a/modules/FvwmForm/FvwmForm-XDGOptionsHelp
++++ b/modules/FvwmForm/FvwmForm-XDGOptionsHelp
+@@ -133,8 +133,8 @@ DestroyModuleConfig  FvwmForm-XDGOptions
+ *FvwmForm-XDGOptionsHelp:   Command Nop
+ *FvwmForm-XDGOptionsHelp:   Button  continue "XDGMenu Help"
+ *FvwmForm-XDGOptionsHelp:   Command Module FvwmForm FvwmForm-XDGMenuHelp
+-*FvwmForm-XDGOptionsHelp:   Button  continue "fvwm-menu-desktop $[gt.manpage]"        
+-*FvwmForm-XDGOptionsHelp:   Command Exec exec x-terminal-emulator -g 100x50 -n "Help fvwm-menu-desktop" -T "Help fvwm-menu-desktop" -e "man fvwm-menu-desktop"
++*FvwmForm-XDGOptionsHelp:   Button  continue "fvwm3-menu-desktop $[gt.manpage]"        
++*FvwmForm-XDGOptionsHelp:   Command Exec exec x-terminal-emulator -g 100x50 -n "Help fvwm3-menu-desktop" -T "Help fvwm3-menu-desktop" -e "man fvwm3-menu-desktop"
+ *FvwmForm-XDGOptionsHelp:   Line    Left
+ *FvwmForm-XDGOptionsHelp:   Line    " "
+ 
