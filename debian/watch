@@ -1,3 +1,4 @@
 version=4
+opts=dversionmangle=s/\+ds// \
 https://github.com/fvwmorg/fvwm3/releases \
  /fvwmorg/fvwm3/releases/download/\S+/fvwm3-(\d\S+)\.tar\.gz

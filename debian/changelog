@@ -1,10 +1,12 @@
-fvwm3 (1.0.4-1~rc1) unstable; urgency=low
+fvwm3 (1.0.4+ds-1) unstable; urgency=low
 
   * Placeholder for future 1.0.4 release for building from git.
   * Update build depends. Move transitional packages to or depends.
   * Add Vcs-* links to the github repo for the Debian source package.
   * Remove libbson-dev from build depends (no longer needed).
   * Remove docbook information from debian/copyright.
+  * Add Files-Excluded: bin/FvwmPrompt/vendor and change version to repack
+    upstream source to remove bundled libraries bin/FvwmPrompt/vendor.
 
  -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Thu, 03 Jun 2021 17:44:00 -0700
 
