@@ -6,4 +6,5 @@ fix-hardcoded-xterm.patch
 enable-more-mouse-buttons.patch
 manpage-ClickTime.patch
 default-config-fvwm3.patch
+spelling-errors.patch
 fvwm3-menu-desktop-fix.patch
