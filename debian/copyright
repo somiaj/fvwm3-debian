@@ -1,7 +1,7 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: fvwm3
 Source: https://github.com/fvwmorg/fvwm3
-  Upstream source repacked to remove bundeled libaries bin/FvwmPrompt/vendor.
+  Upstream source repacked to remove bundled libraries bin/FvwmPrompt/vendor.
   .
   In 1.0.4, bin/FvwmPrompt/FvwmPrompt binary removed.
 Files-Excluded: bin/FvwmPrompt/vendor bin/FvwmPrompt/FvwmPrompt
