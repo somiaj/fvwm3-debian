@@ -9,12 +9,6 @@ Copyright: Read https://www.fvwm.org/Archive/Authors/
   Corporation, Salt Lake City, Utah, and 1989 by the Massachusetts
   Institute of Technology, Cambridge, Massachusetts, all rights
   reserved.  It is also copyright 1993 and 1994 by Robert Nation.
- Portions of the DocBook documentation are:
-  Copyright 1992-2004 HaL Computer Systems, Inc.,
-  O'Reilly & Associates, Inc., ArborText, Inc., Fujitsu Software
-  Corporation, Norman Walsh, Sun Microsystems, Inc., and the
-  Organization for the Advancement of Structured Information
-  Standards (OASIS).
 License: GPL-2
  Additional copyrights of the fvwm main module:
   Permission to use, copy, modify, and distribute this software and its
@@ -34,29 +28,6 @@ License: GPL-2
   USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
   OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
   PERFORMANCE OF THIS SOFTWARE.
- .
- Portions of the DocBook documentation:
-  Copyright 1992-2004 HaL Computer Systems, Inc.,
-  O'Reilly & Associates, Inc., ArborText, Inc., Fujitsu Software
-  Corporation, Norman Walsh, Sun Microsystems, Inc., and the
-  Organization for the Advancement of Structured Information
-  Standards (OASIS).
-   Permission to use, copy, modify and distribute the DocBook DTD
-   and its accompanying documentation for any purpose and without fee
-   is hereby granted in perpetuity, provided that the above copyright
-   notice and this paragraph appear in all copies.  The copyright
-   holders make no representation about the suitability of the DTD for
-   any purpose.  It is provided "as is" without expressed or implied
-   warranty.
-   .
-   If you modify the DocBook DTD in any way, except for declaring and
-   referencing additional sets of general entities and declaring
-   additional notations, label your DTD as a variant of DocBook.  See
-   the maintenance documentation for more information.
-   .
-   Please direct all questions, bug reports, or suggestions for
-   changes to the docbook@lists.oasis-open.org mailing list. For more
-   information, see https://www.oasis-open.org/docbook/.
 
 Files: default-config/images/icons/*
 Copyright: Google Material Design

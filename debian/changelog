@@ -4,6 +4,7 @@ fvwm3 (1.0.4-1~rc1) unstable; urgency=low
   * Update build depends. Move transitional packages to or depends.
   * Add Vcs-* links to the github repo for the Debian source package.
   * Remove libbson-dev from build depends (no longer needed).
+  * Remove docbook information from debian/copyright.
 
  -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Thu, 03 Jun 2021 17:44:00 -0700
 
