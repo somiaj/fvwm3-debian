@@ -1,6 +1,6 @@
 fvwm3 (1.0.4+ds-1) unstable; urgency=low
 
-  * Placeholder for future 1.0.4 release for building from git.
+  * New upstream release.
   * Update build depends. Move transitional packages to or depends.
   * Add Vcs-* links to the github repo for the Debian source package.
   * Remove libbson-dev from build depends (no longer needed).
