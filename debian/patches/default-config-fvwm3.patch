@@ -171,7 +171,7 @@ Last-Update: 2021-06-22
          else:
              sys.stderr.write(install_prefix+desktop+menu_type+".menu not available on this system. Exiting...\n")
          sys.exit(1)
-@@ -878,7 +878,7 @@ Options:
+@@ -877,7 +877,7 @@ Options:
                                menu. NAME can be 'config', 'regenerate', 'both'
                                or 'none'. Default both.
      --regen-cmd ACTION        The fvwm ACTION for the 'Regenerate' menu item.
