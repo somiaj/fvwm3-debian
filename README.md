@@ -56,4 +56,20 @@ Adjust to suit your needs.
   sudo apt install ../fvwm3_1.0.4-1~rc1_amd64.deb
   ```
 
+## FvwmPrompt
+
+Due to Debian policy, the official Debian package cannot contain bundled
+libraries, so `bin/FvwmPrompt/vendor` is removed from the Debian source
+package, and FvwmPrompt must be built using Debian system libraries.
+
+Currently Debian is missing a few golang depends to build FvwmPrompt,
+see `golang-depends.md`, so the Debian package won't contain FvwmPrompt
+until all the depends are packaged for Debian.
+
+To build a local Debian package that uses `bin/FvwmPrompt/vendor`
+to build FvwmPrompt, use the official fvwm3 source. Either the
+master git branch or an official release tarball works. Then
+use the patch in the branch `FvwmPrompt` to build a package that
+also builds FvwmPrompt. Use the above instructions along with
+installing the package `golang-go` to build the package.
 
