@@ -126,13 +126,14 @@ This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
  If the GNU readline library is available, it can be used.
 --- a/doc/bin/fvwm-menu-desktop.adoc
 +++ b/doc/bin/fvwm-menu-desktop.adoc
-@@ -89,6 +89,9 @@ script exits with an error.
+@@ -89,6 +89,10 @@ script exits with an error.
    to run terminal applications in. _CMD_ needs to end with an execute
    option, such as xterm's -e option, which will run the command that is
    appended to _CMD_. The default is "xterm -e".
-+
+++
 +Debian specific: Per Debian policy, default changed to
 +"x-terminal-emulator -e".
+++
  --dynamic ::
    This option is to be used with creating dynamic menus using
    *DynamicPopUpAction* and *DynamicPopDownAction*. This adds a
