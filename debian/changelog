@@ -14,8 +14,10 @@ fvwm3 (1.0.4+ds-1) unstable; urgency=low
   * Remove docbook information from debian/copyright.
   * Add Files-Excluded: bin/FvwmPrompt/vendor and change version to repack
     upstream source to remove bundled libraries bin/FvwmPrompt/vendor.
+  * Remove authors link from debian/copyright and state the copyright
+    belongs to fvwm-workers with many authors.
 
- -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Thu, 03 Jun 2021 17:44:00 -0700
+ -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Sun, 14 Nov 2021 17:44:00 -0700
 
 fvwm3 (1.0.3-1) unstable; urgency=low
 
