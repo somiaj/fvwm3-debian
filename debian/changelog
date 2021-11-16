@@ -3,7 +3,7 @@ fvwm3 (1.0.5+ds-1~rc1) unstable; urgency=low
   * Placeholder for next release.
   * Remove patches that have been applied upstream.
 
- -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Sun, 25 Jul 2021 22:00:00 -0700
+ -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Mon, 15 Nov 2021 22:00:00 -0700
 
 fvwm3 (1.0.4+ds-1) unstable; urgency=low
 
