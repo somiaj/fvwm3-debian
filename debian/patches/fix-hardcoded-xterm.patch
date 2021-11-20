@@ -93,8 +93,8 @@ This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
      --dynamic                 used with dynamic menus.
      -e, --menu-error          out python-xdg not found error in menu.
      -v, --verbose             run and display debug info on STDERR."""
---- a/doc/modules/FvwmConsole.adoc
-+++ b/doc/modules/FvwmConsole.adoc
+--- a/doc/FvwmConsole.adoc
++++ b/doc/FvwmConsole.adoc
 @@ -46,7 +46,9 @@ ____
  
  A different terminal emulator can be specified with the -terminal
@@ -124,8 +124,8 @@ This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
  == COMMAND EDITING
  
  If the GNU readline library is available, it can be used.
---- a/doc/bin/fvwm-menu-desktop.adoc
-+++ b/doc/bin/fvwm-menu-desktop.adoc
+--- a/doc/fvwm-menu-desktop.adoc
++++ b/doc/fvwm-menu-desktop.adoc
 @@ -89,6 +89,10 @@ script exits with an error.
    to run terminal applications in. _CMD_ needs to end with an execute
    option, such as xterm's -e option, which will run the command that is

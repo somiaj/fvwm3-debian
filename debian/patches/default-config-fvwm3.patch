@@ -180,8 +180,8 @@ Last-Update: 2021-06-22
      --term-cmd CMD            Terminal emulator CMD used on terminal entries.
                                Debian Default: x-terminal-emulator -e
      --dynamic                 used with dynamic menus.
---- a/doc/bin/fvwm-menu-desktop.adoc
-+++ b/doc/bin/fvwm-menu-desktop.adoc
+--- a/doc/fvwm-menu-desktop.adoc
++++ b/doc/fvwm-menu-desktop.adoc
 @@ -1,12 +1,12 @@
 -= fvwm-menu-desktop(1)
 += fvwm3-menu-desktop(1)
