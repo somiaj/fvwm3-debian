@@ -1,0 +1,9 @@
+debian/.debhelper/
+debian/autoreconf.after
+debian/autoreconf.before
+debian/debhelper-build-stamp
+debian/files
+debian/fvwm3.debhelper.log
+debian/fvwm3.substvars
+debian/fvwm3/
+
