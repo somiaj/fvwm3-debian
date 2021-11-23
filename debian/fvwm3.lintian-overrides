@@ -10,3 +10,6 @@ fvwm3 binary: typo-in-manual-page usr/share/man/man1/* hilighted highlighted
 # fvwm3 module manual pages have been renamed to make package installable
 # along side fvwm, but are associated with module binaries.
 fvwm3: spare-manual-page usr/share/man/man1/Fvwm3*.1.gz
+# fvwm3 splits its manual page into multiple pages.
+fvwm3: spare-manual-page usr/share/man/man1/fvwm3*.1.gz
+
