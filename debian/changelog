@@ -16,6 +16,7 @@ fvwm3 (1.0.4+ds-1) unstable; urgency=low
     upstream source to remove bundled libraries bin/FvwmPrompt/vendor.
   * Remove authors link from debian/copyright and state the copyright
     belongs to fvwm-workers with many authors.
+  * Bump standards version to 4.6.0.1 (nothing to be done).
 
  -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Sun, 14 Nov 2021 17:44:00 -0700
 
