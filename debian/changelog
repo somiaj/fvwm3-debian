@@ -17,8 +17,9 @@ fvwm3 (1.0.4+ds-1) unstable; urgency=low
   * Remove authors link from debian/copyright and state the copyright
     belongs to fvwm-workers with many authors.
   * Bump standards version to 4.6.0.1 (nothing to be done).
+  * Remove invalid items from debian/upstream/metadata.
 
- -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Sun, 14 Nov 2021 17:44:00 -0700
+ -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Mon, 21 Mar 2022 22:44:00 -0700
 
 fvwm3 (1.0.3-1) unstable; urgency=low
 
