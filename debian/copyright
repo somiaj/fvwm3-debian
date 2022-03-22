@@ -8,8 +8,49 @@ Source: https://github.com/fvwmorg/fvwm3
 Files-Excluded: bin/FvwmPrompt/vendor bin/FvwmPrompt/FvwmPrompt
 
 Files: *
-Copyright: 1998-2021 Fvwm-workers <fvwm-workers@fvwm.org>
- Fvwm-wokers include Dominik Vogt, Thomas Adam, and many others
+Copyright: 1988-2021 Fvwm-workers <fvwm-workers@fvwm.org>
+ Fvwm-wokers include Dominik Vogt, Thomas Adam, Christoph Fritz,
+ Julio José Teca Nemesio, Simon Griph, Serge Koksharov,
+ Arwed von Merkatz, David Maciver, Renato Caldas, Malcolm Still,
+ Evgeny Stambulchik, Jonathan Kotta, Viktor Griph, Bjoern Steinbrink,
+ Arnaud Vrac, Rafal Bisingier, George Potapov, Jim C. Brown,
+ Norman Yarvin, Funda Wang, Anton Kazennikov, Johan Svedberg,
+ Andrei Mitrofanow, David Lazar, Scott Smedley, Francis Litterio,
+ David Fries, Nadim Shaikli, Richard Lister, Marcus Lundblad,
+ Jason Weber, Cameron Simpson, Ben Winslow, Ben Mathews, David Fries,
+ Anders Andersson, Steve Talley, Maxim F. Ischenko, Jan Echternach,
+ Stian Sletner, Derek B. Noonburg, Jochen Klenner, Uwe Pross,
+ Dave Trollope, Daniel Henninger, Suzanne Skinner, Lorenz Minder,
+ Johannes Zellner, Darren Stuart Embry, Neil Bird, Alan F. Ho,
+ Olivier Chapuis, Mikhael Goikhman, Matthias Clasen, Nagi Aboulenein,
+ Dan Espen, Tony Finch, Will French, Julian Gilbey, German Gomez Garcia,
+ Udo Grabowski, Mike Han, Albrecht Kadlec, Andrew Morton, Robert Nation,
+ Tomas Ogren, Jay Painter, Chetan Patil, Mark Rainford, Chris Rankin,
+ Steven M. Robbins, Chris Ross, Paul D. Smith, Benoit Triquet,
+ Fabien Villard, A.J. Weber, Bob Woodside, Charles Hines, Dan Astoorian,
+ Greg J. Badros, Andrew Atrens, John Aughey, Graham Barr, David Barth,
+ Mike Blatchley, Mark Boyns, Eli Burke, Martin Cartwright, Beat Christen,
+ Frederic Cordier, Andrew Davison, Frederic Devernay, Austin Donnelly,
+ Matthias Ettrich, Evans & Sutherland Computer Corporation, Frank Fejes,
+ Thomas Zuwei Feng, Mike Finger, Pete Forman, Patrice Fortier, Todd Fries,
+ Larry Gensch, Romano Giannetti, Peter Gray, Kaj Groner, Eddy J. Gurney,
+ Markus Gutschke, Georg Hager, John Heidemann, Paul Hudson,
+ Sverre H. Huseby, Toshi Isogai, Jesper James, Thimo Jansen,
+ Michael A. Kazda, Jonathan Kelley, Andreas Klemm, Alfredo Kengi Kojima,
+ Chris Laas, Tom LaStrange, Ric Lister, David MacKenzie, Don Mahurin,
+ Pekka Marjola, Anthony Martin, Christophe Martin, Makoto Matushita,
+ Grant McDorman, Henry R. McTague, Roman Mitnitski, Brady Montz,
+ Ludvig A. Norin, Bill Oswald, Carsten Paeth, Hector Peraza,
+ Per Persson, Trent Piepho, Pekka Pietikinen, Mark Powell, Randy Ray,
+ William E. Roadcap, Frank Scheelen, Eric Schott, Mark Scott,
+ Cameron Simpson, Kit Smithers, Nobutaka Suzuki, Szijarto Szabolcs,
+ Andrew Taylor, Jason L. Tibbitts, Jarl Totland, Ilkka E T Tuohela,
+ Andrew Veliath, Barry A. Warsaw, Dan Weeks, Brian Wellington,
+ Rob Whapham, Alan Wild, Randall Winchester, Bo Yang,
+ Free Software Foundation, Inc., Massachusetts Institute of Technology,
+ Joey Shutup, Scott James Remnant, Dan Nicholson, Dave Gabmle,
+ sJSON contributors, Alan Richardson, Carsten Haitzler, Sir Boris,
+ The Open Group, Nicholas Marriott, Todd C. Miller, and others.
  Additional copyrights of the fvwm main module:
   fvwm is copyright 1988 by Evans and Sutherland Computer
   Corporation, Salt Lake City, Utah, and 1989 by the Massachusetts
