@@ -1,0 +1,15 @@
+Description: Fix spelling error found by lintian.
+Author: Jaimos Skriletz <jaimosskriletz@gmail.com>
+Forwarded: https://github.com/fvwmorg/fvwm3/pull/711
+Last-Update: 2022-09-29
+--- a/doc/fvwm3_manpage_source.adoc
++++ b/doc/fvwm3_manpage_source.adoc
+@@ -4601,7 +4601,7 @@ pixels instead of percents of the screen
+ greater than 0 then the horizontal dimension of the window is set to
+ _horizontal_*screen_width/100. If the value is smaller than 0 the size
+ is subtracted from the screen width, i.e. -25 is the same as 75. If
+-_horizontal_ is "_grow_", it is maximized to curren available space
++_horizontal_ is "_grow_", it is maximized to current available space
+ until finding any obstacle. The vertical resizing is similar. If both
+ horizontal and vertical values are "grow", it expands vertically
+ first, then horizontally to find space. Instead of the horizontal

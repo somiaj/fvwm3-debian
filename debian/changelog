@@ -1,9 +1,18 @@
-fvwm3 (1.0.5+ds-1~rc1) unstable; urgency=low
+fvwm3 (1.0.5+ds-1) unstable; urgency=low
 
-  * Placeholder for next release.
+  * New upstream release.
   * Remove patches that have been applied upstream.
+  * Update NEWS file to mention manual page change.
+  * Fix broken debian/watch file.
+  * Remove bin/FvwmPrompt/FvwmPrompt from Files-Excluded
+    in debian/copyright (file is no longer in upstream tar).
+  * Update lintian overrides to match format changes.
+  * Add patch to remove doc/fvwm3_manpage_source.adoc from
+    being built (this is not a standalone manual page).
+  * Fix spelling errors found by lintian.
+  * Bump standards version to 4.6.1.
 
- -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Mon, 15 Nov 2021 22:00:00 -0700
+ -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Wed, 28 Sep 2022 22:00:00 -0700
 
 fvwm3 (1.0.4+ds-1) unstable; urgency=low
 

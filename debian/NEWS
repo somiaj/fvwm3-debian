@@ -1,3 +1,16 @@
+fvwm3 (1.0.5+ds-1) unstable; urgency=low
+
+    The monolithic fvwm3 manual page has been split into multiple pages:
+
+      + fvwm3: Documentation for launching fvwm3 and configuration
+               options not included in the other pages.
+      + fvwm3all: The old monolithic manual page.
+      + fvwm3commands: Documentation for fvwm3 commands.
+      + fvwm3menus: Documentation for menus.
+      + fvwm3styles: Documentation for window styles.
+
+ -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Wed, 28 Sep 2022 22:00:00 -0700
+
 fvwm3 (1.0.3-1) unstable; urgency=low
 
     FVWM3 is the successor to FVWM. FVWM3 will include new features and
@@ -27,4 +40,4 @@ fvwm3 (1.0.3-1) unstable; urgency=low
     to golang dependences.
 
  -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Wed, 26 May 2021 19:44:54 -0700
-    
+

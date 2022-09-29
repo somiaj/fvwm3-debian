@@ -1,0 +1,19 @@
+Description: Don't install fvwm3_manpage_source.
+  Don't install the fvwm3_manpage_source.adoc file which is needed to
+  *generate* other manpages.  This should still be shipped with the dist
+  tarball though.
+Author: Thomas Adam <thomas@fvwm.org>
+Forwarded: https://github.com/fvwmorg/fvwm3/pull/712
+Last-Update: 2022-09-29
+--- a/doc/Makefile.am
++++ b/doc/Makefile.am
+@@ -27,7 +27,8 @@ clean:
+ distclean-local: clean
+ 
+ if FVWM_BUILD_MANDOC
+-man1_MANS = $(patsubst %.adoc,%.1, $(MODULE_ADOC))
++M1M = $(filter-out fvwm3_manpage_source.adoc, $(MODULE_ADOC))
++man1_MANS = $(patsubst %.adoc,%.1, $(M1M))
+ EXTRACT_SECTIONS = \
+ 	commands \
+ 	menus \
