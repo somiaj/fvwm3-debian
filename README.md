@@ -3,20 +3,17 @@
 This is the `debian/` directory for fvwm3 to build a
 Debian package (.deb) from the fvwm3 source.
 
-The main branch is to build a fvwm3 package from the current master
-branch of the [fvwm3](https://github.com/fvwmorg/fvwm3) repository.
-Branches will be used to create snapshots to build a specific fvwm3
-release version.
+The main branch is used to build a fvwm3 package for the 
+[1.0.5 release of fvwm3](https://github.com/fvwmorg/fvwm3/releases/tag/1.0.5).
+To build against the current fvwm3 master branch, use the fvwm3-git branch.
 
 This builds a package that can be installed along side the fvwm package
 (which is fvwm version 2). To do this some binaries and manual pages
 have been renamed. Check `debian/NEWS` for details.
 
-## Build Instructions
+## Build Instructions for Git
 
-Build the current [fvwm3](https://github.com/fvwmorg/fvwm3) source
-and package it in a Debian package for bullseye (or buster) as follows.
-
+These instructions are to build an fvwm3 package from git.
 Adjust to suit your needs.
 
 + Clone fvwm3 and this repo.
@@ -24,6 +21,14 @@ Adjust to suit your needs.
   ```
   git clone https://github.com/fvwmorg/fvwm3.git
   git clone https://github.com/somiaj/fvwm3-debian.git
+  ```
+
++ Switch to the fvwm3-git branch.
+
+  ```
+  cd fvwm3-debian
+  git checkout fvwm3-git
+  cd ..
   ```
 
 + Install the Debian build tools and build dependencies.
@@ -36,12 +41,6 @@ Adjust to suit your needs.
               libxi-dev libxpm-dev libxrandr-dev libxrender-dev libxt-dev
   ```
 
-  If building for buster, install debhelper from `buster-backports`.
-  Provided you have `buster-backports` in your sources:
-
-  ```
-  apt -t buster-backports install debhelper
-  ```
 + Copy `debian/` into the fvwm3 source and build the package.
 
   ```
@@ -67,8 +66,7 @@ see `golang-depends.md`, so the Debian package won't contain FvwmPrompt
 until all the depends are packaged for Debian.
 
 To build a local Debian package that uses `bin/FvwmPrompt/vendor`
-to build FvwmPrompt, use the official fvwm3 source. Either the
-master git branch or an official release tarball works. Then
+to build FvwmPrompt, use the official fvwm3 source. Then
 use the patch in the branch `FvwmPrompt` to build a package that
 also builds FvwmPrompt. Use the above instructions along with
 installing the package `golang-go` to build the package.
