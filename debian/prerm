@@ -20,6 +20,11 @@ set -e
 case "$1" in
     remove|upgrade|deconfigure)
         update-alternatives --remove fvwm /usr/bin/fvwm3
+        update-alternatives --remove FvwmCommand /usr/bin/Fvwm3Command
+        update-alternatives --remove fvwm-root /usr/bin/fvwm3-root
+        update-alternatives --remove fvwm-menu-desktop /usr/bin/fvwm3-menu-desktop
+        update-alternatives --remove fvwm-menu-directory /usr/bin/fvwm3-menu-directory
+        update-alternatives --remove fvwm-perllib /usr/bin/fvwm3-perllib
         update-alternatives --remove x-window-manager /usr/bin/fvwm3
     ;;
 

@@ -43,6 +43,7 @@ Recommends: lxmenu-data | gnome-menus,
             python3-xdg
 Suggests: stalonetray
 Provides: x-window-manager
+Breaks: fvwm (<= 1:2.6.9)
 Description: F(?) Virtual Window Manager
  FVWM3 is a powerful ICCCM2 compliant multiple virtual desktop window manager
  for the X Window System. FVWM3 is the successor to FVWM 2.x, which was

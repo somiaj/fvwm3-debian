@@ -1,3 +1,11 @@
+fvwm3 (1.0.5+ds-2) unstable; urgency=low
+
+  * Add alternatives for fvwm-menu-desktop, fvwm-menu-directory,
+    fvwm-root, fvwm-perllib, and FvwmCommand to work with fvwm,
+    and Break versions of fvwm before alternatives were used.
+
+ -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Thu, 20 Oct 2022 23:00:00 -0600
+
 fvwm3 (1.0.5+ds-1) unstable; urgency=low
 
   * New upstream release.
