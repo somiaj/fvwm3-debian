@@ -1,7 +1,7 @@
 fvwm3 (1.0.6+ds-1~rc) unstable; urgency=low
 
   * New upstream release.
-  * Refresh Debian patches.
+  * Refresh Debian patches and remove patches applied upstream.
 
  -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Sat, 29 Oct 2022 20:00:00 -0600
 
