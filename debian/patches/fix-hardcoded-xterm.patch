@@ -54,22 +54,22 @@ This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
 --- a/modules/FvwmForm/FvwmForm-XDGMenuHelp
 +++ b/modules/FvwmForm/FvwmForm-XDGMenuHelp
 @@ -66,7 +66,7 @@ DestroyModuleConfig  FvwmForm-XDGMenuHel
- *FvwmForm-XDGMenuHelp:   Button  continue "Options Help"
+ *FvwmForm-XDGMenuHelp:   Button  continue "$[gt.Options Help]"
  *FvwmForm-XDGMenuHelp:   Command Module FvwmForm FvwmForm-XDGOptionsHelp
- *FvwmForm-XDGMenuHelp:   Button  continue "fvwm-menu-desktop man page"        
--*FvwmForm-XDGMenuHelp:   Command Exec exec xterm -g 100x50 -n "Help fvwm-menu-desktop" -T "Help fvwm-menu-desktop" -e "man fvwm-menu-desktop"
-+*FvwmForm-XDGMenuHelp:   Command Exec exec x-terminal-emulator -g 100x50 -n "Help fvwm-menu-desktop" -T "Help fvwm-menu-desktop" -e "man fvwm-menu-desktop"
+ *FvwmForm-XDGMenuHelp:   Button  continue "fvwm-menu-desktop $[gt.manpage]"
+-*FvwmForm-XDGMenuHelp:   Command Exec exec xterm -g 100x50 -n "$[gt.Help] fvwm-menu-desktop" -T "[$gt.Help] fvwm-menu-desktop" -e "man fvwm-menu-desktop"
++*FvwmForm-XDGMenuHelp:   Command Exec exec x-terminal-emulator -g 100x50 -n "$[gt.Help] fvwm-menu-desktop" -T "[$gt.Help] fvwm-menu-desktop" -e "man fvwm-menu-desktop"
  *FvwmForm-XDGMenuHelp:   Line    Left
  *FvwmForm-XDGMenuHelp:   Line    " "
  
 --- a/modules/FvwmForm/FvwmForm-XDGOptionsHelp
 +++ b/modules/FvwmForm/FvwmForm-XDGOptionsHelp
 @@ -134,7 +134,7 @@ DestroyModuleConfig  FvwmForm-XDGOptions
- *FvwmForm-XDGOptionsHelp:   Button  continue "XDGMenu Help"
+ *FvwmForm-XDGOptionsHelp:   Button  continue "$[gt.XDGMenu Help]"
  *FvwmForm-XDGOptionsHelp:   Command Module FvwmForm FvwmForm-XDGMenuHelp
- *FvwmForm-XDGOptionsHelp:   Button  continue "fvwm-menu-desktop $[gt.manpage]"        
--*FvwmForm-XDGOptionsHelp:   Command Exec exec xterm -g 100x50 -n "Help fvwm-menu-desktop" -T "Help fvwm-menu-desktop" -e "man fvwm-menu-desktop"
-+*FvwmForm-XDGOptionsHelp:   Command Exec exec x-terminal-emulator -g 100x50 -n "Help fvwm-menu-desktop" -T "Help fvwm-menu-desktop" -e "man fvwm-menu-desktop"
+ *FvwmForm-XDGOptionsHelp:   Button  continue "fvwm-menu-desktop $[gt.manpage]"
+-*FvwmForm-XDGOptionsHelp:   Command Exec exec xterm -g 100x50 -n "$[gt.Help] fvwm-menu-desktop" -T "$[gt.Help] fvwm-menu-desktop" -e "man fvwm-menu-desktop"
++*FvwmForm-XDGOptionsHelp:   Command Exec exec x-terminal-emulator -g 100x50 -n "$[gt.Help] fvwm-menu-desktop" -T "$[gt.Help] fvwm-menu-desktop" -e "man fvwm-menu-desktop"
  *FvwmForm-XDGOptionsHelp:   Line    Left
  *FvwmForm-XDGOptionsHelp:   Line    " "
  

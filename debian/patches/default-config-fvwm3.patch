@@ -37,8 +37,8 @@ Last-Update: 2021-06-22
  + I Exec exec ln -fs $[FVWM_DATADIR]/default-config/images/background/$0 \
      $[FVWM_USERDIR]/.BGdefault
  
-@@ -320,7 +320,7 @@ Test (x $[infostore.runcmd]) + "R&un Com
- + "$[gt.&Quit]%icons/quit.png%" Module FvwmScript FvwmScript-ConfirmQuit
+@@ -326,7 +326,7 @@ Test (x $[infostore.runcmd]) + "R&un Com
+ + "$[gt.&Quit]%icons/quit.png%"       Module FvwmScript FvwmScript-ConfirmQuit
  
  # Generate XDGMenu
 -PipeRead "fvwm-menu-desktop -e"
@@ -46,50 +46,46 @@ Last-Update: 2021-06-22
  
  # Programs Menu
  #
-@@ -428,26 +428,26 @@ AddToMenu   MenuSendToPage
- # Fvwm Man Pages (Help) Menu
+@@ -435,24 +435,24 @@ AddToMenu   MenuSendToPage
  DestroyMenu MenuFvwmManPages
  AddToMenu   MenuFvwmManPages "Help" Title
--+ "fvwm3"               ViewManPage fvwm3
--+ "FvwmAnimate"         ViewManPage FvwmAnimate
--+ "FvwmAuto"            ViewManPage FvwmAuto
--+ "FvwmBacker"          ViewManPage FvwmBacker
--+ "FvwmButtons"         ViewManPage FvwmButtons
--+ "FvwmCommand"         ViewManPage FvwmCommand
--+ "FvwmConsole"         ViewManPage FvwmConsole
--+ "FvwmEvent"           ViewManPage FvwmEvent
--+ "FvwmIconMan"         ViewManPage FvwmIconMan
--+ "FvwmIdent"           ViewManPage FvwmIdent
--+ "FvwmPager"           ViewManPage FvwmPager
--+ "FvwmPerl"            ViewManPage FvwmPerl
--+ "FvwmRearrange"       ViewManPage FvwmRearrange
--+ "FvwmScript"          ViewManPage FvwmScript
+ + "fvwm3"         ViewManPage fvwm3
+-+ "FvwmAnimate"   ViewManPage FvwmAnimate
+-+ "FvwmAuto"      ViewManPage FvwmAuto
+-+ "FvwmBacker"    ViewManPage FvwmBacker
+-+ "FvwmButtons"   ViewManPage FvwmButtons
+-+ "FvwmCommand"   ViewManPage FvwmCommand
+-+ "FvwmConsole"   ViewManPage FvwmConsole
+-+ "FvwmEvent"     ViewManPage FvwmEvent
+-+ "FvwmIconMan"   ViewManPage FvwmIconMan
+-+ "FvwmIdent"     ViewManPage FvwmIdent
+-+ "FvwmPager"     ViewManPage FvwmPager
+-+ "FvwmPerl"      ViewManPage FvwmPerl
+-+ "FvwmRearrange" ViewManPage FvwmRearrange
+-+ "FvwmScript"    ViewManPage FvwmScript
 -+ "" Nop
--+ "fvwm-root"	        ViewManPage fvwm-root
+-+ "fvwm-root"           ViewManPage fvwm-root
 -+ "fvwm-menu-desktop"   ViewManPage fvwm-menu-desktop
 -+ "fvwm-menu-directory" ViewManPage fvwm-menu-directory
 -+ "fvwm-menu-xlock"     ViewManPage fvwm-menu-xlock
--+ "fvwm-config"         ViewManPage fvwm-config
-++ "fvwm3"                ViewManPage fvwm3
-++ "FvwmAnimate"          ViewManPage Fvwm3Animate
-++ "FvwmAuto"             ViewManPage Fvwm3Auto
-++ "FvwmBacker"           ViewManPage Fvwm3Backer
-++ "FvwmButtons"          ViewManPage Fvwm3Buttons
-++ "FvwmCommand"          ViewManPage Fvwm3Command
-++ "FvwmConsole"          ViewManPage Fvwm3Console
-++ "FvwmEvent"            ViewManPage Fvwm3Event
-++ "FvwmIconMan"          ViewManPage Fvwm3IconMan
-++ "FvwmIdent"            ViewManPage Fvwm3Ident
-++ "FvwmPager"            ViewManPage Fvwm3Pager
-++ "FvwmPerl"             ViewManPage Fvwm3Perl
-++ "FvwmRearrange"        ViewManPage Fvwm3Rearrange
-++ "FvwmScript"           ViewManPage Fvwm3Script
+++ "FvwmAnimate"   ViewManPage Fvwm3Animate
+++ "FvwmAuto"      ViewManPage Fvwm3Auto
+++ "FvwmBacker"    ViewManPage Fvwm3Backer
+++ "FvwmButtons"   ViewManPage Fvwm3Buttons
+++ "FvwmCommand"   ViewManPage Fvwm3Command
+++ "FvwmConsole"   ViewManPage Fvwm3Console
+++ "FvwmEvent"     ViewManPage Fvwm3Event
+++ "FvwmIconMan"   ViewManPage Fvwm3IconMan
+++ "FvwmIdent"     ViewManPage Fvwm3Ident
+++ "FvwmPager"     ViewManPage Fvwm3Pager
+++ "FvwmPerl"      ViewManPage Fvwm3Perl
+++ "FvwmRearrange" ViewManPage Fvwm3Rearrange
+++ "FvwmScript"    ViewManPage Fvwm3Script
 ++ "" Nop
-++ "fvwm3-root"	         ViewManPage fvwm3-root
-++ "fvwm3-menu-desktop"   ViewManPage fvwm3-menu-desktop
-++ "fvwm3-menu-directory" ViewManPage fvwm3-menu-directory
-++ "fvwm3-menu-xlock"     ViewManPage fvwm3-menu-xlock
-++ "fvwm3-config"         ViewManPage fvwm3-config
+++ "fvwm-root"           ViewManPage fvwm3-root
+++ "fvwm-menu-desktop"   ViewManPage fvwm3-menu-desktop
+++ "fvwm-menu-directory" ViewManPage fvwm3-menu-directory
+++ "fvwm-menu-xlock"     ViewManPage fvwm3-menu-xlock
  
  #######
  # 5: Mouse and Key bindings
@@ -412,6 +408,12 @@ Last-Update: 2021-06-22
  == COPYING
 --- a/modules/FvwmForm/FvwmForm-XDGMenuHelp
 +++ b/modules/FvwmForm/FvwmForm-XDGMenuHelp
+@@ -1,4 +1,4 @@
+-# FvwmForm-XDGMenuHelp - Help Text for fvwm-menu-desktop-config XDGMenu
++# FvwmForm-XDGMenuHelp - Help Text for fvwm3-menu-desktop-config XDGMenu
+ # V 1.0.4
+ DestroyModuleConfig  FvwmForm-XDGMenuHelp: *
+ *FvwmForm-XDGMenuHelp:   Colorset 5
 @@ -16,7 +16,7 @@ DestroyModuleConfig  FvwmForm-XDGMenuHel
  *FvwmForm-XDGMenuHelp:   Line    left
  *FvwmForm-XDGMenuHelp:   Text    "$[gt.All the XDG menus found on the system are listed under Available Menus.  Use]"
@@ -450,25 +452,31 @@ Last-Update: 2021-06-22
  *FvwmForm-XDGMenuHelp:   Line    left
 @@ -65,8 +65,8 @@ DestroyModuleConfig  FvwmForm-XDGMenuHel
  *FvwmForm-XDGMenuHelp:   Command Nop
- *FvwmForm-XDGMenuHelp:   Button  continue "Options Help"
+ *FvwmForm-XDGMenuHelp:   Button  continue "$[gt.Options Help]"
  *FvwmForm-XDGMenuHelp:   Command Module FvwmForm FvwmForm-XDGOptionsHelp
--*FvwmForm-XDGMenuHelp:   Button  continue "fvwm-menu-desktop man page"        
--*FvwmForm-XDGMenuHelp:   Command Exec exec x-terminal-emulator -g 100x50 -n "Help fvwm-menu-desktop" -T "Help fvwm-menu-desktop" -e "man fvwm-menu-desktop"
-+*FvwmForm-XDGMenuHelp:   Button  continue "fvwm3-menu-desktop man page"        
-+*FvwmForm-XDGMenuHelp:   Command Exec exec x-terminal-emulator -g 100x50 -n "Help fvwm3-menu-desktop" -T "Help fvwm3-menu-desktop" -e "man fvwm3-menu-desktop"
+-*FvwmForm-XDGMenuHelp:   Button  continue "fvwm-menu-desktop $[gt.manpage]"
+-*FvwmForm-XDGMenuHelp:   Command Exec exec x-terminal-emulator -g 100x50 -n "$[gt.Help] fvwm-menu-desktop" -T "[$gt.Help] fvwm-menu-desktop" -e "man fvwm-menu-desktop"
++*FvwmForm-XDGMenuHelp:   Button  continue "fvwm3-menu-desktop $[gt.manpage]"
++*FvwmForm-XDGMenuHelp:   Command Exec exec x-terminal-emulator -g 100x50 -n "$[gt.Help] fvwm3-menu-desktop" -T "[$gt.Help] fvwm3-menu-desktop" -e "man fvwm3-menu-desktop"
  *FvwmForm-XDGMenuHelp:   Line    Left
  *FvwmForm-XDGMenuHelp:   Line    " "
  
 --- a/modules/FvwmForm/FvwmForm-XDGOptionsHelp
 +++ b/modules/FvwmForm/FvwmForm-XDGOptionsHelp
+@@ -1,4 +1,4 @@
+-# FvwmForm-XDGOptionsHelp - Help Text for fvwm-menu-desktop-config XDGMenu Options
++# FvwmForm-XDGOptionsHelp - Help Text for fvwm3-menu-desktop-config XDGMenu Options
+ # V 1.0.3
+ DestroyModuleConfig  FvwmForm-XDGOptionsHelp: *
+ *FvwmForm-XDGOptionsHelp:   Colorset 5
 @@ -133,8 +133,8 @@ DestroyModuleConfig  FvwmForm-XDGOptions
  *FvwmForm-XDGOptionsHelp:   Command Nop
- *FvwmForm-XDGOptionsHelp:   Button  continue "XDGMenu Help"
+ *FvwmForm-XDGOptionsHelp:   Button  continue "$[gt.XDGMenu Help]"
  *FvwmForm-XDGOptionsHelp:   Command Module FvwmForm FvwmForm-XDGMenuHelp
--*FvwmForm-XDGOptionsHelp:   Button  continue "fvwm-menu-desktop $[gt.manpage]"        
--*FvwmForm-XDGOptionsHelp:   Command Exec exec x-terminal-emulator -g 100x50 -n "Help fvwm-menu-desktop" -T "Help fvwm-menu-desktop" -e "man fvwm-menu-desktop"
-+*FvwmForm-XDGOptionsHelp:   Button  continue "fvwm3-menu-desktop $[gt.manpage]"        
-+*FvwmForm-XDGOptionsHelp:   Command Exec exec x-terminal-emulator -g 100x50 -n "Help fvwm3-menu-desktop" -T "Help fvwm3-menu-desktop" -e "man fvwm3-menu-desktop"
+-*FvwmForm-XDGOptionsHelp:   Button  continue "fvwm-menu-desktop $[gt.manpage]"
+-*FvwmForm-XDGOptionsHelp:   Command Exec exec x-terminal-emulator -g 100x50 -n "$[gt.Help] fvwm-menu-desktop" -T "$[gt.Help] fvwm-menu-desktop" -e "man fvwm-menu-desktop"
++*FvwmForm-XDGOptionsHelp:   Button  continue "fvwm3-menu-desktop $[gt.manpage]"
++*FvwmForm-XDGOptionsHelp:   Command Exec exec x-terminal-emulator -g 100x50 -n "$[gt.Help] fvwm3-menu-desktop" -T "$[gt.Help] fvwm3-menu-desktop" -e "man fvwm3-menu-desktop"
  *FvwmForm-XDGOptionsHelp:   Line    Left
  *FvwmForm-XDGOptionsHelp:   Line    " "
  
