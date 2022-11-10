@@ -82,10 +82,10 @@ Last-Update: 2021-06-22
 ++ "FvwmRearrange" ViewManPage Fvwm3Rearrange
 ++ "FvwmScript"    ViewManPage Fvwm3Script
 ++ "" Nop
-++ "fvwm-root"           ViewManPage fvwm3-root
-++ "fvwm-menu-desktop"   ViewManPage fvwm3-menu-desktop
-++ "fvwm-menu-directory" ViewManPage fvwm3-menu-directory
-++ "fvwm-menu-xlock"     ViewManPage fvwm3-menu-xlock
+++ "fvwm3-root"           ViewManPage fvwm3-root
+++ "fvwm3-menu-desktop"   ViewManPage fvwm3-menu-desktop
+++ "fvwm3-menu-directory" ViewManPage fvwm3-menu-directory
+++ "fvwm3-menu-xlock"     ViewManPage fvwm3-menu-xlock
  
  #######
  # 5: Mouse and Key bindings
