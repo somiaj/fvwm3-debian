@@ -28,7 +28,7 @@ Build-Depends: debhelper (>= 13.0.0),
                libxrender-dev,
                libxt-dev,
                pkg-config
-Standards-Version: 4.6.1
+Standards-Version: 4.6.2
 Homepage: https://www.fvwm.org/
 Vcs-Browser: https://github.com/somiaj/fvwm3-debian
 Vcs-Git: https://github.com/somiaj/fvwm3-debian.git
