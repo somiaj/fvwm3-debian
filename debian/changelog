@@ -3,8 +3,9 @@ fvwm3 (1.0.6a+ds-1) unstable; urgency=low
   * New upstream release.
   * Refresh Debian patches and remove patches applied upstream.
   * Update Debian standards version to 4.6.2.
+  * Update end year in debian/copyright to 2023.
 
- -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Tue, 17 Jan 2023 01:05:08 -0700
+ -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Tue, 17 Jan 2023 01:09:09 -0700
 
 fvwm3 (1.0.5+ds-2) unstable; urgency=low
 
