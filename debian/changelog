@@ -1,3 +1,13 @@
+fvwm3 (1.0.8+ds-1) unstable; urgency=low
+
+  * New upstream release.
+  * Remove debian/desktop/fvwm3.desktop in favor of upstream file.
+  * Add patch to add Keywords and Icon to fvwm3.desktop.
+  * Add bin/FvwmPrompt/FvwmPrompt to FilesExcluded in debian/copyright
+    due to the binary accidentally added to release tarball.
+
+ -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Fri, 20 Oct 2023 20:00:00 -0700
+
 fvwm3 (1.0.6a+ds-1) unstable; urgency=low
 
   * New upstream release.

@@ -1,2 +1,3 @@
 fix-hardcoded-xterm.patch
 default-config-fvwm3.patch
+fvwm3.desktop.patch
