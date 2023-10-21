@@ -4,7 +4,7 @@ This is the `debian/` directory for fvwm3 to build a
 Debian package (.deb) from the fvwm3 source.
 
 The main branch is used to build a fvwm3 package for the 
-[1.0.6a release of fvwm3](https://github.com/fvwmorg/fvwm3/releases/tag/1.0.6a).
+[1.0.8 release of fvwm3](https://github.com/fvwmorg/fvwm3/releases/tag/1.0.8).
 To build against the current fvwm3 master branch, use the fvwm3-git branch.
 
 This builds a package that can be installed along side the fvwm package
