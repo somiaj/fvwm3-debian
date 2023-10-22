@@ -1,8 +1,9 @@
 fvwm3 (1.0.9~rc-1) unstable; urgency=low
 
   * New upstream release.
+  * Remove fvwm3.desktop patch applied upstream.
 
- -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Fri, 20 Oct 2023 20:00:00 -0700
+ -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Sun, 22 Oct 2023 20:00:00 -0700
 
 fvwm3 (1.0.8+ds-1) unstable; urgency=low
 
