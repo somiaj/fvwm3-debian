@@ -11,7 +11,7 @@
 export DEB_BUILD_MAINT_OPTIONS=hardening=+all
 
 override_dh_auto_configure:
-	dh_auto_configure -- --verbose --disable-imlibtest --with-imlib-prefix=/no/dir --with-readline-library=yes --enable-mandoc --program-transform-name='/vwm[^3]/ s/vwm/vwm3/'
+	dh_auto_configure -- --verbose --disable-imlibtest --with-imlib-prefix=/no/dir --with-readline-library=yes --enable-mandoc --enable-htmldoc --htmldir=/tmp --program-transform-name='/vwm[^3]/ s/vwm/vwm3/'
 
 override_dh_install:
 	dh_install
@@ -20,6 +20,8 @@ override_dh_installman:
 	dh_installman
 	# Remove FvwmPrompt manual page, since binary isn't included.
 	cd $(CURDIR)/debian/fvwm3/usr/share/man/man1 && rm Fvwm3Prompt.1
+	# Add link to htmldocs in /usr/share/doc/fvwm3
+	cd $(CURDIR)/debian/fvwm3/usr/share/doc/fvwm3 && ln -fs ../../fvwm3/htmldoc .
 
 override_dh_installdocs:
 	dh_installdocs -X.in -X.am -XMakefile
