@@ -41,7 +41,7 @@ Depends: libperl4-corelibs-perl,
 Recommends: lxmenu-data | gnome-menus,
             python3,
             python3-xdg
-Suggests: stalonetray
+Suggests: stalonetray, doc-base
 Provides: x-window-manager
 Breaks: fvwm (<= 1:2.6.9)
 Description: F(?) Virtual Window Manager

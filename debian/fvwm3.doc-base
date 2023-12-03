@@ -1,0 +1,8 @@
+Document: fvwm3
+Title: Fvwm3 HTML Manual Pages
+Author: Fvwm Workers <fvwm-workers@fvwm.org>
+Abstract: HTML versions of the fvwm3 manual pages.
+Section: Window Managers
+
+Format: HTML
+Files: /usr/share/doc/fvwm3/htmldoc/*.html
