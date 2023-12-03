@@ -3,10 +3,11 @@ fvwm3 (1.0.9+ds-1) unstable; urgency=low
   * New upstream release.
   * Remove fvwm3.desktop patch applied upstream.
   * Refresh patches.
+  * Remove bin/FvwmPrompt/FvwmPrompt from Excluded-Files.
   * Build html docs, and add link in /usr/share/doc/fvwm3 to them.
   * Disable webfonts in asciidoctor html documentation.
 
- -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Sat, 02 Dec 2023 18:55:00 -0700
+ -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Sat, 02 Dec 2023 19:29:00 -0700
 
 fvwm3 (1.0.8+ds-1) unstable; urgency=low
 

@@ -4,7 +4,7 @@ Upstream-Contact: Fvwm-workers <fvwm-workers@fvwm.org>
 Source: https://github.com/fvwmorg/fvwm3
 Comment:
  Upstream source repacked to remove bundled libraries bin/FvwmPrompt/vendor/.
-Files-Excluded: bin/FvwmPrompt/vendor/ bin/FvwmPrompt/FvwmPrompt
+Files-Excluded: bin/FvwmPrompt/vendor/
 
 Files: *
 Copyright: 1988-2023 Fvwm-workers <fvwm-workers@fvwm.org>
