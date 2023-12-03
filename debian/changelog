@@ -1,10 +1,11 @@
-fvwm3 (1.0.9~rc-1) unstable; urgency=low
+fvwm3 (1.0.9+ds-1) unstable; urgency=low
 
   * New upstream release.
   * Remove fvwm3.desktop patch applied upstream.
+  * Refresh patches.
   * Build html docs, and add link in /usr/share/doc/fvwm3 to them.
 
- -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Sat, 28 Oct 2023 20:00:00 -0700
+ -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Sat, 02 Dec 2023 18:20:00 -0700
 
 fvwm3 (1.0.8+ds-1) unstable; urgency=low
 

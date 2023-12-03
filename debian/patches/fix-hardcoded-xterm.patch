@@ -84,7 +84,7 @@ This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
  
      # Loads config options from $FVWM_USERDIR/.FvwmForm-XDGMenu-Config
      if "FVWM_USERDIR" in os.environ:
-@@ -879,7 +879,7 @@ Options:
+@@ -880,7 +880,7 @@ Options:
      --regen-cmd ACTION        The fvwm ACTION for the 'Regenerate' menu item.
                                Default: 'PipeRead `fvwm-menu-desktop`'
      --term-cmd CMD            Terminal emulator CMD used on terminal entries.
@@ -126,7 +126,7 @@ This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
  If the GNU readline library is available, it can be used.
 --- a/doc/fvwm-menu-desktop.adoc
 +++ b/doc/fvwm-menu-desktop.adoc
-@@ -89,6 +89,10 @@ script exits with an error.
+@@ -88,6 +88,10 @@ script exits with an error.
    to run terminal applications in. _CMD_ needs to end with an execute
    option, such as xterm's -e option, which will run the command that is
    appended to _CMD_. The default is "xterm -e".
@@ -134,6 +134,6 @@ This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
 +Debian specific: Per Debian policy, default changed to
 +"x-terminal-emulator -e".
 ++
- --dynamic ::
+ *--dynamic*::
    This option is to be used with creating dynamic menus using
    *DynamicPopUpAction* and *DynamicPopDownAction*. This adds a
