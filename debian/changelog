@@ -1,3 +1,10 @@
+fvwm3 (1.0.10~rc-1) unstable; urgency=low
+
+  * New upstream release.
+  * Remove patches applied upstream.
+
+ -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Sat, 02 Dec 2023 21:30:00 -0700
+
 fvwm3 (1.0.9+ds-1) unstable; urgency=low
 
   * New upstream release.
