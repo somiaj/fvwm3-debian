@@ -1,3 +1,4 @@
 fix-hardcoded-xterm.patch
 default-config-fvwm3.patch
-asciidoctor-offline.diff
+asciidoctor-offline.patch
+add-html-index.patch

@@ -18,9 +18,7 @@ override_dh_install:
 
 override_dh_installman:
 	dh_installman
-	# Remove FvwmPrompt manual page, since binary isn't included.
-	cd $(CURDIR)/debian/fvwm3/usr/share/man/man1 && rm Fvwm3Prompt.1
-	# Move htmldocs in /usr/share/doc/fvwm3 and link to them.
+	# Move htmldoc to /usr/share/doc/fvwm3 and link to them.
 	cd $(CURDIR)/debian/fvwm3/usr/share/fvwm3 \
 		&& mv htmldoc ../doc/fvwm3 \
 		&& ln -fs ../doc/fvwm3/htmldoc .
