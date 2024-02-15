@@ -84,7 +84,7 @@ This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
  
      # Loads config options from $FVWM_USERDIR/.FvwmForm-XDGMenu-Config
      if "FVWM_USERDIR" in os.environ:
-@@ -880,7 +880,7 @@ Options:
+@@ -888,7 +888,7 @@ Options:
      --regen-cmd ACTION        The fvwm ACTION for the 'Regenerate' menu item.
                                Default: 'PipeRead `fvwm-menu-desktop`'
      --term-cmd CMD            Terminal emulator CMD used on terminal entries.

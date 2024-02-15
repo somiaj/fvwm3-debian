@@ -5,7 +5,7 @@ Forwarded: not-needed
 Last-Update: 2021-06-22
 --- a/default-config/config
 +++ b/default-config/config
-@@ -84,8 +84,8 @@ AddToFunc   StartFunction
+@@ -85,8 +85,8 @@ AddToFunc   StartFunction
  DestroyFunc InitBackground
  AddToFunc InitBackground
  + I Test (f $[FVWM_USERDIR]/.BGdefault) \
@@ -16,7 +16,7 @@ Last-Update: 2021-06-22
      $[FVWM_DATADIR]/default-config/images/background/bg1.png
  
  # Mouse Bindings Functions
-@@ -118,17 +118,17 @@ AddToFunc   ViewManPage
+@@ -119,17 +119,17 @@ AddToFunc   ViewManPage
  #
  # SetBG is used with the background menu to set the background
  # image and configure it to be loaded the next time fvwm is run.
@@ -37,7 +37,7 @@ Last-Update: 2021-06-22
  + I Exec exec ln -fs $[FVWM_DATADIR]/default-config/images/background/$0 \
      $[FVWM_USERDIR]/.BGdefault
  
-@@ -326,7 +326,7 @@ Test (x $[infostore.runcmd]) + "R&un Com
+@@ -328,7 +328,7 @@ Test (x FvwmPrompt) + "&FvwmPrompt%icons
  + "$[gt.&Quit]%icons/quit.png%"       Module FvwmScript FvwmScript-ConfirmQuit
  
  # Generate XDGMenu
@@ -46,7 +46,7 @@ Last-Update: 2021-06-22
  
  # Programs Menu
  #
-@@ -440,24 +440,24 @@ AddToMenu   MenuFvwmManPages "Help" Titl
+@@ -442,25 +442,25 @@ AddToMenu   MenuFvwmManPages "Help" Titl
  + "fvwm3menus"    ViewManPage fvwm3menus
  + "fvwm3all"      ViewManPage fvwm3all
  + "" Nop
@@ -55,33 +55,33 @@ Last-Update: 2021-06-22
 -+ "FvwmBacker"    ViewManPage FvwmBacker
 -+ "FvwmButtons"   ViewManPage FvwmButtons
 -+ "FvwmCommand"   ViewManPage FvwmCommand
--+ "FvwmConsole"   ViewManPage FvwmConsole
+-Test (x $[FVWM_MODULEDIR]/FvwmConsole) + "FvwmConsole" ViewManPage FvwmConsole
 -+ "FvwmEvent"     ViewManPage FvwmEvent
 -+ "FvwmIconMan"   ViewManPage FvwmIconMan
 -+ "FvwmIdent"     ViewManPage FvwmIdent
 -+ "FvwmPager"     ViewManPage FvwmPager
 -+ "FvwmPerl"      ViewManPage FvwmPerl
--+ "FvwmRearrange" ViewManPage FvwmRearrange
--+ "FvwmScript"    ViewManPage FvwmScript
--+ "" Nop
--+ "fvwm-root"           ViewManPage fvwm-root
--+ "fvwm-menu-desktop"   ViewManPage fvwm-menu-desktop
--+ "fvwm-menu-directory" ViewManPage fvwm-menu-directory
--+ "fvwm-menu-xlock"     ViewManPage fvwm-menu-xlock
 ++ "FvwmAnimate"   ViewManPage Fvwm3Animate
 ++ "FvwmAuto"      ViewManPage Fvwm3Auto
 ++ "FvwmBacker"    ViewManPage Fvwm3Backer
 ++ "FvwmButtons"   ViewManPage Fvwm3Buttons
 ++ "FvwmCommand"   ViewManPage Fvwm3Command
-++ "FvwmConsole"   ViewManPage Fvwm3Console
++Test (x $[FVWM_MODULEDIR]/FvwmConsole) + "FvwmConsole" ViewManPage Fvwm3Console
 ++ "FvwmEvent"     ViewManPage Fvwm3Event
 ++ "FvwmIconMan"   ViewManPage Fvwm3IconMan
 ++ "FvwmIdent"     ViewManPage Fvwm3Ident
 ++ "FvwmPager"     ViewManPage Fvwm3Pager
 ++ "FvwmPerl"      ViewManPage Fvwm3Perl
+ Test (x FvwmPrompt) + "FvwmPrompt" ViewManPage FvwmPrompt
+-+ "FvwmRearrange" ViewManPage FvwmRearrange
+-+ "FvwmScript"    ViewManPage FvwmScript
 ++ "FvwmRearrange" ViewManPage Fvwm3Rearrange
 ++ "FvwmScript"    ViewManPage Fvwm3Script
-++ "" Nop
+ + "" Nop
+-+ "fvwm-root"           ViewManPage fvwm-root
+-+ "fvwm-menu-desktop"   ViewManPage fvwm-menu-desktop
+-+ "fvwm-menu-directory" ViewManPage fvwm-menu-directory
+-+ "fvwm-menu-xlock"     ViewManPage fvwm-menu-xlock
 ++ "fvwm3-root"           ViewManPage fvwm3-root
 ++ "fvwm3-menu-desktop"   ViewManPage fvwm3-menu-desktop
 ++ "fvwm3-menu-directory" ViewManPage fvwm3-menu-directory
@@ -167,7 +167,7 @@ Last-Update: 2021-06-22
          else:
              sys.stderr.write(install_prefix+desktop+menu_type+".menu not available on this system. Exiting...\n")
          sys.exit(1)
-@@ -878,7 +878,7 @@ Options:
+@@ -886,7 +886,7 @@ Options:
                                menu. NAME can be 'config', 'regenerate', 'both'
                                or 'none'. Default both.
      --regen-cmd ACTION        The fvwm ACTION for the 'Regenerate' menu item.
