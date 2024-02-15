@@ -2,3 +2,4 @@ fix-hardcoded-xterm.patch
 default-config-fvwm3.patch
 asciidoctor-offline.patch
 add-html-index.patch
+fix-gh-941.patch

@@ -1,0 +1,31 @@
+Description: GotoPage bugfix.
+  When invoking GotoPage 0 0, the 0 was incorrectly interpreted as a screen number
+  and not a page number. This ensures the 0 is treated as a page number.
+Author: Thomas Adam <thomas@fvwm.org>
+Forwarded: Not needed
+Last-Update: 2024-01-03
+diff --git a/fvwm/virtual.c b/fvwm/virtual.c
+index 7acadfac0..8c8da485d 100644
+--- a/fvwm/virtual.c
++++ b/fvwm/virtual.c
+@@ -1831,6 +1831,20 @@ Bool get_page_arguments(
+ 	limitdeskx = 1;
+ 	limitdesky = 1;
+ 
++	/* We've received something like:
++	 *
++	 * GotoPage 0 0
++	 *
++	 * But no monitor token.  Use the current monitor.
++	 */
++	if (GetIntegerArguments(action, NULL, val, 2) == 2) {
++		xasprintf(&action, "%s %d %d",
++			monitor_get_current()->si->name, val[0], val[1]);
++
++		val[0] = -1;
++		val[1] = -1;
++	}
++
+ 	token = PeekToken(action, &next);
+ 	m = monitor_resolve_name(token);
+ 	if (m != NULL)
