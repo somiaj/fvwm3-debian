@@ -11,7 +11,7 @@
 export DEB_BUILD_MAINT_OPTIONS=hardening=+all
 
 override_dh_auto_configure:
-	dh_auto_configure -- --verbose --disable-imlibtest --with-imlib-prefix=/no/dir --with-readline-library=yes --enable-mandoc --enable-htmldoc --htmldir=/tmp --program-transform-name='/vwm[^3]/ s/vwm/vwm3/'
+	dh_auto_configure -- --verbose --disable-imlibtest --with-imlib-prefix=/no/dir --with-readline-library=yes --enable-mandoc --enable-htmldoc --program-transform-name='/vwm[^3]/ s/vwm/vwm3/'
 
 override_dh_install:
 	dh_install
