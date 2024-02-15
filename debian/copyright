@@ -7,7 +7,7 @@ Comment:
 Files-Excluded: bin/FvwmPrompt/vendor/
 
 Files: *
-Copyright: 1988-2023 Fvwm-workers <fvwm-workers@fvwm.org>
+Copyright: 1988-2024 Fvwm-workers <fvwm-workers@fvwm.org>
  Robert Nation, Dominik Vogt, Thomas Adam, Christoph Fritz,
  Julio José Teca Nemesio, Simon Griph, Serge Koksharov,
  Arwed von Merkatz, David Maciver, Renato Caldas, Malcolm Still,
@@ -91,7 +91,7 @@ Files: debian/*
 Copyright: 2000 Alexander Kotelnikov <sacha@debian.org>
            2004-2007 Manoj Srivastava <srivasta@debian.org>
            2012 Vincent W. Chen <vinmun@gmail.com>
-           2016-2023 Jaimos Skriletz <jaimosskriletz@gmail.com>
+           2016-2024 Jaimos Skriletz <jaimosskriletz@gmail.com>
 License: GPL-2+
 Comment:
  This package was debianized by Alexander Kotelnikov <sacha@debian.org> on
