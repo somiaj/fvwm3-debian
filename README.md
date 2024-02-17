@@ -52,7 +52,7 @@ Adjust to suit your needs.
 + Install the resulting .deb package.
 
   ```
-  sudo apt install ../fvwm3_1.0.*_amd64.deb
+  sudo apt install ../fvwm3_1.1.*_amd64.deb
   ```
 
 ## FvwmPrompt
