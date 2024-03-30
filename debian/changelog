@@ -1,9 +1,10 @@
-fvwm3 (1.1.0~rc-1) unstable; urgency=low
+fvwm3 (1.1.0+ds-1) unstable; urgency=medium
 
   * New upstream release.
   * Remove patches applied upstream.
+  * Update obsolete build depends, pkg-config -> pkgconf.
 
- -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Sat, 02 Dec 2023 21:30:00 -0700
+ -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Fri, 29 Mar 2024 19:30:00 -0700
 
 fvwm3 (1.0.9+ds-1) unstable; urgency=low
 
