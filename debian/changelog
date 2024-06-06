@@ -5,8 +5,11 @@ fvwm3 (1.1.0+ds-1) unstable; urgency=medium
   * Update obsolete build depends, pkg-config -> pkgconf.
   * Remove debian/desktop/fvwm3.desktop in favor of upstream file.
   * Build html docs, and move them to /usr/share/doc/fvwm3/htmldoc.
+  * Update debian/copyright to correctly state the main license is
+    GPL-2+, and document the copyright and licenses for source in libs/
+    which which are not GPL-2+.
 
- -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Sat, 30 Mar 2024 13:22:00 -0600
+ -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Thu, 06 Jun 2024 17:03:38 -0600
 
 fvwm3 (1.0.6a+ds-1) unstable; urgency=low
 
