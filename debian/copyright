@@ -94,7 +94,7 @@ License: LGPL-2+
 
 Files: libs/log.*
 Copyright: 2007 Nicholas Marriot, 2019 Thomas Adam
-License: BSD-3-clause
+License: ISC
 
 Files: libs/strlcat.* libs/strlcpy.*
 Copyright: 1998 Todd C. Miller
@@ -107,6 +107,10 @@ License: ISC
 Files: libs/tree.h
 Copyright: 2002 Niels Provos
 License: BSD-2-clause
+
+Files: libs/queue.h
+Copyright: 1991, 1993 The Regents of the University of California.
+License: BSD-3-clause
 
 Files: default-config/images/icons/*
 Copyright: Google Material Design
@@ -196,9 +200,9 @@ License: BSD-3-clause
  Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions
  are met:
- 1.  Redistributions of source code must retain the above copyright
+ 1. Redistributions of source code must retain the above copyright
     notice, this list of conditions and the following disclaimer.
- 2.  Redistributions in binary form must reproduce the above copyright
+ 2. Redistributions in binary form must reproduce the above copyright
     notice, this list of conditions and the following disclaimer in the
     documentation and/or other materials provided with the distribution.
  3. Neither the name of the University nor the names of its contributors
@@ -216,17 +220,14 @@ License: BSD-3-clause
  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
  OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  SUCH DAMAGE.
- .
- On Debian systems, the complete text of the BSD-3-clause Livense
- can be found in "/usr/share/common-licenses/BSD".
 
 License: BSD-2-clause
  Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions
  are met:
- 1.  Redistributions of source code must retain the above copyright
+ 1. Redistributions of source code must retain the above copyright
     notice, this list of conditions and the following disclaimer.
- 2.  Redistributions in binary form must reproduce the above copyright
+ 2. Redistributions in binary form must reproduce the above copyright
     notice, this list of conditions and the following disclaimer in the
     documentation and/or other materials provided with the distribution.
  .
