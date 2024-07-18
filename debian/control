@@ -37,8 +37,9 @@ Package: fvwm3
 Architecture: any
 Depends: libperl4-corelibs-perl,
          ${misc:Depends},
-         ${shlibs:Depends}
+         ${shlibs:Depends},
 Recommends: lxmenu-data | gnome-menus,
+            ${perl:Depends},
             python3,
             python3-xdg
 Suggests: stalonetray, doc-base
