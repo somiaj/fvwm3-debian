@@ -7,7 +7,7 @@ fvwm3 (1.1.0+ds-1) unstable; urgency=medium
   * Build html docs, and move them to /usr/share/doc/fvwm3/htmldoc.
   * Update debian/copyright to correctly state the main license is
     GPL-2+, and document the copyright and licenses for source in libs/
-    which which are not GPL-2+.
+    which are not GPL-2+.
 
  -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Thu, 06 Jun 2024 17:03:38 -0600
 
