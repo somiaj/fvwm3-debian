@@ -11,7 +11,7 @@ fvwm3 (1.1.0+ds-1) unstable; urgency=medium
   * Add ${perl:Depends} to the recommends package list.
   * Upstream version fixes gcc-14 build issue (Closes: #1074975).
 
- -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Thu, 06 Jun 2024 17:03:38 -0600
+ -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Thu, 18 Jul 2024 14:45:03 -0600
 
 fvwm3 (1.0.6a+ds-1) unstable; urgency=low
 
