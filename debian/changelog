@@ -9,6 +9,7 @@ fvwm3 (1.1.0+ds-1) unstable; urgency=medium
     GPL-2+, and document the copyright and licenses for source in libs/
     which are not GPL-2+.
   * Add ${perl:Depends} to the recommends package list.
+  * Upstream version fixes gcc-14 build issue (Closes: #1074975).
 
  -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Thu, 06 Jun 2024 17:03:38 -0600
 
