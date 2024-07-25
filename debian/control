@@ -36,10 +36,10 @@ Vcs-Git: https://github.com/somiaj/fvwm3-debian.git
 Package: fvwm3
 Architecture: any
 Depends: libperl4-corelibs-perl,
+         ${perl:Depends},
          ${misc:Depends},
          ${shlibs:Depends},
 Recommends: lxmenu-data | gnome-menus,
-            ${perl:Depends},
             python3,
             python3-xdg
 Suggests: stalonetray, doc-base

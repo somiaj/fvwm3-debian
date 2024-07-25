@@ -8,7 +8,7 @@ fvwm3 (1.1.0+ds-1) unstable; urgency=medium
   * Update debian/copyright to correctly state the main license is
     GPL-2+, and document the copyright and licenses for source in libs/
     which are not GPL-2+.
-  * Add ${perl:Depends} to the recommends package list.
+  * Add ${perl:Depends} to the depends package list.
   * Upstream version fixes gcc-14 build issue (Closes: #1074975).
   * Remove trailing slash from Files-Excluded.
 
