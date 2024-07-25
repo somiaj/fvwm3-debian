@@ -10,8 +10,9 @@ fvwm3 (1.1.0+ds-1) unstable; urgency=medium
     which are not GPL-2+.
   * Add ${perl:Depends} to the recommends package list.
   * Upstream version fixes gcc-14 build issue (Closes: #1074975).
+  * Remove trailing slash from Files-Excluded.
 
- -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Thu, 18 Jul 2024 14:45:03 -0600
+ -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Thu, 25 Jul 2024 10:27:03 -0600
 
 fvwm3 (1.0.6a+ds-1) unstable; urgency=low
 
