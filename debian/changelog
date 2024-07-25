@@ -2,6 +2,8 @@ fvwm3 (1.1.0+ds-1) unstable; urgency=medium
 
   * New upstream release.
   * Refresh patches.
+  * Bump standards to 4.7.0.
+    - Update comment for how x-window-manager priority is computed.
   * Update obsolete build depends, pkg-config -> pkgconf.
   * Remove debian/desktop/fvwm3.desktop in favor of upstream file.
   * Build html docs, and move them to /usr/share/doc/fvwm3/htmldoc.

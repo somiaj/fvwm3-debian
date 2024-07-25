@@ -44,10 +44,10 @@ case "$1" in
             --install /usr/bin/fvwm-perllib fvwm-perllib /usr/bin/fvwm3-perllib 300 \
             --slave /usr/share/man/man1/fvwm-perllib.1.gz fvwm-perllib.1.gz \
                     /usr/share/man/man1/fvwm3-perllib.1.gz
-        # From debian-policy as of 2012-07-12, sec. 11.8.4.
-        # Priority: 20 + 20 (support Debian menu system) + 40 (complies with
-        # The Window Manager Specification Project) + 10 (defaults to
-        # permitting X session to be restarted with different window manager
+        # From debian-policy as of 2024-07-25, sec. 11.8.4.
+        # Priority: 40 + 40 (complies with The Window Manager
+        # Specification Project) + 10 (defaults to permitting
+        # X session to be restarted with different window manager
         # without killing X server) = 90
         update-alternatives \
             --install /usr/bin/x-window-manager x-window-manager /usr/bin/fvwm3 90 \
