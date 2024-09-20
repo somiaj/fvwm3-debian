@@ -1,27 +1,41 @@
 #!/usr/bin/make -f
 # -*- makefile -*-
-# Sample debian/rules that uses debhelper.
-# This file was originally written by Joey Hess and Craig Small.
-# As a special exception, when this file is copied by dh-make into a
-# dh-make output file, you may use that output file without restriction.
-# This special exception was added by Craig Small in version 0.37 of dh-make.
 
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 export DEB_BUILD_MAINT_OPTIONS=hardening=+all
 
+# Do no nothing here, to keep build from from using autotools.
+override_dh_autoreconf:
+
 override_dh_auto_configure:
-	dh_auto_configure -- --verbose --disable-imlibtest --with-imlib-prefix=/no/dir --with-readline-library=yes --enable-mandoc --enable-htmldoc --program-transform-name='/vwm[^3]/ s/vwm/vwm3/'
+	dh_auto_configure -- -Dgolang=disabled -Dhtmldoc=true -Dmandoc=true
 
 override_dh_install:
 	dh_install
+	# Rename fvwm helper binaries to install along side fvwm package.
+	cd $(CURDIR)/debian/fvwm3/usr/bin; \
+	mv FvwmCommand Fvwm3Command; \
+	for name in convert-2.6 menu-desktop menu-directory menu-xlock \
+		perllib root; \
+	do \
+		mv fvwm-$$name fvwm3-$$name; \
+	done
 
 override_dh_installman:
 	dh_installman
-	# Move htmldoc to /usr/share/doc/fvwm3 and link to them.
-	cd $(CURDIR)/debian/fvwm3/usr/share/fvwm3 \
-		&& mv htmldoc ../doc/fvwm3 \
-		&& ln -fs ../doc/fvwm3/htmldoc .
+	# Rename fvwm3 manpages to install along side fvwm package.
+	cd $(CURDIR)/debian/fvwm3/usr/share/man/man1; \
+	for module in Animate Auto Backer Buttons Command Console Event \
+		Form IconMan Ident MFL Pager Perl Rearrange Script; \
+	do \
+		mv Fvwm$$module.1 Fvwm3$$module.1; \
+	done; \
+	for name in convert-2.6 menu-desktop menu-directory menu-xlock \
+		perllib root; \
+	do \
+		mv fvwm-$$name.1 fvwm3-$$name.1; \
+	done
 
 override_dh_installdocs:
 	dh_installdocs -X.in -X.am -XMakefile
@@ -30,4 +44,4 @@ override_dh_installchangelogs:
 	dh_installchangelogs CHANGELOG.md
 
 %:
-	dh $@
+	dh $@ --buildsystem=meson
