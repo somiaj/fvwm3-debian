@@ -3,6 +3,12 @@
 This is the `debian/` directory for fvwm3 to build a
 Debian package (.deb) from the fvwm3 source.
 
++ **Build Note:** Starting with fvwm3 1.1.1 the build system
+  has moved from autotools to meson (version 1.5.1 or greater).
+  The Debian package now builds using meson. The old `debian/`
+  directory to build with autotools can be found in the
+  `autotools` branch.
+
 + This only contains the `debian/` directory. Get the upstream
   [fvwm3 source on github](https://github.com/fvwmorg/fvwm3).
 
@@ -47,7 +53,14 @@ Adjust to suit your needs.
               libncurses-dev libpng-dev libreadline-dev librsvg2-dev \
               libsm-dev libx11-dev libxcursor-dev libxext-dev libxft-dev \
               libxi-dev libxkbcommon-dev libxpm-dev libxrandr-dev \
-              libxrender-dev libxt-dev
+              libxrender-dev libxt-dev meson
+  ```
+
+  **Note:** This build requires a version of meson 1.5.1 or greater. On bookworm
+  you can get this from bookworm-backports.
+
+  ```
+  apt install -t bookworm-backports meson
   ```
 
 + Copy `debian/` into the fvwm3 source and build the package.
@@ -83,10 +96,9 @@ This isn't needed if you just want to install fvwm3 from a Debian package.
 
   ```
   cd fvwm3/
-  ./autogen.sh
-  ./configure
-  make dist
-  mk-origtargz fvwm3-<version>.tar.gz
+  meson setup build -Dgolang=disabled
+  meson dist -C build
+  mk-origtargz build/meson-dist/fvwm3-<version>.tar.xz
   cd ..
   ```
 
@@ -118,4 +130,8 @@ also builds FvwmPrompt. Use the above instructions for building
 a binary package along with checking out the FvwmPrompt branch,
 `git checkout FvwmPrompt`, and installing the package `golang-go`
 to build the package.
+
+To build FvwmPrompt using meson, golang version 1.20.0 or greater is
+required. In bookworm, you will need to install the `golang-go` package
+from bookworm-backports to build FvwmPrompt.
 

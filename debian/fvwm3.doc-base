@@ -5,5 +5,5 @@ Abstract: HTML versions of the fvwm3 manual pages.
 Section: Window Managers
 
 Format: HTML
-Index: /usr/share/doc/fvwm3/htmldoc/index.html
-Files: /usr/share/doc/fvwm3/htmldoc/*.html
+Index: /usr/share/doc/fvwm3/html/index.html
+Files: /usr/share/doc/fvwm3/html/*.html

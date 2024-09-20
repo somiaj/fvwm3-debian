@@ -28,6 +28,7 @@ Build-Depends: debhelper (>= 13.0.0),
                libxrandr-dev,
                libxrender-dev,
                libxt-dev,
+               meson (>= 1.5.1),
                pkgconf
 Standards-Version: 4.7.0
 Homepage: https://www.fvwm.org/

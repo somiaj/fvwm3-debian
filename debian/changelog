@@ -6,8 +6,9 @@ fvwm3 (1.1.1+ds-1~rc) unstable; urgency=medium
     fall back XKeycodeToKeysym() is not used when building.
   * Rename NEWS to README.Debian to document the differences
     between upstream source and the Debian package.
+  * Update package to build using the meson build system.
 
- -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Mon, 21 Oct 2024 16:06:07 -0600
+ -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Thu, 31 Oct 2024 09:45:07 -0600
 
 fvwm3 (1.1.0+ds-1) unstable; urgency=medium
 
