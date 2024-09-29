@@ -17,7 +17,7 @@ Last-Update: 2018-05-14
 This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
 --- a/modules/FvwmConsole/FvwmConsole.c
 +++ b/modules/FvwmConsole/FvwmConsole.c
-@@ -90,7 +90,9 @@ int main(int argc, char *argv[])
+@@ -92,7 +92,9 @@ int main(int argc, char *argv[])
  	char client[120];
  	char **eargv;
  	int i, j, k;
@@ -95,7 +95,7 @@ This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
      -v, --verbose             run and display debug info on STDERR."""
 --- a/doc/FvwmConsole.adoc
 +++ b/doc/FvwmConsole.adoc
-@@ -46,7 +46,9 @@ ____
+@@ -46,7 +46,9 @@ Module FvwmConsole -g 40x10 -fg black -b
  
  A different terminal emulator can be specified with the -terminal
  option. However, only terminal programs that understand the options
@@ -104,11 +104,11 @@ This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
 +is changed to x-terminal-emulator. To be policy compliant -name
 +option is removed from default options and -title is change to -T.
  
- ____
+ ....
  Module FvwmConsole -terminal rxvt
 @@ -64,6 +66,17 @@ FvwmConsole*VT100*geometry: 40x4 +
  FvwmConsole*font: 7x14
- ____
+ ....
  
 +Debian specific: Since -name is not included by default, the
 +default resource will be set by the x-terminal-emulator used

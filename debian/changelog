@@ -1,8 +1,9 @@
 fvwm3 (1.1.1~rc-1) unstable; urgency=medium
 
   * New upstream release.
+  * Refresh patches.
 
- -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Thu, 18 Jul 2024 14:46:19 -0600
+ -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Sat, 28 Sep 2024 18:25:23 -0600
 
 fvwm3 (1.1.0+ds-1) unstable; urgency=medium
 
