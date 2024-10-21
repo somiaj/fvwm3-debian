@@ -38,7 +38,8 @@ Adjust to suit your needs.
               libevent-dev libfontconfig-dev libfreetype6-dev libfribidi-dev \
               libncurses-dev libpng-dev libreadline-dev librsvg2-dev \
               libsm-dev libx11-dev libxcursor-dev libxext-dev libxft-dev \
-              libxi-dev libxpm-dev libxrandr-dev libxrender-dev libxt-dev
+              libxi-dev libxkbcommon-dev libxpm-dev libxrandr-dev \
+              libxrender-dev libxt-dev
   ```
 
 + Copy `debian/` into the fvwm3 source and build the package.
