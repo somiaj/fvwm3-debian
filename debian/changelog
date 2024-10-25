@@ -1,4 +1,4 @@
-fvwm3 (1.1.1-1~rc1) unstable; urgency=medium
+fvwm3 (1.1.1+ds-1~rc) unstable; urgency=medium
 
   * New upstream release.
   * Refresh patches.
