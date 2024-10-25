@@ -1,0 +1,61 @@
+Description: Disable building FvwmPrompt with meson.
+  To comply with Debian policy and not use vendored libs, FvwmPrompt is
+  built using debhelper directly via debian/rules and is not built using
+  meson. To ensure that FvwmConsole is not built and FvwmPrompt manual
+  page is built, meson will be configured to build FvwmPrompt, so do
+  nothing when trying to build FvwmPrompt with meson.
+Author: Jaimos Skriletz <jaimosskriletz@gmail.com>
+Forwarded: not-needed
+Last-Update: 2026-02-14
+--- a/bin/FvwmPrompt/meson.build
++++ b/bin/FvwmPrompt/meson.build
+@@ -3,26 +3,26 @@
+ # do it manually.
+ 
+ # Extract all of the go sources from the current directory
+-r = run_command('find-go-sources.sh', meson.current_source_dir(), check: true)
+-fvwmprompt_files = r.stdout().strip().split()
+-fvwmprompt_files += 'go.mod'
+-fvwmprompt_files += 'go.sum'
+-
+-fvwmprompt_build = meson.current_source_dir()
+-fvwmprompt_output = meson.current_build_dir() + '/FvwmPrompt'
+-
+-fvwmprompt = custom_target(
+-    'FvwmPrompt',
+-    output: 'FvwmPrompt',
+-    input: fvwmprompt_files,
+-    command: [
+-        golang,
+-        'build',
+-        '-C', fvwmprompt_build,
+-        '-v',
+-        '-mod=vendor',
+-        '-o', fvwmprompt_output,
+-    ],
+-    install: true,
+-    install_dir: bindir,
+-)
++#r = run_command('find-go-sources.sh', meson.current_source_dir(), check: true)
++#fvwmprompt_files = r.stdout().strip().split()
++#fvwmprompt_files += 'go.mod'
++#fvwmprompt_files += 'go.sum'
++#
++#fvwmprompt_build = meson.current_source_dir()
++#fvwmprompt_output = meson.current_build_dir() + '/FvwmPrompt'
++#
++#fvwmprompt = custom_target(
++#    'FvwmPrompt',
++#    output: 'FvwmPrompt',
++#    input: fvwmprompt_files,
++#    command: [
++#        golang,
++#        'build',
++#        '-C', fvwmprompt_build,
++#        '-v',
++#        '-mod=vendor',
++#        '-o', fvwmprompt_output,
++#    ],
++#    install: true,
++#    install_dir: bindir,
++#)

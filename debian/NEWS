@@ -1,0 +1,14 @@
+fvwm3 (1.1.5+ds-1) unstable; urgency=medium
+
+    The fvwm3 package now provides FvwmPrompt and no longer provides
+    FvwmConsole. This means config files that use FvwmConsole need
+    to be updated. FvwmPrompt is a binary that runs in any terminal
+    emulator. It can open a simple shell, similar to FvwmConsole, to
+    send multiple commands to fvwm by running `FvwmPrompt`. It can
+    also issue a single command, similar to FvwmCommand, by running
+    `FvwmPrompt <command>`. To update a config file to launch a terminal
+    emulator that is running FvwmPrompt use something similar to
+    (replaces the `Module FvwmConsole` command):
+
+        Exec exec x-terminal-emulator -T FvwmPrompt -e FvwmPrompt
+

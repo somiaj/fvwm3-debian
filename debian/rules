@@ -5,11 +5,25 @@
 #export DH_VERBOSE=1
 export DEB_BUILD_MAINT_OPTIONS=hardening=+all
 
-override_dh_auto_configure:
-	dh_auto_configure -- -Dgolang=disabled -Dhtmldoc=true -Dmandoc=true
+PROMPTDIR=$(CURDIR)/_build/src/github.com/fvwmorg/FvwmPrompt
 
-override_dh_install:
-	dh_install
+override_dh_auto_configure:
+	# Create links to Debian golang libs, but this copies the full source.
+	dh_auto_configure -O--buildsystem=golang -O--builddirectory=_build
+	# Delete full source and copy only FvwmPrompt module into place.
+	rm -rf $(PROMPTDIR)/*
+	for name in FvwmPrompt.go go.mod go.sum; do \
+		cp $(CURDIR)/bin/FvwmPrompt/$$name $(PROMPTDIR); \
+	done
+	dh_auto_configure -- -Dgolang=enabled -Dhtmldoc=true -Dmandoc=true
+
+# Build FvwmPrompt
+execute_after_dh_auto_build:
+	dh_auto_build -O--buildsystem=golang -O--builddirectory=_build
+
+execute_after_dh_install:
+	# Copy FvwmPrompt into place.
+	cp $(CURDIR)/_build/bin/FvwmPrompt $(CURDIR)/debian/fvwm3/usr/bin
 	# Rename fvwm helper binaries to install along side fvwm package.
 	cd $(CURDIR)/debian/fvwm3/usr/bin; \
 	mv FvwmCommand Fvwm3Command; \
@@ -19,11 +33,10 @@ override_dh_install:
 		mv fvwm-$$name fvwm3-$$name; \
 	done
 
-override_dh_installman:
-	dh_installman
+execute_after_dh_installman:
 	# Rename fvwm3 manpages to install along side fvwm package.
 	cd $(CURDIR)/debian/fvwm3/usr/share/man/man1; \
-	for module in Animate Auto Backer Buttons Command Console Event \
+	for module in Animate Auto Backer Buttons Command Event \
 		Form IconMan Ident MFL Pager Perl Rearrange Script; \
 	do \
 		mv Fvwm$$module.1 Fvwm3$$module.1; \
@@ -34,11 +47,12 @@ override_dh_installman:
 		mv fvwm-$$name.1 fvwm3-$$name.1; \
 	done
 
-override_dh_installdocs:
-	dh_installdocs
-
 override_dh_installchangelogs:
 	dh_installchangelogs CHANGELOG.md
+
+# Skip running dwz on FvwmPrompt, it is already compressed.
+override_dh_dwz:
+	dh_dwz -XFvwmPrompt
 
 %:
 	dh $@

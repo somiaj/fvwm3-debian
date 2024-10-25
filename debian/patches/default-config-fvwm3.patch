@@ -55,18 +55,17 @@ Last-Update: 2021-06-22
 -+ "FvwmBacker"    ViewManPage FvwmBacker
 -+ "FvwmButtons"   ViewManPage FvwmButtons
 -+ "FvwmCommand"   ViewManPage FvwmCommand
--Test (x $[FVWM_MODULEDIR]/FvwmConsole) + "FvwmConsole" ViewManPage FvwmConsole
--+ "FvwmEvent"     ViewManPage FvwmEvent
--+ "FvwmIconMan"   ViewManPage FvwmIconMan
--+ "FvwmIdent"     ViewManPage FvwmIdent
--+ "FvwmPager"     ViewManPage FvwmPager
--+ "FvwmPerl"      ViewManPage FvwmPerl
 ++ "FvwmAnimate"   ViewManPage Fvwm3Animate
 ++ "FvwmAuto"      ViewManPage Fvwm3Auto
 ++ "FvwmBacker"    ViewManPage Fvwm3Backer
 ++ "FvwmButtons"   ViewManPage Fvwm3Buttons
 ++ "FvwmCommand"   ViewManPage Fvwm3Command
-+Test (x $[FVWM_MODULEDIR]/FvwmConsole) + "FvwmConsole" ViewManPage Fvwm3Console
+ Test (x $[FVWM_MODULEDIR]/FvwmConsole) + "FvwmConsole" ViewManPage FvwmConsole
+-+ "FvwmEvent"     ViewManPage FvwmEvent
+-+ "FvwmIconMan"   ViewManPage FvwmIconMan
+-+ "FvwmIdent"     ViewManPage FvwmIdent
+-+ "FvwmPager"     ViewManPage FvwmPager
+-+ "FvwmPerl"      ViewManPage FvwmPerl
 ++ "FvwmEvent"     ViewManPage Fvwm3Event
 ++ "FvwmIconMan"   ViewManPage Fvwm3IconMan
 ++ "FvwmIdent"     ViewManPage Fvwm3Ident

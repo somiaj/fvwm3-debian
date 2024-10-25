@@ -1,45 +1,17 @@
 Description: Changed hard-coded xterm into x-terminal-emulator per Policy
  .
- Also in keeping with Debian policy, change the option --title to -T,
- and removed the --name option. Changed the man page to document the
- Debian specific change.
+ In keeping with Debian policy, change the option --title to -T,
+ and document the Debian specific change.
  .
  Converted with metadata by Vincent W. Chen <vinmun@gmail.com>.
  .
- Updated by Jaimos Skriletz <jaimosskriletz@gmail.com>
-   * Added updates to change xterm to x-terminal-emulator in the default-config
-     and fvwm-menu-desktop.
-   * Added a clarification of the -name option to FvwmConsole manpage.
+ Updated by Jaimos Skriletz <jaimosskriletz@gmail.com> to apply this
+ change in the default-config and fvwm-menu-desktop.
 Author: Manoj Srivastava <srivasta@debian.org>
 Forwarded: not-needed
-Last-Update: 2018-05-14
+Last-Update: 2026-02-12
 ---
 This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
---- a/modules/FvwmConsole/FvwmConsole.c
-+++ b/modules/FvwmConsole/FvwmConsole.c
-@@ -92,7 +92,9 @@ int main(int argc, char *argv[])
- 	char client[120];
- 	char **eargv;
- 	int i, j, k;
--	char *xterm_pre[] = { "-title", Name, "-name", Name, NULL };
-+	/* char *xterm_pre[] = { "-title", Name, "-name", Name, NULL }; */
-+	/* x-terminal-emulator options. */
-+	char *xterm_pre[] = { "-T", Name, NULL };
- 	char *xterm_post[] = { "-e", NULL, NULL };
- 	int  clpid;
- 
---- a/modules/FvwmConsole/FvwmConsole.h
-+++ b/modules/FvwmConsole/FvwmConsole.h
-@@ -34,7 +34,8 @@
- #define HISTSIZE 100    /* readline history file size */
- #define HISTFILE "/.FvwmConsole-History"
- 
--#define XTERM "xterm"
-+/* #define XTERM "xterm" */
-+#define XTERM "x-terminal-emulator" /* Debian specific change for policy */
- 
- /* message to client */
- #define C_BEG   "_C_Config_Line_Begin_\n"
 --- a/default-config/config
 +++ b/default-config/config
 @@ -29,7 +29,7 @@
@@ -93,37 +65,6 @@ This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
      --dynamic                 used with dynamic menus.
      -e, --menu-error          out python-xdg not found error in menu.
      -v, --verbose             run and display debug info on STDERR."""
---- a/doc/FvwmConsole.adoc
-+++ b/doc/FvwmConsole.adoc
-@@ -46,7 +46,9 @@ Module FvwmConsole -g 40x10 -fg black -b
- 
- A different terminal emulator can be specified with the -terminal
- option. However, only terminal programs that understand the options
---name, -title and -e can be used.
-+-name, -title and -e can be used. Debian specific: hardcoded xterm
-+is changed to x-terminal-emulator. To be policy compliant -name
-+option is removed from default options and -title is change to -T.
- 
- ....
- Module FvwmConsole -terminal rxvt
-@@ -64,6 +66,17 @@ FvwmConsole*VT100*geometry: 40x4 +
- FvwmConsole*font: 7x14
- ....
- 
-+Debian specific: Since -name is not included by default, the
-+default resource will be set by the x-terminal-emulator used
-+and not FvwmConsole. You can change the resource to match the
-+terminal, or if supported by the terminal, run FvwmCConsole
-+with the -name option:
-+
-+____
-+Module FvwmConsole -name FvwmConsole
-+____
-+
-+
- == COMMAND EDITING
- 
- If the GNU readline library is available, it can be used.
 --- a/doc/fvwm-menu-desktop.adoc
 +++ b/doc/fvwm-menu-desktop.adoc
 @@ -88,6 +88,10 @@ script exits with an error.

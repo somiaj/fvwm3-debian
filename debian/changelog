@@ -1,6 +1,7 @@
 fvwm3 (1.1.5+ds~rc) UNRELEASED; urgency=medium
 
   * New upstream release.
+  * Build FvwmPrompt and remove FvwmConsole.
 
  -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Sat, 20 Dec 2025 13:58:48 -0700
 

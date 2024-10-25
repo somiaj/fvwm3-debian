@@ -14,8 +14,7 @@ the fvwm3 and fvwm package to be installed side by side.  This includes:
   the mandb database to remove old entries, `sudo mandb`, then reinstall
   the fvwm3 package to get mandb to update the aliases.
 
-+ The Debian package provides FvwmConsole and FvwmCommand, instead of
-  FvwmPrompt due to missing golang dependencies in Debian.
++ The Debian package provides FvwmPrompt and no longer provides FvwmConsole.
 
 If you want to install and run fvwm3 and fvwm side by side, here are some
 things to consider.
