@@ -19,7 +19,8 @@ Debian package (.deb) from the fvwm3 source.
 
 + This builds a package that can be installed along side the fvwm
   package (which is fvwm version 2). To do this some binaries and
-  manual pages have been renamed. Check `debian/NEWS` for details.
+  manual pages have been renamed. Check `debian/README.Debian` for
+  details.
 
 + The version of the package appends `ds` (Debian source) to the
   upstream version to indicate that the official Debian package

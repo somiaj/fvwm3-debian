@@ -4,6 +4,8 @@ fvwm3 (1.1.1+ds-1~rc) unstable; urgency=medium
   * Refresh patches.
   * Add libxkbcommon-dev to build-depends so the deprecated
     fall back XKeycodeToKeysym() is not used when building.
+  * Rename NEWS to README.Debian to document the differences
+    between upstream source and the Debian package.
 
  -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Mon, 21 Oct 2024 16:06:07 -0600
 
