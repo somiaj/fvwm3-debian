@@ -1,0 +1,33 @@
+The Debian fvwm3 has some differences from the upstream source to allow
+the fvwm3 and fvwm package to be installed side by side.  This includes:
+
++ All the helper binaries are renamed from fvwm-<name> to fvwm3-<name>.
+  This includes fvwm3-menu-desktop, fvwm3-menu-directory, fvwm3-menu-xlock,
+  fvwm3-perllib, fvwm3-root, fvwm3-convert-2.6, and Fvwm3Command.  The
+  Debian alternative system is then used to link them to their original
+  fvwm-<name> (which are shared with the fvwm package).
+
++ Manual pages for modules have been renamed from FvwmModule to Fvwm3Module
+  (the module names are unchanged).  mandb should set up alias for these
+  when installed.  To test run `man -w fvwmpager` to see if it is linked
+  to Fvwm3Pager. If not you may need to remove the `fvwm` package, update
+  the mandb database to remove old entries, `sudo mandb`, then reinstall
+  the fvwm3 package to get mandb to update the aliases.
+
++ The Debian package provides FvwmConsole and FvwmCommand, instead of
+  FvwmPrompt due to missing golang dependencies in Debian.
+
+If you want to install and run fvwm3 and fvwm side by side, here are some
+things to consider.
+
++ Make sure the alternative system is linked to the helper binaries you
+  want to use by default and/or call the fvwm3-name or fvwm2-name binaries
+  directly.
+
++ fvwm3 uses the same configuration file, ~/.fvwm/config, as fvwm.  Due to
+  differences in the configuration file, update the environment for fvwm3
+  and fvwm to point to different locations.  This can be done by setting
+  the FVWM_USERDIR environment variable and/or launching fvwm3 with the
+  `-f config_file` option (the same environment variables and option work
+  with fvwm).
+
