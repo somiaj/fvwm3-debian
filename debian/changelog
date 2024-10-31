@@ -7,6 +7,8 @@ fvwm3 (1.1.1+ds-1~rc) unstable; urgency=medium
   * Rename NEWS to README.Debian to document the differences
     between upstream source and the Debian package.
   * Update package to build using the meson build system.
+  * Add libxfixes-dev to build-depends (adds support for the
+    new CursorBarrier feature).
 
  -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Thu, 31 Oct 2024 09:45:07 -0600
 
