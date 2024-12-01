@@ -1,4 +1,4 @@
-fvwm3 (1.1.1+ds-1~rc) unstable; urgency=medium
+fvwm3 (1.1.1+ds-1) unstable; urgency=medium
 
   * New upstream release.
   * Refresh patches.
@@ -10,7 +10,7 @@ fvwm3 (1.1.1+ds-1~rc) unstable; urgency=medium
   * Add libxfixes-dev to build-depends (adds support for the
     new CursorBarrier feature).
 
- -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Thu, 31 Oct 2024 09:45:07 -0600
+ -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Sat, 30 Nov 2024 17:18:23 -0600
 
 fvwm3 (1.1.0+ds-1) unstable; urgency=medium
 

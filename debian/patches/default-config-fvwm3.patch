@@ -16,7 +16,7 @@ Last-Update: 2021-06-22
      $[FVWM_DATADIR]/default-config/images/background/bg1.png
  
  # Mouse Bindings Functions
-@@ -119,17 +119,17 @@ AddToFunc   ViewManPage
+@@ -122,17 +122,17 @@ AddToFunc   ViewManPage
  #
  # SetBG is used with the background menu to set the background
  # image and configure it to be loaded the next time fvwm is run.
@@ -37,7 +37,7 @@ Last-Update: 2021-06-22
  + I Exec exec ln -fs $[FVWM_DATADIR]/default-config/images/background/$0 \
      $[FVWM_USERDIR]/.BGdefault
  
-@@ -328,7 +328,7 @@ Test (x FvwmPrompt) + "&FvwmPrompt%icons
+@@ -337,7 +337,7 @@ Test (x FvwmPrompt) + "&FvwmPrompt%icons
  + "$[gt.&Quit]%icons/quit.png%"       Module FvwmScript FvwmScript-ConfirmQuit
  
  # Generate XDGMenu
@@ -46,7 +46,7 @@ Last-Update: 2021-06-22
  
  # Programs Menu
  #
-@@ -442,25 +442,25 @@ AddToMenu   MenuFvwmManPages "Help" Titl
+@@ -451,25 +451,25 @@ AddToMenu   MenuFvwmManPages "Help" Titl
  + "fvwm3menus"    ViewManPage fvwm3menus
  + "fvwm3all"      ViewManPage fvwm3all
  + "" Nop
