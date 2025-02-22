@@ -1,8 +1,10 @@
-fvwm3 (1.1.2+ds-1~rc) UNRELEASED; urgency=medium
+fvwm3 (1.1.2+ds-1) unstable; urgency=medium
 
   * New upstream release.
+  * Update debian/ copyright to 2025.
+  * Update standards version 4.7.0 -> 4.7.1 (nothing to do).
 
- -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Sun, 01 Dec 2024 10:24:35 -0700
+ -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Sat, 22 Feb 2025 11:47:35 -0700
 
 fvwm3 (1.1.1+ds-1) unstable; urgency=medium
 
