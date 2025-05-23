@@ -1,8 +1,10 @@
 fvwm3 (1.1.3+ds-1~rc) UNRELEASED; urgency=medium
 
   * New upstream release.
+  * fvwm3 removed autotools support, so removed any remaining autotools
+    references in debian/rules.
 
- -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Sat, 22 Feb 2025 13:13:34 -0700
+ -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Fri, 23 May 2025 09:13:34 -0700
 
 fvwm3 (1.1.2+ds-1) unstable; urgency=medium
 
