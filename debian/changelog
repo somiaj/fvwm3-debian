@@ -1,4 +1,4 @@
-fvwm3 (1.1.3+ds-1~rc) UNRELEASED; urgency=medium
+fvwm3 (1.1.3+ds-1) unstable; urgency=medium
 
   * New upstream release.
   * fvwm3 removed autotools support, so removed any remaining autotools
@@ -9,7 +9,7 @@ fvwm3 (1.1.3+ds-1~rc) UNRELEASED; urgency=medium
   * Remove old FSF physical address and supply a link for a copy
     of the LGPL-2+ license in the debian/copyright file.
 
- -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Fri, 23 May 2025 09:13:34 -0700
+ -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Sun, 05 Oct 2025 12:22:46 -0600
 
 fvwm3 (1.1.2+ds-1) unstable; urgency=medium
 
