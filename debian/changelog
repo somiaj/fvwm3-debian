@@ -5,6 +5,7 @@ fvwm3 (1.1.3+ds-1~rc) UNRELEASED; urgency=medium
     references in debian/rules.
   * Upstream fixed issue with broadcasting icon title to modules.
     Closes: #1103613
+  * Bump standards version to 4.7.2. Nothing to do.
 
  -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Fri, 23 May 2025 09:13:34 -0700
 

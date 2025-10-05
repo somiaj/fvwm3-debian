@@ -31,7 +31,7 @@ Build-Depends: debhelper (>= 13.0.0),
                libxt-dev,
                meson (>= 1.5.1),
                pkgconf
-Standards-Version: 4.7.1
+Standards-Version: 4.7.2
 Homepage: https://www.fvwm.org/
 Vcs-Browser: https://github.com/somiaj/fvwm3-debian
 Vcs-Git: https://github.com/somiaj/fvwm3-debian.git
