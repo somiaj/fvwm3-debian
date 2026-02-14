@@ -2,8 +2,10 @@ fvwm3 (1.1.5+ds~rc) UNRELEASED; urgency=medium
 
   * New upstream release.
   * Build FvwmPrompt and remove FvwmConsole.
+  * Use debian/fvwm3.alternatives to create alternative links
+    and remove debian/postinst and debian/prerm.
 
- -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Sat, 20 Dec 2025 13:58:48 -0700
+ -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Sat, 14 Feb 2026 10:28:48 -0700
 
 fvwm3 (1.1.4+ds-1) unstable; urgency=medium
 

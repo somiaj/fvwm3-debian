@@ -6,4 +6,5 @@ debian/files
 debian/fvwm3.debhelper.log
 debian/fvwm3.substvars
 debian/fvwm3/
-
+fvwm3.postinst.debhelper
+fvwm3.prerm.debhelper

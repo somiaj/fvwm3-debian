@@ -1,0 +1,49 @@
+Name: x-window-manager
+Link: /usr/bin/x-window-manager
+Alternative: /usr/bin/fvwm3
+Dependents:
+  /usr/share/man/man1/x-window-manager.1.gz x-window-manager.1.gz /usr/share/man/man1/fvwm3.1.gz
+Priority: 90
+
+Name: fvwm
+Link: /usr/bin/fvwm
+Alternative: /usr/bin/fvwm3
+Dependents:
+  /usr/share/man/man1/fvwm.1.gz fvwm.1.gz /usr/share/man/man1/fvwm3.1.gz
+Priority: 300
+
+Name: FvwmCommand
+Link: /usr/bin/FvwmCommand
+Alternative: /usr/bin/Fvwm3Command
+Dependents:
+  /usr/share/man/man1/FvwmCommand.1.gz FvwmCommand.1.gz /usr/share/man/man1/Fvwm3Command.1.gz
+Priority: 300
+
+Name: fvwm-root
+Link: /usr/bin/fvwm-root
+Alternative: /usr/bin/fvwm3-root
+Dependents:
+  /usr/share/man/man1/fvwm-root.1.gz fvwm-root.1.gz /usr/share/man/man1/fvwm3-root.1.gz
+Priority: 300
+
+Name: fvwm-menu-desktop
+Link: /usr/bin/fvwm-menu-desktop
+Alternative: /usr/bin/fvwm3-menu-desktop
+Dependents:
+  /usr/share/man/man1/fvwm-menu-desktop.1.gz fvwm-menu-desktop.1.gz /usr/share/man/man1/fvwm3-menu-desktop.1.gz
+Priority: 300
+
+Name: fvwm-menu-directory
+Link: /usr/bin/fvwm-menu-directory
+Alternative: /usr/bin/fvwm3-menu-directory
+Dependents:
+  /usr/share/man/man1/fvwm-menu-directory.1.gz fvwm-menu-directory.1.gz /usr/share/man/man1/fvwm3-menu-directory.1.gz
+Priority: 300
+
+Name: fvwm-perllib
+Link: /usr/bin/fvwm-perllib
+Alternative: /usr/bin/fvwm3-perllib
+Dependents:
+  /usr/share/man/man1/fvwm-perllib.1.gz fvwm-perllib.1.gz /usr/share/man/man1/fvwm3-perllib.1.gz
+Priority: 300
+
