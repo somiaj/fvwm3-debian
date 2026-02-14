@@ -1,8 +1,6 @@
 Source: fvwm3
 Section: x11
-Priority: optional
 Maintainer: Jaimos Skriletz <jaimosskriletz@gmail.com>
-Rules-Requires-Root: no
 Build-Depends: debhelper,
                debhelper-compat (= 13),
                dh-golang,
@@ -41,7 +39,7 @@ Build-Depends: debhelper,
                libxt-dev,
                meson (>= 1.5.1),
                pkgconf
-Standards-Version: 4.7.2
+Standards-Version: 4.7.3
 Homepage: https://www.fvwm.org/
 Vcs-Browser: https://github.com/somiaj/fvwm3-debian
 Vcs-Git: https://github.com/somiaj/fvwm3-debian.git
