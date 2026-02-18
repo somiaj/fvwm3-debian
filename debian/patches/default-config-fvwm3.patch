@@ -5,7 +5,7 @@ Forwarded: not-needed
 Last-Update: 2021-06-22
 --- a/default-config/config
 +++ b/default-config/config
-@@ -84,8 +84,8 @@ AddToFunc   StartFunction
+@@ -84,8 +84,8 @@
  DestroyFunc InitBackground
  AddToFunc InitBackground
  + I Test (f $[FVWM_USERDIR]/.BGdefault) \
@@ -16,7 +16,7 @@ Last-Update: 2021-06-22
      $[FVWM_DATADIR]/default-config/images/background/bg1.png
  
  # Mouse Bindings Functions
-@@ -121,17 +121,17 @@ AddToFunc   ViewManPage
+@@ -121,17 +121,17 @@
  #
  # SetBG is used with the background menu to set the background
  # image and configure it to be loaded the next time fvwm is run.
@@ -37,7 +37,7 @@ Last-Update: 2021-06-22
  + I Exec exec ln -fs $[FVWM_DATADIR]/default-config/images/background/$0 \
      $[FVWM_USERDIR]/.BGdefault
  
-@@ -336,7 +336,7 @@ Test (x FvwmPrompt) + "&FvwmPrompt%icons
+@@ -335,7 +335,7 @@
  + "$[gt.&Quit]%icons/quit.png%"       Module FvwmScript FvwmScript-ConfirmQuit
  
  # Generate XDGMenu
@@ -46,7 +46,7 @@ Last-Update: 2021-06-22
  
  # Programs Menu
  #
-@@ -450,25 +450,25 @@ AddToMenu   MenuFvwmManPages "Help" Titl
+@@ -449,24 +449,24 @@
  + "fvwm3menus"    ViewManPage fvwm3menus
  + "fvwm3all"      ViewManPage fvwm3all
  + "" Nop
@@ -55,17 +55,16 @@ Last-Update: 2021-06-22
 -+ "FvwmBacker"    ViewManPage FvwmBacker
 -+ "FvwmButtons"   ViewManPage FvwmButtons
 -+ "FvwmCommand"   ViewManPage FvwmCommand
-++ "FvwmAnimate"   ViewManPage Fvwm3Animate
-++ "FvwmAuto"      ViewManPage Fvwm3Auto
-++ "FvwmBacker"    ViewManPage Fvwm3Backer
-++ "FvwmButtons"   ViewManPage Fvwm3Buttons
-++ "FvwmCommand"   ViewManPage Fvwm3Command
- Test (x $[FVWM_MODULEDIR]/FvwmConsole) + "FvwmConsole" ViewManPage FvwmConsole
 -+ "FvwmEvent"     ViewManPage FvwmEvent
 -+ "FvwmIconMan"   ViewManPage FvwmIconMan
 -+ "FvwmIdent"     ViewManPage FvwmIdent
 -+ "FvwmPager"     ViewManPage FvwmPager
 -+ "FvwmPerl"      ViewManPage FvwmPerl
+++ "FvwmAnimate"   ViewManPage Fvwm3Animate
+++ "FvwmAuto"      ViewManPage Fvwm3Auto
+++ "FvwmBacker"    ViewManPage Fvwm3Backer
+++ "FvwmButtons"   ViewManPage Fvwm3Buttons
+++ "FvwmCommand"   ViewManPage Fvwm3Command
 ++ "FvwmEvent"     ViewManPage Fvwm3Event
 ++ "FvwmIconMan"   ViewManPage Fvwm3IconMan
 ++ "FvwmIdent"     ViewManPage Fvwm3Ident
@@ -81,16 +80,16 @@ Last-Update: 2021-06-22
 -+ "fvwm-menu-desktop"   ViewManPage fvwm-menu-desktop
 -+ "fvwm-menu-directory" ViewManPage fvwm-menu-directory
 -+ "fvwm-menu-xlock"     ViewManPage fvwm-menu-xlock
-++ "fvwm3-root"           ViewManPage fvwm3-root
-++ "fvwm3-menu-desktop"   ViewManPage fvwm3-menu-desktop
-++ "fvwm3-menu-directory" ViewManPage fvwm3-menu-directory
-++ "fvwm3-menu-xlock"     ViewManPage fvwm3-menu-xlock
+++ "fvwm-root"           ViewManPage fvwm3-root
+++ "fvwm-menu-desktop"   ViewManPage fvwm3-menu-desktop
+++ "fvwm-menu-directory" ViewManPage fvwm3-menu-directory
+++ "fvwm-menu-xlock"     ViewManPage fvwm3-menu-xlock
  
  #######
  # 5: Mouse and Key bindings
 --- a/bin/fvwm-menu-desktop-config.fpl
 +++ b/bin/fvwm-menu-desktop-config.fpl
-@@ -16,8 +16,8 @@ my $configtmp = "$ENV{'FVWM_USERDIR'}/.X
+@@ -16,8 +16,8 @@
  
  open(MSG ,">$configtmp") || die "Error $!";
  
@@ -101,7 +100,7 @@ Last-Update: 2021-06-22
  
  my @all_filelist = split(/ /,$all);
  my @selected_filelist = split(/ /,$selected);
-@@ -97,7 +97,7 @@ else {
+@@ -97,7 +97,7 @@
  *${modname}: Line    center
  *${modname}: Text    \"\$[gt.No menus found! Check why from within a terminal with]\"
  *${modname}: Line    center
@@ -110,7 +109,7 @@ Last-Update: 2021-06-22
  *${modname}: Line    left
  *${modname}: Text    \" \"
  ";
-@@ -189,7 +189,7 @@ foreach my $key (keys %all_menus) {
+@@ -189,7 +189,7 @@
  }
  
  $fvwmform_commands .= "\"
@@ -119,7 +118,7 @@ Last-Update: 2021-06-22
  \$(IconsOn\?--enable-mini-icons )\\
  \$(Size\?-s \$(Size) )\\
  \$(TitlesOn\?--with-titles )\\
-@@ -246,7 +246,7 @@ $fvwmform_commands .= "
+@@ -246,7 +246,7 @@
    '*${modname}Default: AppIcon      \$(AppIcon) '       \\
  ) >> \$FVWM_USERDIR/.${modname}
  
@@ -130,7 +129,7 @@ Last-Update: 2021-06-22
  
 --- a/bin/fvwm-menu-desktop.in
 +++ b/bin/fvwm-menu-desktop.in
-@@ -271,7 +271,7 @@ Standard output is a series Fvwm command
+@@ -271,7 +271,7 @@
      default_app_icon = "gnome-applications"
      default_dir_icon = "gnome-fs-directory"
      include_items = 'both'
@@ -139,7 +138,7 @@ Last-Update: 2021-06-22
      dynamic_menu = False
      menu_error = False
      term_cmd = "x-terminal-emulator -e" # Debian Policy change xterm to x-terminal-emulator
-@@ -333,7 +333,7 @@ Standard output is a series Fvwm command
+@@ -333,7 +333,7 @@
              print(usage)
              sys.exit()
          elif o in ("--version") :
@@ -148,7 +147,7 @@ Last-Update: 2021-06-22
              sys.exit()
          elif o in ("-e", "--menu-error") :
              menu_error = True
-@@ -409,7 +409,7 @@ Standard output is a series Fvwm command
+@@ -409,7 +409,7 @@
              printtext('AddToMenu "%s" "%s" Title' % (top, top))
              printtext('+ "$[gt.Error]: python-xdg $[gt.not found]" Nop')
              printtext('+ "" Nop')
@@ -157,7 +156,7 @@ Last-Update: 2021-06-22
          else:
              sys.stderr.write('Python module python-xdg not found.')
          sys.exit(1)
-@@ -455,7 +455,7 @@ Standard output is a series Fvwm command
+@@ -455,7 +455,7 @@
              printtext('AddToMenu "%s" "%s" Title' % (top, top))
              printtext('+ "$[gt.Error]: $[gt.No menus found]" Nop')
              printtext('+ "" Nop')
@@ -166,7 +165,7 @@ Last-Update: 2021-06-22
          else:
              sys.stderr.write(install_prefix+desktop+menu_type+".menu not available on this system. Exiting...\n")
          sys.exit(1)
-@@ -886,7 +886,7 @@ Options:
+@@ -886,7 +886,7 @@
                                menu. NAME can be 'config', 'regenerate', 'both'
                                or 'none'. Default both.
      --regen-cmd ACTION        The fvwm ACTION for the 'Regenerate' menu item.
@@ -193,7 +192,7 @@ Last-Update: 2021-06-22
  *--install-prefix* _DIR_ ] [ *--desktop* _NAME_ ] [ *--menu-type* _NAME_
  ] [ *--theme* _NAME_ ] [ *--with-titles*|*-w* ] [ *--without-titles* ]
  [ *--enable-mini-icons* ] [ *--size*|*-s* _NUM_ ] [ *--mini-icon-dir*
-@@ -62,7 +62,7 @@ script exits with an error.
+@@ -62,7 +62,7 @@
    menus matching those settings.
  *--install-prefix* _DIR_::
    Optional parameter to override the standard locations for XDG menu
@@ -202,7 +201,7 @@ Last-Update: 2021-06-22
    files instead of the standard locations /etc/xdg/menus (and
    $HOME/.config/menus if it exists).
  *--with-titles*|*-w*::
-@@ -82,7 +82,7 @@ script exits with an error.
+@@ -82,7 +82,7 @@
  *--regen-cmd* _CMD_::
    This option sets the fvwm command _CMD_ that is run when the menu item
    'Regenerate' is selected. The default is "PipeRead
@@ -211,7 +210,7 @@ Last-Update: 2021-06-22
  *--term-cmd* _CMD_::
    This option sets the terminal emulator command _CMD_ that is used to
    to run terminal applications in. _CMD_ needs to end with an execute
-@@ -120,7 +120,7 @@ below for some solutions.
+@@ -120,7 +120,7 @@
  
  == ICONS OPTIONS
  
@@ -220,7 +219,7 @@ Last-Update: 2021-06-22
  enable mini-icons use the following options.
  
  If ImageMagick is installed on the system, the script will resize and
-@@ -145,7 +145,7 @@ is generated to speed things up.
+@@ -145,7 +145,7 @@
    If --enable-mini-icons is used the _size_ of the icons can changed
    with this parameter. Default is 24.
  *--mini-icon-dir* _DIR_::
@@ -229,7 +228,7 @@ Last-Update: 2021-06-22
    creates icons with the right size in $HOME/.fvwm/icons. If you don't
    want to use the default directory, $HOME/.fvwm/icons, use this option
    to specify a different folder.
-@@ -158,14 +158,14 @@ is generated to speed things up.
+@@ -158,14 +158,14 @@
  
  == USAGE
  
@@ -247,7 +246,7 @@ Last-Update: 2021-06-22
  ....
  
  If no menus are found you may not have any installed on your system. By
-@@ -174,16 +174,16 @@ $HOME/.config/menus or the location set
+@@ -174,16 +174,16 @@
  *--install-prefix* to specify another location search for menus.
  
  Though a combination of command line options and the
@@ -268,7 +267,7 @@ Last-Update: 2021-06-22
  
  If no config file is found, all menus will be weighted and the script
  will generate the best (highest weight) menu found.
-@@ -204,12 +204,12 @@ names.
+@@ -204,12 +204,12 @@
  
  *--all-menus* by itself will generate all menus found.
  
@@ -284,7 +283,7 @@ Last-Update: 2021-06-22
  ....
  
  *Warning:* Depending on the options used this command may be slow and
-@@ -223,13 +223,13 @@ Once the menu is generated you can open
+@@ -223,13 +223,13 @@
  AddToMenu MenuFvwmRoot "XDG Menu" Popup XDGMenu
  ....
  
@@ -298,9 +297,9 @@ Last-Update: 2021-06-22
 -configure the defaults for *fvwm-menu-desktop*. You can access this from
 +configure the defaults for *fvwm3-menu-desktop*. You can access this from
  the "Configure" item in the top level menu that is generated or run the
- following from within *FvwmConsole*
+ following from within *FvwmCommand* or *FvwmPrompt*:
  
-@@ -240,21 +240,21 @@ Module FvwmPerl -l fvwm-menu-desktop-con
+@@ -240,21 +240,21 @@
  This form can be used to select which menu(s) get generated by default
  along with setting many (but not all) of the available options. When you
  click "Save Settings" the form will write a config file located at
@@ -325,7 +324,7 @@ Last-Update: 2021-06-22
  ....
  
  The menu is created once when fvwm loads. Since menu creation can
-@@ -271,7 +271,7 @@ generate the menu when 'Regenerate' is s
+@@ -271,7 +271,7 @@
  using a command like
  
  ....
@@ -334,7 +333,7 @@ Last-Update: 2021-06-22
  ....
  
  Then add the following to the fvwm config file to define the function
-@@ -281,14 +281,14 @@ file doesn't exist when fvwm starts.
+@@ -281,14 +281,14 @@
  ....
  DestroyFunc XDGRegen
  AddToFunc   XDGRegen
@@ -351,7 +350,7 @@ Last-Update: 2021-06-22
  menu into an existing menu using the *--insert-in-menu* option. For
  example one could create the menu MenuFvwmRoot and include the XDG items
  at the end.
-@@ -300,7 +300,7 @@ AddToMenu   MenuFvwmRoot "Fvwm" Title
+@@ -300,7 +300,7 @@
  + "ItemN" ActionN
  + "" Nop
  
@@ -360,7 +359,7 @@ Last-Update: 2021-06-22
  ....
  
  In this case the menu items are inserted at the end of the MenuFvwmRoot
-@@ -317,7 +317,7 @@ AddToFunc   XDGRegen
+@@ -317,7 +317,7 @@
  + I AddToMenu MenuFvwmRoot "Item1" Action1 ...
  + I AddToMenu MenuFvwmRoot "ItemN" ActionN
  + I AddToMenu MenuFvwmRoot "" Nop
@@ -369,7 +368,7 @@ Last-Update: 2021-06-22
      --regen-cmd XDGRegen'
  ....
  
-@@ -328,7 +328,7 @@ menu XDGMenu when it is opened using
+@@ -328,7 +328,7 @@
  
  ....
  AddToMenu XDGMenu "XDGMenu" Title
@@ -378,7 +377,7 @@ Last-Update: 2021-06-22
  ....
  
  This will create the menu when it is opened. One issue here is it will
-@@ -338,7 +338,7 @@ is open used the *--dynamic* option
+@@ -338,7 +338,7 @@
  
  ....
  AddToMenu XDGMenu "XDGMenu" Title
@@ -387,7 +386,7 @@ Last-Update: 2021-06-22
      --dynamic --include-items config'
  + DynamicPopDownAction DestroyMenu recreate XDGMenu
  ....
-@@ -360,7 +360,7 @@ AddToFunc GenRootMenu
+@@ -360,7 +360,7 @@
  + I AddToMenu MenuFvwmRoot "Item1" Action1 ...
  + I AddToMenu MenuFvwmRoot "ItemN" ActionN
  + I AddToMenu MenuFvwmRoot "" Nop
@@ -396,7 +395,7 @@ Last-Update: 2021-06-22
      --include-items config`
  
  AddToMenu MenuFvwmRoot "Fvwm" Title
-@@ -379,7 +379,7 @@ This script is based on fvwm-xdg-menu.py
+@@ -379,7 +379,7 @@
  (http://www.cl.cam.ac.uk/~pz215/) who assigned Licence: GPL 2 Date:
  03.12.2005.
  
@@ -413,7 +412,7 @@ Last-Update: 2021-06-22
  # V 1.0.4
  DestroyModuleConfig  FvwmForm-XDGMenuHelp: *
  *FvwmForm-XDGMenuHelp:   Colorset 5
-@@ -16,7 +16,7 @@ DestroyModuleConfig  FvwmForm-XDGMenuHel
+@@ -16,7 +16,7 @@
  *FvwmForm-XDGMenuHelp:   Line    left
  *FvwmForm-XDGMenuHelp:   Text    "$[gt.All the XDG menus found on the system are listed under Available Menus.  Use]"
  *FvwmForm-XDGMenuHelp:   Line    left
@@ -422,7 +421,7 @@ Last-Update: 2021-06-22
  *FvwmForm-XDGMenuHelp:   Line    left
  *FvwmForm-XDGMenuHelp:   Text    "$[gt.and select which menus are generated.  Select the options you want and then]"
  *FvwmForm-XDGMenuHelp:   Line    left
-@@ -26,7 +26,7 @@ DestroyModuleConfig  FvwmForm-XDGMenuHel
+@@ -26,7 +26,7 @@
  *FvwmForm-XDGMenuHelp:   Line    left
  *FvwmForm-XDGMenuHelp:   Text    "$[gt.Export Menu:]"
  *FvwmForm-XDGMenuHelp:   Line    left
@@ -431,7 +430,7 @@ Last-Update: 2021-06-22
  *FvwmForm-XDGMenuHelp:   Line    left
  *FvwmForm-XDGMenuHelp:   Text    "$[gt.     and saves the output to Output Path. After the menu file is created it]"
  *FvwmForm-XDGMenuHelp:   Line    left
-@@ -36,7 +36,7 @@ DestroyModuleConfig  FvwmForm-XDGMenuHel
+@@ -36,7 +36,7 @@
  *FvwmForm-XDGMenuHelp:   Line    left
  *FvwmForm-XDGMenuHelp:   Text    "$[gt.Save and Regenerate:]"
  *FvwmForm-XDGMenuHelp:   Line    left
@@ -440,7 +439,7 @@ Last-Update: 2021-06-22
  *FvwmForm-XDGMenuHelp:   Line    left
  *FvwmForm-XDGMenuHelp:   Text    "$[gt.     the defaults saved in the config file. This does not export the menu.]"
  *FvwmForm-XDGMenuHelp:   Line    left
-@@ -50,7 +50,7 @@ DestroyModuleConfig  FvwmForm-XDGMenuHel
+@@ -50,7 +50,7 @@
  *FvwmForm-XDGMenuHelp:   Line    Left
  *FvwmForm-XDGMenuHelp:   Line    " "
  *FvwmForm-XDGMenuHelp:   Line    left
@@ -449,7 +448,7 @@ Last-Update: 2021-06-22
  *FvwmForm-XDGMenuHelp:   Line    left
  *FvwmForm-XDGMenuHelp:   Text    "$[gt.Also it is a good idea to check $HOME/.xsession-errors for errors.]"
  *FvwmForm-XDGMenuHelp:   Line    left
-@@ -65,8 +65,8 @@ DestroyModuleConfig  FvwmForm-XDGMenuHel
+@@ -65,8 +65,8 @@
  *FvwmForm-XDGMenuHelp:   Command Nop
  *FvwmForm-XDGMenuHelp:   Button  continue "$[gt.Options Help]"
  *FvwmForm-XDGMenuHelp:   Command Module FvwmForm FvwmForm-XDGOptionsHelp
@@ -468,7 +467,7 @@ Last-Update: 2021-06-22
  # V 1.0.3
  DestroyModuleConfig  FvwmForm-XDGOptionsHelp: *
  *FvwmForm-XDGOptionsHelp:   Colorset 5
-@@ -133,8 +133,8 @@ DestroyModuleConfig  FvwmForm-XDGOptions
+@@ -133,8 +133,8 @@
  *FvwmForm-XDGOptionsHelp:   Command Nop
  *FvwmForm-XDGOptionsHelp:   Button  continue "$[gt.XDGMenu Help]"
  *FvwmForm-XDGOptionsHelp:   Command Module FvwmForm FvwmForm-XDGMenuHelp

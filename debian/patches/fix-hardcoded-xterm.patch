@@ -16,8 +16,8 @@ This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
 +++ b/default-config/config
 @@ -29,7 +29,7 @@
  #
- # The following is used in various menus and also sets the terminal
- # that FvwmConsole uses. Change this to your terminal of choice
+ # The following is used in various menus.  Change this to your terminal of
+ # choice.
 -InfoStoreAdd terminal xterm
 +InfoStoreAdd terminal x-terminal-emulator
  
@@ -25,7 +25,7 @@ This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
  # runcmd is the binary name and runcmdopt contains additional
 --- a/modules/FvwmForm/FvwmForm-XDGMenuHelp
 +++ b/modules/FvwmForm/FvwmForm-XDGMenuHelp
-@@ -66,7 +66,7 @@ DestroyModuleConfig  FvwmForm-XDGMenuHel
+@@ -66,7 +66,7 @@
  *FvwmForm-XDGMenuHelp:   Button  continue "$[gt.Options Help]"
  *FvwmForm-XDGMenuHelp:   Command Module FvwmForm FvwmForm-XDGOptionsHelp
  *FvwmForm-XDGMenuHelp:   Button  continue "fvwm-menu-desktop $[gt.manpage]"
@@ -36,7 +36,7 @@ This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
  
 --- a/modules/FvwmForm/FvwmForm-XDGOptionsHelp
 +++ b/modules/FvwmForm/FvwmForm-XDGOptionsHelp
-@@ -134,7 +134,7 @@ DestroyModuleConfig  FvwmForm-XDGOptions
+@@ -134,7 +134,7 @@
  *FvwmForm-XDGOptionsHelp:   Button  continue "$[gt.XDGMenu Help]"
  *FvwmForm-XDGOptionsHelp:   Command Module FvwmForm FvwmForm-XDGMenuHelp
  *FvwmForm-XDGOptionsHelp:   Button  continue "fvwm-menu-desktop $[gt.manpage]"
@@ -47,7 +47,7 @@ This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
  
 --- a/bin/fvwm-menu-desktop.in
 +++ b/bin/fvwm-menu-desktop.in
-@@ -274,7 +274,7 @@ Standard output is a series Fvwm command
+@@ -274,7 +274,7 @@
      regen_cmd = 'PipeRead `fvwm-menu-desktop`'
      dynamic_menu = False
      menu_error = False
@@ -56,7 +56,7 @@ This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
  
      # Loads config options from $FVWM_USERDIR/.FvwmForm-XDGMenu-Config
      if "FVWM_USERDIR" in os.environ:
-@@ -888,7 +888,7 @@ Options:
+@@ -888,7 +888,7 @@
      --regen-cmd ACTION        The fvwm ACTION for the 'Regenerate' menu item.
                                Default: 'PipeRead `fvwm-menu-desktop`'
      --term-cmd CMD            Terminal emulator CMD used on terminal entries.
@@ -67,7 +67,7 @@ This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
      -v, --verbose             run and display debug info on STDERR."""
 --- a/doc/fvwm-menu-desktop.adoc
 +++ b/doc/fvwm-menu-desktop.adoc
-@@ -88,6 +88,10 @@ script exits with an error.
+@@ -88,6 +88,10 @@
    to run terminal applications in. _CMD_ needs to end with an execute
    option, such as xterm's -e option, which will run the command that is
    appended to _CMD_. The default is "xterm -e".
