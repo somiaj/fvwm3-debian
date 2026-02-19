@@ -23,7 +23,6 @@ Build-Depends: debhelper,
                libfribidi-dev (>= 0.10.7),
                libncurses-dev,
                libpng-dev,
-               libreadline-dev,
                librsvg2-dev (>= 2.13.92),
                libsm-dev,
                libx11-dev,
@@ -47,11 +46,11 @@ XS-Go-Import-Path: github.com/fvwmorg/FvwmPrompt
 
 Package: fvwm3
 Architecture: any
-Static-Built-Using: ${dh-builtusing:golang-S-dev}
+Static-Built-Using: ${go:Version}, ${dh-builtusing:golang-S-dev}
 Depends: libperl4-corelibs-perl,
          ${perl:Depends},
          ${misc:Depends},
-         ${shlibs:Depends},
+         ${shlibs:Depends}
 Recommends: lxmenu-data | gnome-menus,
             python3,
             python3-xdg

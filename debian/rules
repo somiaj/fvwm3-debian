@@ -11,14 +11,13 @@ override_dh_auto_configure:
 	# Create links to Debian golang libs, but this copies the full source.
 	dh_auto_configure -O--buildsystem=golang -O--builddirectory=_build
 	# Delete full source and copy only FvwmPrompt module into place.
-	rm -rf $(PROMPTDIR)/*
-	for name in FvwmPrompt.go go.mod go.sum; do \
-		cp $(CURDIR)/bin/FvwmPrompt/$$name $(PROMPTDIR); \
-	done
+	rm -rf $(PROMPTDIR)/*; \
+	cd $(CURDIR)/bin/FvwmPrompt; \
+	cp FvwmPrompt.go go.mod go.sum $(PROMPTDIR)
 	dh_auto_configure -- -Dgolang=enabled -Dhtmldoc=true -Dmandoc=true
 
-# Build FvwmPrompt
 execute_after_dh_auto_build:
+	# Build FvwmPrompt
 	dh_auto_build -O--buildsystem=golang -O--builddirectory=_build
 
 execute_after_dh_install:
@@ -53,6 +52,12 @@ override_dh_installchangelogs:
 # Skip running dwz on FvwmPrompt, it is already compressed.
 override_dh_dwz:
 	dh_dwz -XFvwmPrompt
+
+# Determine golang version used in build to add to Static-Built-Using.
+override_dh_gencontrol:
+	dh_gencontrol -- -Vgo:Version="$(shell dpkg-query \
+		--showformat='$${source:Package} (= $${source:Version})' \
+		--show golang-*-go)"
 
 %:
 	dh $@

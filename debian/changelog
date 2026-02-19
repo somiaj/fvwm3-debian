@@ -2,6 +2,7 @@ fvwm3 (1.1.5+ds~rc) UNRELEASED; urgency=medium
 
   * New upstream release.
   * Build FvwmPrompt and remove FvwmConsole.
+    Remove libreadline depends as a result.
   * Use debian/fvwm3.alternatives to create alternative links
     and remove debian/postinst and debian/prerm.
   * Update standards version to 4.7.3. Remove Priority and

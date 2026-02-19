@@ -56,9 +56,9 @@ Adjust to suit your needs.
               golang-github-mattn-go-isatty-dev golang-github-sirupsen-logrus-dev \
               golang-golang-x-sys-dev golang-golang-x-text-dev libevent-dev \
               libfontconfig-dev libfreetype6-dev libfribidi-dev libncurses-dev \
-              libpng-dev libreadline-dev librsvg2-dev libsm-dev libx11-dev \
-              libxcursor-dev libxext-dev libxft-dev libxi-dev libxkbcommon-dev \
-              libxpm-dev libxrandr-dev libxrender-dev libxt-dev meson
+              libpng-dev librsvg2-dev libsm-dev libx11-dev libxcursor-dev \
+              libxext-dev libxft-dev libxi-dev libxkbcommon-dev libxpm-dev \
+              libxrandr-dev libxrender-dev libxt-dev meson
   ```
 
 + Copy `debian/` into the fvwm3 source and build the package.
