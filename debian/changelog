@@ -10,6 +10,7 @@ fvwm3 (1.1.5+ds~rc) UNRELEASED; urgency=medium
   * Ignore lintian missing-static-built-using-field-for-golang-package.
     Static-Built-Using is generated in a different way than expected
     due to how FvwmPrompt is built using golang.
+  * Update debian/copyright date to 2026.
 
  -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Thu, 19 Feb 2026 13:18:48 -0700
 
