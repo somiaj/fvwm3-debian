@@ -7,6 +7,9 @@ fvwm3 (1.1.5+ds~rc) UNRELEASED; urgency=medium
     and remove debian/postinst and debian/prerm.
   * Update standards version to 4.7.3. Remove Priority and
     Rules-Requires-Root from debian/control.
+  * Ignore lintian missing-static-built-using-field-for-golang-package.
+    Static-Built-Using is generated in a different way than expected
+    due to how FvwmPrompt is built using golang.
 
  -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Sat, 14 Feb 2026 10:28:48 -0700
 

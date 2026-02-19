@@ -1,0 +1,5 @@
+# Due to how dh-golang is used to build FvwmPrompt, Static-Built-Using is
+# generated with dh-builtusing and setting go version with dh_gencontrol
+# in debian/rules. So ignore not setting this with ${misc:Static-Built-Using}.
+fvwm3 source: missing-static-built-using-field-for-golang-package
+
