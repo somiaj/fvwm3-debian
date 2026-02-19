@@ -12,3 +12,5 @@ fvwm3 (1.1.5+ds-1) unstable; urgency=medium
 
         Exec exec x-terminal-emulator -T FvwmPrompt -e FvwmPrompt
 
+ -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Thu, 19 Feb 2026 13:18:48 -0700
+

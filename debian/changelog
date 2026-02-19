@@ -11,7 +11,7 @@ fvwm3 (1.1.5+ds~rc) UNRELEASED; urgency=medium
     Static-Built-Using is generated in a different way than expected
     due to how FvwmPrompt is built using golang.
 
- -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Sat, 14 Feb 2026 10:28:48 -0700
+ -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Thu, 19 Feb 2026 13:18:48 -0700
 
 fvwm3 (1.1.4+ds-1) unstable; urgency=medium
 
