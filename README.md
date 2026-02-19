@@ -94,9 +94,9 @@ This isn't needed if you just want to install fvwm3 from a Debian package.
 
   ```
   cd fvwm3/
-  meson setup build -Dgolang=enabled -Dhtmldoc=true -Dmandoc=true
-  meson dist -C build
-  mk-origtargz build/meson-dist/fvwm3-<version>.tar.xz
+  meson setup compile -Dgolang=enabled -Dhtmldoc=true -Dmandoc=true
+  meson dist -C compile
+  mk-origtargz compile/meson-dist/fvwm3-<version>.tar.xz
   cd ..
   ```
 
