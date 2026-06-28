@@ -1,18 +1,18 @@
-fvwm3 (1.1.5+ds~rc) UNRELEASED; urgency=medium
+fvwm3 (1.1.5+ds-1) unstable; urgency=medium
 
   * New upstream release.
   * Build FvwmPrompt and remove FvwmConsole.
     Remove libreadline depends as a result.
   * Use debian/fvwm3.alternatives to create alternative links
     and remove debian/postinst and debian/prerm.
-  * Update standards version to 4.7.3. Remove Priority and
+  * Update standards version to 4.7.4. Remove Priority and
     Rules-Requires-Root from debian/control.
   * Ignore lintian missing-static-built-using-field-for-golang-package.
     Static-Built-Using is generated in a different way than expected
     due to how FvwmPrompt is built using golang.
   * Update debian/copyright date to 2026.
 
- -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Thu, 19 Feb 2026 13:18:48 -0700
+ -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Sun, 28 Jun 2026 10:53:34 -0600
 
 fvwm3 (1.1.4+ds-1) unstable; urgency=medium
 
