@@ -1,3 +1,13 @@
+fvwm3 (1.1.5+ds-2) unstable; urgency=medium
+
+    FvwmPrompt is only available on amd64, arm64, i386, loong64, ppc64el,
+    riscv64, and s390x. On other arches FvwmCommand can be used instead.
+    To send multiple configurations, read a temporary config file:
+
+        FvwmCommand Read /path/to/temporary.config
+
+ -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Sun, 26 Jul 2026 16:48:01 -0600
+
 fvwm3 (1.1.5+ds-1) unstable; urgency=medium
 
     The fvwm3 package now provides FvwmPrompt and no longer provides
