@@ -7,7 +7,17 @@ export DEB_BUILD_MAINT_OPTIONS=hardening=+all
 
 PROMPTDIR=$(CURDIR)/_build/src/github.com/fvwmorg/FvwmPrompt
 
+include /usr/share/dpkg/architecture.mk
+
+# Only build FvwmPrompt on arches which include golang, since the build
+# fails with gccgo, due to go version and generics requirement.
+FVWM_PROMPT_ARCHS = amd64 arm64 armhf i386 loong64 ppc64el riscv64 s390x
+ifeq ($(DEB_HOST_ARCH),$(filter $(DEB_HOST_ARCH),$(FVWM_PROMPT_ARCHS)))
+	BUILD_FVWM_PROMPT = true
+endif
+
 override_dh_auto_configure:
+ifdef BUILD_FVWM_PROMPT
 	# Create links to Debian golang libs, but this copies the full source.
 	dh_auto_configure -O--buildsystem=golang -O--builddirectory=_build
 	# Delete full source and copy only FvwmPrompt module into place.
@@ -15,14 +25,21 @@ override_dh_auto_configure:
 	cd $(CURDIR)/bin/FvwmPrompt; \
 	cp FvwmPrompt.go go.mod go.sum $(PROMPTDIR)
 	dh_auto_configure -- -Dgolang=enabled -Dhtmldoc=true -Dmandoc=true
+else
+	dh_auto_configure -- -Dgolang=disabled -Dhtmldoc=true -Dmandoc=true
+endif
 
 execute_after_dh_auto_build:
+ifdef BUILD_FVWM_PROMPT
 	# Build FvwmPrompt
 	dh_auto_build -O--buildsystem=golang -O--builddirectory=_build
+endif
 
 execute_after_dh_install:
+ifdef BUILD_FVWM_PROMPT
 	# Copy FvwmPrompt into place.
 	cp $(CURDIR)/_build/bin/FvwmPrompt $(CURDIR)/debian/fvwm3/usr/bin
+endif
 	# Rename fvwm helper binaries to install along side fvwm package.
 	cd $(CURDIR)/debian/fvwm3/usr/bin; \
 	mv FvwmCommand Fvwm3Command; \
@@ -55,9 +72,13 @@ override_dh_dwz:
 
 # Determine golang version used in build to add to Static-Built-Using.
 override_dh_gencontrol:
+ifdef BUILD_FVWM_PROMPT
 	dh_gencontrol -- -Vgo:Version="$(shell dpkg-query \
 		--showformat='$${source:Package} (= $${source:Version})' \
 		--show golang-*-go)"
+else
+	dh_gencontrol -- -Vgo:Version="disabled-by-restriction (= 0)"
+endif
 
 %:
 	dh $@

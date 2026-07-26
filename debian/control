@@ -3,20 +3,20 @@ Section: x11
 Maintainer: Jaimos Skriletz <jaimosskriletz@gmail.com>
 Build-Depends: debhelper,
                debhelper-compat (= 13),
-               dh-golang,
+               dh-golang [amd64 arm64 armhf i386 loong64 ppc64el riscv64 s390x],
                dh-sequence-builtusing,
                asciidoctor,
                file,
                fontconfig,
                gettext,
-               golang-any,
-               golang-github-ergochat-readline-dev,
-               golang-github-fatih-color-dev,
-               golang-github-mattn-go-colorable-dev,
-               golang-github-mattn-go-isatty-dev,
-               golang-github-sirupsen-logrus-dev,
-               golang-golang-x-sys-dev,
-               golang-golang-x-text-dev,
+               golang-any [amd64 arm64 armhf i386 loong64 ppc64el riscv64 s390x],
+               golang-github-ergochat-readline-dev [amd64 arm64 armhf i386 loong64 ppc64el riscv64 s390x],
+               golang-github-fatih-color-dev [amd64 arm64 armhf i386 loong64 ppc64el riscv64 s390x],
+               golang-github-mattn-go-colorable-dev [amd64 arm64 armhf i386 loong64 ppc64el riscv64 s390x],
+               golang-github-mattn-go-isatty-dev [amd64 arm64 armhf i386 loong64 ppc64el riscv64 s390x],
+               golang-github-sirupsen-logrus-dev [amd64 arm64 armhf i386 loong64 ppc64el riscv64 s390x],
+               golang-golang-x-sys-dev [amd64 arm64 armhf i386 loong64 ppc64el riscv64 s390x],
+               golang-golang-x-text-dev [amd64 arm64 armhf i386 loong64 ppc64el riscv64 s390x],
                libevent-dev,
                libfontconfig-dev,
                libfreetype-dev,
@@ -46,7 +46,8 @@ XS-Go-Import-Path: github.com/fvwmorg/FvwmPrompt
 
 Package: fvwm3
 Architecture: any
-Static-Built-Using: ${go:Version}, ${dh-builtusing:golang-S-dev}
+Static-Built-Using: ${go:Version} [amd64 arm64 armhf i386 loong64 ppc64el riscv64 s390x],
+                    ${dh-builtusing:golang-S-dev} [amd64 arm64 armhf i386 loong64 ppc64el riscv64 s390x]
 Depends: libperl4-corelibs-perl,
          ${perl:Depends},
          ${misc:Depends},

@@ -15,6 +15,10 @@ the fvwm3 and fvwm package to be installed side by side.  This includes:
   the fvwm3 package to get mandb to update the aliases.
 
 + The Debian package provides FvwmPrompt and no longer provides FvwmConsole.
+  FvwmPrompt is only available on amd64, arm64, i386, loong64, ppc64el,
+  riscv64, and s390x. On other arches FvwmCommand can be used instead.
+  To send multiple configurations, read a temporary config file:
+  `Fvwm3Command Read /path/to/temporary.config`
 
 If you want to install and run fvwm3 and fvwm side by side, here are some
 things to consider.

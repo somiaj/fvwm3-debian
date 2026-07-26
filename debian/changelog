@@ -1,3 +1,14 @@
+fvwm3 (1.1.5+ds-2) unstable; urgency=medium
+
+  * Only build FvwmPrompt on the arches amd64, armhf, i386, loong64,
+    ppc64el, riscv64, and s390x, which include golang, since the
+    build fails using gccgo.
+  * Remove debian/source/lintian-overrides since
+    missing-static-built-using-filed-for-golang-package no longer
+    occurs with only using golang on some arches.
+
+ -- Jaimos Skriletz <jaimosskriletz@gmail.com>  Fri, 31 Jul 2026 13:17:29 -0600
+
 fvwm3 (1.1.5+ds-1) unstable; urgency=medium
 
   * New upstream release.
